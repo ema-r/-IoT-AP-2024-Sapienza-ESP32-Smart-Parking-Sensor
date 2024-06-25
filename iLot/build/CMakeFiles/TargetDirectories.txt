@@ -646,13 +646,6 @@
 /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/esp-idf/wifi_provisioning/CMakeFiles/install.dir
 /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/esp-idf/wifi_provisioning/CMakeFiles/install/local.dir
 /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/esp-idf/wifi_provisioning/CMakeFiles/install/strip.dir
-/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/esp-idf/lora_communication/CMakeFiles/__idf_lora_communication.dir
-/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/esp-idf/lora_communication/CMakeFiles/edit_cache.dir
-/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/esp-idf/lora_communication/CMakeFiles/rebuild_cache.dir
-/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/esp-idf/lora_communication/CMakeFiles/list_install_components.dir
-/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/esp-idf/lora_communication/CMakeFiles/install.dir
-/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/esp-idf/lora_communication/CMakeFiles/install/local.dir
-/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/esp-idf/lora_communication/CMakeFiles/install/strip.dir
 /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/esp-idf/ra01s/CMakeFiles/__idf_ra01s.dir
 /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/esp-idf/ra01s/CMakeFiles/edit_cache.dir
 /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/esp-idf/ra01s/CMakeFiles/rebuild_cache.dir
@@ -660,6 +653,13 @@
 /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/esp-idf/ra01s/CMakeFiles/install.dir
 /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/esp-idf/ra01s/CMakeFiles/install/local.dir
 /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/esp-idf/ra01s/CMakeFiles/install/strip.dir
+/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/esp-idf/lora_communication/CMakeFiles/__idf_lora_communication.dir
+/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/esp-idf/lora_communication/CMakeFiles/edit_cache.dir
+/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/esp-idf/lora_communication/CMakeFiles/rebuild_cache.dir
+/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/esp-idf/lora_communication/CMakeFiles/list_install_components.dir
+/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/esp-idf/lora_communication/CMakeFiles/install.dir
+/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/esp-idf/lora_communication/CMakeFiles/install/local.dir
+/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/esp-idf/lora_communication/CMakeFiles/install/strip.dir
 /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/esp-idf/main/CMakeFiles/__idf_main.dir
 /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/esp-idf/main/CMakeFiles/edit_cache.dir
 /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/esp-idf/main/CMakeFiles/rebuild_cache.dir
