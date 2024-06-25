@@ -18,7 +18,15 @@ RTC_DATA_ATTR int boot_num=0;
 
 void app_main(void)
 {
-    /*printf("wake up number %d\n", boot_num);
+    init_lora();
+
+    char* mes="wake up number ";
+    char message[25];
+    snprintf(message, sizeof(message), "%s%d",  mes, boot_num);
+    send_lora_message(message);
+    
+
+    printf("wake up number %d\n", boot_num);
     boot_num++;
 
     esp_sleep_enable_ext0_wakeup(GPIO_NUM_ADC1_CH0, 1); // Wake up on high level
@@ -27,16 +35,7 @@ void app_main(void)
     printf("Entering deep sleep...\n");
 
             // Enter deep sleep
-    esp_deep_sleep_start();*/
-
-
-
-init_lora();
-
-
-send_lora_message("ciao bello");
-
-
+    esp_deep_sleep_start();
 
 
 

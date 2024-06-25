@@ -92,19 +92,17 @@ void receive_lora_data(){
 void send_lora_message(const char* message) {
 
     ESP_LOGI(TAG, "Start");
-	while(1) {
-		TickType_t nowTick = xTaskGetTickCount();
-		int txLen = sprintf((char *)txData, message, nowTick);
-		//uint8_t len = strlen((char *)txData);
+    TickType_t nowTick = xTaskGetTickCount();
+    int txLen = sprintf((char *)txData, message, nowTick);
+    //uint8_t len = strlen((char *)txData);
 
-		// Wait for transmission to complete
-		if (LoRaSend(txData, txLen, SX126x_TXMODE_SYNC)) {
-			ESP_LOGI(TAG, "Send success");
-		} else {
-			ESP_LOGE(TAG, "Send fail");
-		}
-		vTaskDelay(pdMS_TO_TICKS(1000));
-	} // end while
+    // Wait for transmission to complete
+    if (LoRaSend(txData, txLen, SX126x_TXMODE_SYNC)) {
+        ESP_LOGI(TAG, "Send success");
+    } else {
+        ESP_LOGE(TAG, "Send fail");
+    }
+
 
 
 }
