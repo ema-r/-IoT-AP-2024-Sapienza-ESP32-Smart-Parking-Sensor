@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/fracchio/Scrivania/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/bootloader/esp-idf/cmake_install.cmake")
+  include("/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/bootloader/esp-idf/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/fracchio/Scrivania/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/bootloader/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/bootloader/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

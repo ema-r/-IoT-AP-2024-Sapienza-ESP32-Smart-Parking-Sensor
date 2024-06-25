@@ -1431,6 +1431,44 @@ rule C_STATIC_LIBRARY_LINKER____idf_wifi_provisioning_
 #############################################
 # Rule for compiling C files.
 
+rule C_COMPILER____idf_lora_communication_unscanned_
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ${LAUNCHER}${CODE_CHECK}/home/fracchio/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building C object $out
+
+
+#############################################
+# Rule for linking C static library.
+
+rule C_STATIC_LIBRARY_LINKER____idf_lora_communication_
+  command = $PRE_LINK && /usr/bin/cmake -E rm -f $TARGET_FILE && /home/fracchio/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32s3-elf-ar qc $TARGET_FILE $LINK_FLAGS $in && /home/fracchio/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32s3-elf-ranlib $TARGET_FILE && $POST_BUILD
+  description = Linking C static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling C files.
+
+rule C_COMPILER____idf_ra01s_unscanned_
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ${LAUNCHER}${CODE_CHECK}/home/fracchio/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building C object $out
+
+
+#############################################
+# Rule for linking C static library.
+
+rule C_STATIC_LIBRARY_LINKER____idf_ra01s_
+  command = $PRE_LINK && /usr/bin/cmake -E rm -f $TARGET_FILE && /home/fracchio/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32s3-elf-ar qc $TARGET_FILE $LINK_FLAGS $in && /home/fracchio/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32s3-elf-ranlib $TARGET_FILE && $POST_BUILD
+  description = Linking C static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling C files.
+
 rule C_COMPILER____idf_main_unscanned_
   depfile = $DEP_FILE
   deps = gcc
@@ -1451,7 +1489,7 @@ rule C_STATIC_LIBRARY_LINKER____idf_main_
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /usr/bin/cmake --regenerate-during-build -S/home/fracchio/Scrivania/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot -B/home/fracchio/Scrivania/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build
+  command = /usr/bin/cmake --regenerate-during-build -S/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot -B/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build
   description = Re-running CMake...
   generator = 1
 
@@ -1468,7 +1506,7 @@ rule CLEAN_ADDITIONAL
 # Rule for cleaning all built files.
 
 rule CLEAN
-  command = /usr/bin/ninja $FILE_ARG -t clean $TARGETS
+  command = /home/fracchio/.espressif/tools/ninja/1.11.1/ninja $FILE_ARG -t clean $TARGETS
   description = Cleaning all built files...
 
 
@@ -1476,6 +1514,6 @@ rule CLEAN
 # Rule for printing all primary targets available.
 
 rule HELP
-  command = /usr/bin/ninja -t targets
+  command = /home/fracchio/.espressif/tools/ninja/1.11.1/ninja -t targets
   description = All primary targets available:
 

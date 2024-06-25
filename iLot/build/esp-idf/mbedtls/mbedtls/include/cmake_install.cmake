@@ -45,6 +45,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
     "/home/fracchio/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/asn1write.h"
     "/home/fracchio/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/base64.h"
     "/home/fracchio/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/bignum.h"
+    "/home/fracchio/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/block_cipher.h"
     "/home/fracchio/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/build_info.h"
     "/home/fracchio/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/camellia.h"
     "/home/fracchio/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/ccm.h"

@@ -2,34 +2,34 @@
 	"sources" : 
 	[
 		{
-			"file" : "/home/fracchio/Scrivania/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/CMakeFiles/bootloader"
+			"file" : "/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/CMakeFiles/bootloader"
 		},
 		{
-			"file" : "/home/fracchio/Scrivania/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/CMakeFiles/bootloader.rule"
+			"file" : "/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/CMakeFiles/bootloader.rule"
 		},
 		{
-			"file" : "/home/fracchio/Scrivania/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/CMakeFiles/bootloader-complete.rule"
+			"file" : "/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/CMakeFiles/bootloader-complete.rule"
 		},
 		{
-			"file" : "/home/fracchio/Scrivania/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule"
+			"file" : "/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule"
 		},
 		{
-			"file" : "/home/fracchio/Scrivania/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule"
+			"file" : "/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule"
 		},
 		{
-			"file" : "/home/fracchio/Scrivania/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule"
+			"file" : "/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule"
 		},
 		{
-			"file" : "/home/fracchio/Scrivania/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule"
+			"file" : "/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule"
 		},
 		{
-			"file" : "/home/fracchio/Scrivania/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule"
+			"file" : "/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule"
 		},
 		{
-			"file" : "/home/fracchio/Scrivania/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule"
+			"file" : "/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule"
 		},
 		{
-			"file" : "/home/fracchio/Scrivania/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule"
+			"file" : "/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule"
 		}
 	],
 	"target" : 

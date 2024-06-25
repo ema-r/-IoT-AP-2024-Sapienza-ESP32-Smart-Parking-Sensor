@@ -1,4 +1,4 @@
-/* * Data converted from /home/fracchio/Scrivania/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/esp-idf/mbedtls/x509_crt_bundle
+/* * Data converted from /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/esp-idf/mbedtls/x509_crt_bundle
  */
 .data
 .section .rodata.embedded

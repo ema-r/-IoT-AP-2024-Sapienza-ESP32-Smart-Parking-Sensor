@@ -3333,6 +3333,16 @@
         "children": [],
         "depends_on": null,
         "help": null,
+        "id": "SOC_WIFI_PHY_NEEDS_USB_WORKAROUND",
+        "name": "SOC_WIFI_PHY_NEEDS_USB_WORKAROUND",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
         "id": "SOC_BLE_SUPPORTED",
         "name": "SOC_BLE_SUPPORTED",
         "range": null,
@@ -5160,6 +5170,16 @@
         "help": null,
         "id": "ESP_ROM_HAS_ERASE_0_REGION_BUG",
         "name": "ESP_ROM_HAS_ERASE_0_REGION_BUG",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
+        "id": "ESP_ROM_HAS_ENCRYPTED_WRITES_USING_LEGACY_DRV",
+        "name": "ESP_ROM_HAS_ENCRYPTED_WRITES_USING_LEGACY_DRV",
         "range": null,
         "title": null,
         "type": "bool"
@@ -7646,7 +7666,7 @@
                             },
                             {
                                 "children": [],
-                                "depends_on": "<choice ESP_SYSTEM_PANIC>",
+                                "depends_on": "ESP_GDBSTUB_ENABLED && <choice ESP_SYSTEM_PANIC>",
                                 "help": "Invoke gdbstub on the serial port, allowing for gdb to attach to it to do a postmortem\nof the crash.",
                                 "id": "ESP_SYSTEM_PANIC_GDBSTUB",
                                 "name": "ESP_SYSTEM_PANIC_GDBSTUB",
@@ -8797,6 +8817,16 @@
                                 "range": null,
                                 "title": "configUSE_TICKLESS_IDLE",
                                 "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": null,
+                                "help": "Enables task tagging functionality and its associated API (see configUSE_APPLICATION_TASK_TAG\ndocumentation for more details).",
+                                "id": "FREERTOS_USE_APPLICATION_TASK_TAG",
+                                "name": "FREERTOS_USE_APPLICATION_TASK_TAG",
+                                "range": null,
+                                "title": "configUSE_APPLICATION_TASK_TAG",
+                                "type": "bool"
                             }
                         ],
                         "depends_on": null,
@@ -8808,7 +8838,7 @@
                         "children": [
                             {
                                 "children": [],
-                                "depends_on": "COMPILER_OPTIMIZATION_DEBUG || ESP_COREDUMP_ENABLE || ESP_GDBSTUB_ENABLED",
+                                "depends_on": "COMPILER_OPTIMIZATION_DEBUG || ESP_COREDUMP_ENABLE || ESP_SYSTEM_PANIC_GDBSTUB || ESP_SYSTEM_GDBSTUB_RUNTIME",
                                 "help": "If enabled, all FreeRTOS task functions will be enclosed in a wrapper function. If a task function\nmistakenly returns (i.e. does not delete), the call flow will return to the wrapper function. The\nwrapper function will then log an error and abort the application. This option is also required for GDB\nbacktraces and C++ exceptions to work correctly inside top-level task functions.",
                                 "id": "FREERTOS_TASK_FUNCTION_WRAPPER",
                                 "name": "FREERTOS_TASK_FUNCTION_WRAPPER",

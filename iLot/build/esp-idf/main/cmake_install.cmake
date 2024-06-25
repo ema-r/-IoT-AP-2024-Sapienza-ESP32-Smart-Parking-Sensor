@@ -1,4 +1,4 @@
-# Install script for directory: /home/fracchio/Scrivania/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/main
+# Install script for directory: /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

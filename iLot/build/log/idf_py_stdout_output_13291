@@ -1,0 +1,1974 @@
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x9 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3810,len:0x178c
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xcbc
+load:0x403cc700,len:0x2d9c
+entry 0x403c9914
+[0;32mI (27) boot: ESP-IDF v5.2.2 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Jun 25 2024 15:41:31[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (34) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (38) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (53) boot: Partition Table:[0m
+[0;32mI (57) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (64) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (72) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (79) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (87) boot: End of partition table[0m
+[0;32mI (91) esp_image: segment 0: paddr=00010020 vaddr=3c030020 size=0d5e0h ( 54752) map[0m
+[0;32mI (109) esp_image: segment 1: paddr=0001d608 vaddr=3fc94700 size=02a10h ( 10768) load[0m
+[0;32mI (112) esp_image: segment 2: paddr=00020020 vaddr=42000020 size=24074h (147572) map[0m
+[0;32mI (143) esp_image: segment 3: paddr=0004409c vaddr=3fc97110 size=00074h (   116) load[0m
+[0;32mI (143) esp_image: segment 4: paddr=00044118 vaddr=40374000 size=1063ch ( 67132) load[0m
+[0;32mI (170) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (170) boot: Disabling RNG early entropy source...[0m
+[0;32mI (181) cpu_start: Multicore app[0m
+[0;32mI (191) cpu_start: Pro cpu start user code[0m
+[0;32mI (191) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (191) cpu_start: Application information:[0m
+[0;32mI (194) cpu_start: Project name:     iLot[0m
+[0;32mI (199) cpu_start: App version:      930dcde-dirty[0m
+[0;32mI (205) cpu_start: Compile time:     Jun 25 2024 16:35:23[0m
+[0;32mI (211) cpu_start: ELF file SHA256:  398d0d4c4...[0m
+[0;32mI (216) cpu_start: ESP-IDF:          v5.2.2[0m
+[0;32mI (221) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (226) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (230) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (235) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (242) heap_init: At 3FC97A90 len 00051C80 (327 KiB): RAM[0m
+[0;32mI (248) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (255) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (261) heap_init: At 600FE010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (268) spi_flash: detected chip: gd[0m
+[0;32mI (271) spi_flash: flash io: dio[0m
+[0;33mW (275) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (288) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (295) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (303) main_task: Started on CPU0[0m
+[0;32mI (313) main_task: Calling app_main()[0m
+[0;32mI (313) MAIN: Frequency is 868MHz[0m
+[0;32mI (313) RA01S: CONFIG_MISO_GPIO=11[0m
+[0;32mI (323) RA01S: CONFIG_MOSI_GPIO=10[0m
+[0;32mI (323) RA01S: CONFIG_SCLK_GPIO=9[0m
+[0;32mI (323) RA01S: CONFIG_NSS_GPIO=8[0m
+[0;32mI (333) RA01S: CONFIG_RST_GPIO=12[0m
+[0;32mI (333) RA01S: CONFIG_BUSY_GPIO=13[0m
+[0;32mI (343) RA01S: CONFIG_TXEN_GPIO=-1[0m
+[0;32mI (343) RA01S: CONFIG_RXEN_GPIO=-1[0m
+[0;32mI (343) gpio: GPIO[8]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (353) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (363) gpio: GPIO[13]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (373) RA01S: spi_bus_initialize=0[0m
+[0;32mI (383) RA01S: spi_bus_add_device=0[0m
+[0;33mW (383) MAIN: Enable TCXO[0m
+[0;32mI (423) RA01S: Reset[0m
+[0;32mI (423) RA01S: syncWord=0x1424[0m
+[0;32mI (423) RA01S: SX126x installed[0m
+[0;33mW (423) RA01S: WriteCommand2 status=0a retry=1[0m
+[0;32mI (433) RA01S: tcxoVoltage=3.300000[0m
+[0;32mI (443) RA01S: useRegulatorLDO=1[0m
+[0;32mI (453) RA01S: SetStopRxTimerOnPreambleDetect enable=0[0m
+[0;32mI (463) PRIMARY: Start[0m
+[0;32mI (523) main_task: Returned from app_main()[0m
+[0;33mW (1533) PRIMARY: No response within 100 ticks[0m
+[0;33mW (3613) PRIMARY: No response within 100 ticks[0m
+[0;33mW (5693) PRIMARY: No response within 100 ticks[0m
+[0;33mW (7773) PRIMARY: No response within 100 ticks[0m
+[0;33mW (9853) PRIMARY: No response within 100 ticks[0m
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3810,len:0x178c
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xcbc
+load:0x403cc700,len:0x2d9c
+entry 0x403c9914
+[0;32mI (27) boot: ESP-IDF v5.2.2 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Jun 25 2024 15:41:31[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (34) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (38) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (53) boot: Partition Table:[0m
+[0;32mI (57) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (64) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (72) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (79) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (87) boot: End of partition table[0m
+[0;32mI (91) esp_image: segment 0: paddr=00010020 vaddr=3c030020 size=0d5e0h ( 54752) map[0m
+[0;32mI (109) esp_image: segment 1: paddr=0001d608 vaddr=3fc94700 size=02a10h ( 10768) load[0m
+[0;32mI (112) esp_image: segment 2: paddr=00020020 vaddr=42000020 size=24074h (147572) map[0m
+[0;32mI (143) esp_image: segment 3: paddr=0004409c vaddr=3fc97110 size=00074h (   116) load[0m
+[0;32mI (143) esp_image: segment 4: paddr=00044118 vaddr=40374000 size=1063ch ( 67132) load[0m
+[0;32mI (170) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (170) boot: Disabling RNG early entropy source...[0m
+[0;32mI (181) cpu_start: Multicore app[0m
+[0;32mI (191) cpu_start: Pro cpu start user code[0m
+[0;32mI (191) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (191) cpu_start: Application information:[0m
+[0;32mI (194) cpu_start: Project name:     iLot[0m
+[0;32mI (199) cpu_start: App version:      930dcde-dirty[0m
+[0;32mI (205) cpu_start: Compile time:     Jun 25 2024 16:35:23[0m
+[0;32mI (211) cpu_start: ELF file SHA256:  398d0d4c4...[0m
+[0;32mI (216) cpu_start: ESP-IDF:          v5.2.2[0m
+[0;32mI (221) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (226) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (230) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (235) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (242) heap_init: At 3FC97A90 len 00051C80 (327 KiB): RAM[0m
+[0;32mI (248) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (255) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (261) heap_init: At 600FE010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (268) spi_flash: detected chip: gd[0m
+[0;32mI (271) spi_flash: flash io: dio[0m
+[0;33mW (275) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (288) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (295) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (303) main_task: Started on CPU0[0m
+[0;32mI (313) main_task: Calling app_main()[0m
+[0;32mI (313) MAIN: Frequency is 868MHz[0m
+[0;32mI (313) RA01S: CONFIG_MISO_GPIO=11[0m
+[0;32mI (323) RA01S: CONFIG_MOSI_GPIO=10[0m
+[0;32mI (323) RA01S: CONFIG_SCLK_GPIO=9[0m
+[0;32mI (323) RA01S: CONFIG_NSS_GPIO=8[0m
+[0;32mI (333) RA01S: CONFIG_RST_GPIO=12[0m
+[0;32mI (333) RA01S: CONFIG_BUSY_GPIO=13[0m
+[0;32mI (343) RA01S: CONFIG_TXEN_GPIO=-1[0m
+[0;32mI (343) RA01S: CONFIG_RXEN_GPIO=-1[0m
+[0;32mI (343) gpio: GPIO[8]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (353) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (363) gpio: GPIO[13]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (373) RA01S: spi_bus_initialize=0[0m
+[0;32mI (383) RA01S: spi_bus_add_device=0[0m
+[0;33mW (383) MAIN: Enable TCXO[0m
+[0;32mI (423) RA01S: Reset[0m
+[0;32mI (423) RA01S: syncWord=0x1424[0m
+[0;32mI (423) RA01S: SX126x installed[0m
+[0;33mW (423) RA01S: WriteCommand2 status=0a retry=1[0m
+[0;32mI (433) RA01S: tcxoVoltage=3.300000[0m
+[0;32mI (443) RA01S: useRegulatorLDO=1[0m
+[0;32mI (453) RA01S: SetStopRxTimerOnPreambleDetect enable=0[0m
+[0;32mI (463) PRIMARY: Start[0m
+[0;32mI (523) main_task: Returned from app_main()[0m
+[0;32mI (803) PRIMARY: 18 byte packet received:[Hello World 868379][0m
+[0;32mI (803) PRIMARY: Response time is 280 millisecond[0m
+[0;32mI (2883) PRIMARY: 18 byte packet received:[Hello World 868587][0m
+[0;32mI (2883) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (2883) PRIMARY: No response within 100 ticks[0m
+[0;32mI (4963) PRIMARY: 18 byte packet received:[Hello World 868795][0m
+[0;32mI (4963) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (4963) PRIMARY: No response within 100 ticks[0m
+[0;32mI (7043) PRIMARY: 18 byte packet received:[Hello World 869003][0m
+[0;32mI (7043) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (7043) PRIMARY: No response within 100 ticks[0m
+[0;32mI (9123) PRIMARY: 18 byte packet received:[Hello World 869211][0m
+[0;32mI (9123) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (9123) PRIMARY: No response within 100 ticks[0m
+[0;32mI (11203) PRIMARY: 18 byte packet received:[Hello World 869419][0m
+[0;32mI (11203) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (11203) PRIMARY: No response within 100 ticks[0m
+[0;32mI (13283) PRIMARY: 18 byte packet received:[Hello World 869627][0m
+[0;32mI (13283) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (13283) PRIMARY: No response within 100 ticks[0m
+[0;32mI (15363) PRIMARY: 18 byte packet received:[Hello World 869835][0m
+[0;32mI (15363) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (15363) PRIMARY: No response within 100 ticks[0m
+[0;32mI (17443) PRIMARY: 18 byte packet received:[Hello World 870043][0m
+[0;32mI (17443) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (17443) PRIMARY: No response within 100 ticks[0m
+[0;33mW (19523) PRIMARY: No response within 100 ticks[0m
+[0;33mW (21603) PRIMARY: No response within 100 ticks[0m
+[0;33mW (23683) PRIMARY: No response within 100 ticks[0m
+[0;33mW (25763) PRIMARY: No response within 100 ticks[0m
+[0;33mW (27843) PRIMARY: No response within 100 ticks[0m
+[0;33mW (29923) PRIMARY: No response within 100 ticks[0m
+[0;33mW (32003) PRIMARY: No response within 100 ticks[0m
+[0;32mI (33633) PRIMARY: 14 byte packet received:[Hello World 16][0m
+[0;32mI (33633) PRIMARY: Response time is 560 millisecond[0m
+[0;32mI (35713) PRIMARY: 15 byte packet received:[Hello World 224][0m
+[0;32mI (35713) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (35713) PRIMARY: No response within 100 ticks[0m
+[0;32mI (37793) PRIMARY: 15 byte packet received:[Hello World 432][0m
+[0;32mI (37793) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (37793) PRIMARY: No response within 100 ticks[0m
+[0;32mI (39873) PRIMARY: 15 byte packet received:[Hello World 640][0m
+[0;32mI (39873) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (39873) PRIMARY: No response within 100 ticks[0m
+[0;32mI (41953) PRIMARY: 15 byte packet received:[Hello World 848][0m
+[0;32mI (41953) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (41953) PRIMARY: No response within 100 ticks[0m
+[0;32mI (44033) PRIMARY: 16 byte packet received:[Hello World 1056][0m
+[0;32mI (44033) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (44033) PRIMARY: No response within 100 ticks[0m
+[0;32mI (46113) PRIMARY: 16 byte packet received:[Hello World 1264][0m
+[0;32mI (46113) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (46113) PRIMARY: No response within 100 ticks[0m
+[0;32mI (48193) PRIMARY: 16 byte packet received:[Hello World 1472][0m
+[0;32mI (48193) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (48193) PRIMARY: No response within 100 ticks[0m
+[0;32mI (50273) PRIMARY: 16 byte packet received:[Hello World 1680][0m
+[0;32mI (50273) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (50273) PRIMARY: No response within 100 ticks[0m
+[0;32mI (52353) PRIMARY: 16 byte packet received:[Hello World 1888][0m
+[0;32mI (52353) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (52353) PRIMARY: No response within 100 ticks[0m
+[0;32mI (54433) PRIMARY: 16 byte packet received:[Hello World 2096][0m
+[0;32mI (54433) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (54433) PRIMARY: No response within 100 ticks[0m
+[0;32mI (56513) PRIMARY: 16 byte packet received:[Hello World 2304][0m
+[0;32mI (56513) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (56513) PRIMARY: No response within 100 ticks[0m
+[0;32mI (58593) PRIMARY: 16 byte packet received:[Hello World 2512][0m
+[0;32mI (58593) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (58593) PRIMARY: No response within 100 ticks[0m
+[0;32mI (60673) PRIMARY: 16 byte packet received:[Hello World 2720][0m
+[0;32mI (60673) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (60673) PRIMARY: No response within 100 ticks[0m
+[0;32mI (62753) PRIMARY: 16 byte packet received:[Hello World 2928][0m
+[0;32mI (62753) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (62753) PRIMARY: No response within 100 ticks[0m
+[0;32mI (64833) PRIMARY: 16 byte packet received:[Hello World 3136][0m
+[0;32mI (64833) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (64833) PRIMARY: No response within 100 ticks[0m
+[0;32mI (66913) PRIMARY: 16 byte packet received:[Hello World 3344][0m
+[0;32mI (66913) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (66913) PRIMARY: No response within 100 ticks[0m
+[0;32mI (68993) PRIMARY: 16 byte packet received:[Hello World 3552][0m
+[0;32mI (68993) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (68993) PRIMARY: No response within 100 ticks[0m
+[0;32mI (71073) PRIMARY: 16 byte packet received:[Hello World 3760][0m
+[0;32mI (71073) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (71073) PRIMARY: No response within 100 ticks[0m
+[0;32mI (73153) PRIMARY: 16 byte packet received:[Hello World 3968][0m
+[0;32mI (73153) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (73153) PRIMARY: No response within 100 ticks[0m
+[0;32mI (75233) PRIMARY: 16 byte packet received:[Hello World 4176][0m
+[0;32mI (75233) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (75233) PRIMARY: No response within 100 ticks[0m
+[0;32mI (77313) PRIMARY: 16 byte packet received:[Hello World 4384][0m
+[0;32mI (77313) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (77313) PRIMARY: No response within 100 ticks[0m
+[0;32mI (79393) PRIMARY: 16 byte packet received:[Hello World 4592][0m
+[0;32mI (79393) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (79393) PRIMARY: No response within 100 ticks[0m
+[0;32mI (81473) PRIMARY: 16 byte packet received:[Hello World 4800][0m
+[0;32mI (81473) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (81473) PRIMARY: No response within 100 ticks[0m
+[0;32mI (83553) PRIMARY: 16 byte packet received:[Hello World 5008][0m
+[0;32mI (83553) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (83553) PRIMARY: No response within 100 ticks[0m
+[0;32mI (85633) PRIMARY: 16 byte packet received:[Hello World 5216][0m
+[0;32mI (85633) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (85633) PRIMARY: No response within 100 ticks[0m
+[0;32mI (87713) PRIMARY: 16 byte packet received:[Hello World 5424][0m
+[0;32mI (87713) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (87713) PRIMARY: No response within 100 ticks[0m
+[0;32mI (89793) PRIMARY: 16 byte packet received:[Hello World 5632][0m
+[0;32mI (89793) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (89793) PRIMARY: No response within 100 ticks[0m
+[0;32mI (91873) PRIMARY: 16 byte packet received:[Hello World 5840][0m
+[0;32mI (91873) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (91873) PRIMARY: No response within 100 ticks[0m
+[0;32mI (93953) PRIMARY: 16 byte packet received:[Hello World 6048][0m
+[0;32mI (93953) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (93953) PRIMARY: No response within 100 ticks[0m
+[0;32mI (96033) PRIMARY: 16 byte packet received:[Hello World 6256][0m
+[0;32mI (96033) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (96033) PRIMARY: No response within 100 ticks[0m
+[0;32mI (98113) PRIMARY: 16 byte packet received:[Hello World 6464][0m
+[0;32mI (98113) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (98113) PRIMARY: No response within 100 ticks[0m
+[0;32mI (100193) PRIMARY: 16 byte packet received:[Hello World 6672][0m
+[0;32mI (100193) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (100193) PRIMARY: No response within 100 ticks[0m
+[0;32mI (102273) PRIMARY: 16 byte packet received:[Hello World 6880][0m
+[0;32mI (102273) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (102273) PRIMARY: No response within 100 ticks[0m
+[0;32mI (104353) PRIMARY: 16 byte packet received:[Hello World 7088][0m
+[0;32mI (104353) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (104353) PRIMARY: No response within 100 ticks[0m
+[0;32mI (106433) PRIMARY: 16 byte packet received:[Hello World 7296][0m
+[0;32mI (106433) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (106433) PRIMARY: No response within 100 ticks[0m
+[0;32mI (108513) PRIMARY: 16 byte packet received:[Hello World 7504][0m
+[0;32mI (108513) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (108513) PRIMARY: No response within 100 ticks[0m
+[0;32mI (110593) PRIMARY: 16 byte packet received:[Hello World 7712][0m
+[0;32mI (110593) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (110593) PRIMARY: No response within 100 ticks[0m
+[0;32mI (112673) PRIMARY: 16 byte packet received:[Hello World 7920][0m
+[0;32mI (112673) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (112673) PRIMARY: No response within 100 ticks[0m
+[0;32mI (114753) PRIMARY: 16 byte packet received:[Hello World 8128][0m
+[0;32mI (114753) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (114753) PRIMARY: No response within 100 ticks[0m
+[0;32mI (116833) PRIMARY: 16 byte packet received:[Hello World 8336][0m
+[0;32mI (116833) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (116833) PRIMARY: No response within 100 ticks[0m
+[0;32mI (118913) PRIMARY: 16 byte packet received:[Hello World 8544][0m
+[0;32mI (118913) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (118913) PRIMARY: No response within 100 ticks[0m
+[0;32mI (120993) PRIMARY: 16 byte packet received:[Hello World 8752][0m
+[0;32mI (120993) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (120993) PRIMARY: No response within 100 ticks[0m
+[0;32mI (123073) PRIMARY: 16 byte packet received:[Hello World 8960][0m
+[0;32mI (123073) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (123073) PRIMARY: No response within 100 ticks[0m
+[0;32mI (125153) PRIMARY: 16 byte packet received:[Hello World 9168][0m
+[0;32mI (125153) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (125153) PRIMARY: No response within 100 ticks[0m
+[0;32mI (127233) PRIMARY: 16 byte packet received:[Hello World 9376][0m
+[0;32mI (127233) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (127233) PRIMARY: No response within 100 ticks[0m
+[0;32mI (129313) PRIMARY: 16 byte packet received:[Hello World 9584][0m
+[0;32mI (129313) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (129313) PRIMARY: No response within 100 ticks[0m
+[0;32mI (131393) PRIMARY: 16 byte packet received:[Hello World 9792][0m
+[0;32mI (131393) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (131393) PRIMARY: No response within 100 ticks[0m
+[0;32mI (133473) PRIMARY: 17 byte packet received:[Hello World 10000][0m
+[0;32mI (133473) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (133473) PRIMARY: No response within 100 ticks[0m
+[0;32mI (135553) PRIMARY: 17 byte packet received:[Hello World 10208][0m
+[0;32mI (135553) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (135553) PRIMARY: No response within 100 ticks[0m
+[0;32mI (137633) PRIMARY: 17 byte packet received:[Hello World 10416][0m
+[0;32mI (137633) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (137633) PRIMARY: No response within 100 ticks[0m
+[0;32mI (139713) PRIMARY: 17 byte packet received:[Hello World 10624][0m
+[0;32mI (139713) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (139713) PRIMARY: No response within 100 ticks[0m
+[0;32mI (141793) PRIMARY: 17 byte packet received:[Hello World 10832][0m
+[0;32mI (141793) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (141793) PRIMARY: No response within 100 ticks[0m
+[0;32mI (143873) PRIMARY: 17 byte packet received:[Hello World 11040][0m
+[0;32mI (143873) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (143873) PRIMARY: No response within 100 ticks[0m
+[0;32mI (145953) PRIMARY: 17 byte packet received:[Hello World 11248][0m
+[0;32mI (145953) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (145953) PRIMARY: No response within 100 ticks[0m
+[0;32mI (148033) PRIMARY: 17 byte packet received:[Hello World 11456][0m
+[0;32mI (148033) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (148033) PRIMARY: No response within 100 ticks[0m
+[0;32mI (150113) PRIMARY: 17 byte packet received:[Hello World 11664][0m
+[0;32mI (150113) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (150113) PRIMARY: No response within 100 ticks[0m
+[0;32mI (152193) PRIMARY: 17 byte packet received:[Hello World 11872][0m
+[0;32mI (152193) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (152193) PRIMARY: No response within 100 ticks[0m
+[0;32mI (154273) PRIMARY: 17 byte packet received:[Hello World 12080][0m
+[0;32mI (154273) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (154273) PRIMARY: No response within 100 ticks[0m
+[0;32mI (156353) PRIMARY: 17 byte packet received:[Hello World 12288][0m
+[0;32mI (156353) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (156353) PRIMARY: No response within 100 ticks[0m
+[0;32mI (158433) PRIMARY: 17 byte packet received:[Hello World 12496][0m
+[0;32mI (158433) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (158433) PRIMARY: No response within 100 ticks[0m
+[0;32mI (160513) PRIMARY: 17 byte packet received:[Hello World 12704][0m
+[0;32mI (160513) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (160513) PRIMARY: No response within 100 ticks[0m
+[0;32mI (162593) PRIMARY: 17 byte packet received:[Hello World 12912][0m
+[0;32mI (162593) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (162593) PRIMARY: No response within 100 ticks[0m
+[0;32mI (164673) PRIMARY: 17 byte packet received:[Hello World 13120][0m
+[0;32mI (164673) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (164673) PRIMARY: No response within 100 ticks[0m
+[0;32mI (166753) PRIMARY: 17 byte packet received:[Hello World 13328][0m
+[0;32mI (166753) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (166753) PRIMARY: No response within 100 ticks[0m
+[0;32mI (168833) PRIMARY: 17 byte packet received:[Hello World 13536][0m
+[0;32mI (168833) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (168833) PRIMARY: No response within 100 ticks[0m
+[0;32mI (170913) PRIMARY: 17 byte packet received:[Hello World 13744][0m
+[0;32mI (170913) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (170913) PRIMARY: No response within 100 ticks[0m
+[0;32mI (172993) PRIMARY: 17 byte packet received:[Hello World 13952][0m
+[0;32mI (172993) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (172993) PRIMARY: No response within 100 ticks[0m
+[0;32mI (175073) PRIMARY: 17 byte packet received:[Hello World 14160][0m
+[0;32mI (175073) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (175073) PRIMARY: No response within 100 ticks[0m
+[0;32mI (177153) PRIMARY: 17 byte packet received:[Hello World 14368][0m
+[0;32mI (177153) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (177153) PRIMARY: No response within 100 ticks[0m
+[0;32mI (179233) PRIMARY: 17 byte packet received:[Hello World 14576][0m
+[0;32mI (179233) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (179233) PRIMARY: No response within 100 ticks[0m
+[0;32mI (181313) PRIMARY: 17 byte packet received:[Hello World 14784][0m
+[0;32mI (181313) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (181313) PRIMARY: No response within 100 ticks[0m
+[0;32mI (183393) PRIMARY: 17 byte packet received:[Hello World 14992][0m
+[0;32mI (183393) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (183393) PRIMARY: No response within 100 ticks[0m
+[0;32mI (185473) PRIMARY: 17 byte packet received:[Hello World 15200][0m
+[0;32mI (185473) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (185473) PRIMARY: No response within 100 ticks[0m
+[0;32mI (187553) PRIMARY: 17 byte packet received:[Hello World 15408][0m
+[0;32mI (187553) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (187553) PRIMARY: No response within 100 ticks[0m
+[0;32mI (189633) PRIMARY: 17 byte packet received:[Hello World 15616][0m
+[0;32mI (189633) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (189633) PRIMARY: No response within 100 ticks[0m
+[0;32mI (191713) PRIMARY: 17 byte packet received:[Hello World 15824][0m
+[0;32mI (191713) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (191713) PRIMARY: No response within 100 ticks[0m
+[0;32mI (193793) PRIMARY: 17 byte packet received:[Hello World 16032][0m
+[0;32mI (193793) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (193793) PRIMARY: No response within 100 ticks[0m
+[0;32mI (195873) PRIMARY: 17 byte packet received:[Hello World 16240][0m
+[0;32mI (195873) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (195873) PRIMARY: No response within 100 ticks[0m
+[0;32mI (197953) PRIMARY: 17 byte packet received:[Hello World 16448][0m
+[0;32mI (197953) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (197953) PRIMARY: No response within 100 ticks[0m
+[0;32mI (200033) PRIMARY: 17 byte packet received:[Hello World 16656][0m
+[0;32mI (200033) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (200033) PRIMARY: No response within 100 ticks[0m
+[0;32mI (202113) PRIMARY: 17 byte packet received:[Hello World 16864][0m
+[0;32mI (202113) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (202113) PRIMARY: No response within 100 ticks[0m
+[0;32mI (204193) PRIMARY: 17 byte packet received:[Hello World 17072][0m
+[0;32mI (204193) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (204193) PRIMARY: No response within 100 ticks[0m
+[0;32mI (206273) PRIMARY: 17 byte packet received:[Hello World 17280][0m
+[0;32mI (206273) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (206273) PRIMARY: No response within 100 ticks[0m
+[0;32mI (208353) PRIMARY: 17 byte packet received:[Hello World 17488][0m
+[0;32mI (208353) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (208353) PRIMARY: No response within 100 ticks[0m
+[0;32mI (210433) PRIMARY: 17 byte packet received:[Hello World 17696][0m
+[0;32mI (210433) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (210433) PRIMARY: No response within 100 ticks[0m
+[0;32mI (212513) PRIMARY: 17 byte packet received:[Hello World 17904][0m
+[0;32mI (212513) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (212513) PRIMARY: No response within 100 ticks[0m
+[0;32mI (214593) PRIMARY: 17 byte packet received:[Hello World 18112][0m
+[0;32mI (214593) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (214593) PRIMARY: No response within 100 ticks[0m
+[0;32mI (216673) PRIMARY: 17 byte packet received:[Hello World 18320][0m
+[0;32mI (216673) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (216673) PRIMARY: No response within 100 ticks[0m
+[0;32mI (218753) PRIMARY: 17 byte packet received:[Hello World 18528][0m
+[0;32mI (218753) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (218753) PRIMARY: No response within 100 ticks[0m
+[0;32mI (220833) PRIMARY: 17 byte packet received:[Hello World 18736][0m
+[0;32mI (220833) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (220833) PRIMARY: No response within 100 ticks[0m
+[0;32mI (222913) PRIMARY: 17 byte packet received:[Hello World 18944][0m
+[0;32mI (222913) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (222913) PRIMARY: No response within 100 ticks[0m
+[0;32mI (224993) PRIMARY: 17 byte packet received:[Hello World 19152][0m
+[0;32mI (224993) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (224993) PRIMARY: No response within 100 ticks[0m
+[0;32mI (227073) PRIMARY: 17 byte packet received:[Hello World 19360][0m
+[0;32mI (227073) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (227073) PRIMARY: No response within 100 ticks[0m
+[0;32mI (229153) PRIMARY: 17 byte packet received:[Hello World 19568][0m
+[0;32mI (229153) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (229153) PRIMARY: No response within 100 ticks[0m
+[0;32mI (231233) PRIMARY: 17 byte packet received:[Hello World 19776][0m
+[0;32mI (231233) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (231233) PRIMARY: No response within 100 ticks[0m
+[0;32mI (233313) PRIMARY: 17 byte packet received:[Hello World 19984][0m
+[0;32mI (233313) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (233313) PRIMARY: No response within 100 ticks[0m
+[0;32mI (235393) PRIMARY: 17 byte packet received:[Hello World 20192][0m
+[0;32mI (235393) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (235393) PRIMARY: No response within 100 ticks[0m
+[0;32mI (237473) PRIMARY: 17 byte packet received:[Hello World 20400][0m
+[0;32mI (237473) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (237473) PRIMARY: No response within 100 ticks[0m
+[0;32mI (239553) PRIMARY: 17 byte packet received:[Hello World 20608][0m
+[0;32mI (239553) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (239553) PRIMARY: No response within 100 ticks[0m
+[0;32mI (241633) PRIMARY: 17 byte packet received:[Hello World 20816][0m
+[0;32mI (241633) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (241633) PRIMARY: No response within 100 ticks[0m
+[0;32mI (243713) PRIMARY: 17 byte packet received:[Hello World 21024][0m
+[0;32mI (243713) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (243713) PRIMARY: No response within 100 ticks[0m
+[0;32mI (245793) PRIMARY: 17 byte packet received:[Hello World 21232][0m
+[0;32mI (245793) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (245793) PRIMARY: No response within 100 ticks[0m
+[0;32mI (247873) PRIMARY: 17 byte packet received:[Hello World 21440][0m
+[0;32mI (247873) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (247873) PRIMARY: No response within 100 ticks[0m
+[0;32mI (249953) PRIMARY: 17 byte packet received:[Hello World 21648][0m
+[0;32mI (249953) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (249953) PRIMARY: No response within 100 ticks[0m
+[0;32mI (252033) PRIMARY: 17 byte packet received:[Hello World 21856][0m
+[0;32mI (252033) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (252033) PRIMARY: No response within 100 ticks[0m
+[0;32mI (254113) PRIMARY: 17 byte packet received:[Hello World 22064][0m
+[0;32mI (254113) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (254113) PRIMARY: No response within 100 ticks[0m
+[0;32mI (256193) PRIMARY: 17 byte packet received:[Hello World 22272][0m
+[0;32mI (256193) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (256193) PRIMARY: No response within 100 ticks[0m
+[0;32mI (258273) PRIMARY: 17 byte packet received:[Hello World 22480][0m
+[0;32mI (258273) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (258273) PRIMARY: No response within 100 ticks[0m
+[0;32mI (260353) PRIMARY: 17 byte packet received:[Hello World 22688][0m
+[0;32mI (260353) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (260353) PRIMARY: No response within 100 ticks[0m
+[0;32mI (262433) PRIMARY: 17 byte packet received:[Hello World 22896][0m
+[0;32mI (262433) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (262433) PRIMARY: No response within 100 ticks[0m
+[0;32mI (264513) PRIMARY: 17 byte packet received:[Hello World 23104][0m
+[0;32mI (264513) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (264513) PRIMARY: No response within 100 ticks[0m
+[0;32mI (266593) PRIMARY: 17 byte packet received:[Hello World 23312][0m
+[0;32mI (266593) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (266593) PRIMARY: No response within 100 ticks[0m
+[0;32mI (268673) PRIMARY: 17 byte packet received:[Hello World 23520][0m
+[0;32mI (268673) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (268673) PRIMARY: No response within 100 ticks[0m
+[0;32mI (270753) PRIMARY: 17 byte packet received:[Hello World 23728][0m
+[0;32mI (270753) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (270753) PRIMARY: No response within 100 ticks[0m
+[0;32mI (272833) PRIMARY: 17 byte packet received:[Hello World 23936][0m
+[0;32mI (272833) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (272833) PRIMARY: No response within 100 ticks[0m
+[0;32mI (274913) PRIMARY: 17 byte packet received:[Hello World 24144][0m
+[0;32mI (274913) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (274913) PRIMARY: No response within 100 ticks[0m
+[0;32mI (276993) PRIMARY: 17 byte packet received:[Hello World 24352][0m
+[0;32mI (276993) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (276993) PRIMARY: No response within 100 ticks[0m
+[0;32mI (279073) PRIMARY: 17 byte packet received:[Hello World 24560][0m
+[0;32mI (279073) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (279073) PRIMARY: No response within 100 ticks[0m
+[0;32mI (281153) PRIMARY: 17 byte packet received:[Hello World 24768][0m
+[0;32mI (281153) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (281153) PRIMARY: No response within 100 ticks[0m
+[0;32mI (283233) PRIMARY: 17 byte packet received:[Hello World 24976][0m
+[0;32mI (283233) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (283233) PRIMARY: No response within 100 ticks[0m
+[0;32mI (285313) PRIMARY: 17 byte packet received:[Hello World 25184][0m
+[0;32mI (285313) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (285313) PRIMARY: No response within 100 ticks[0m
+[0;32mI (287393) PRIMARY: 17 byte packet received:[Hello World 25392][0m
+[0;32mI (287393) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (287393) PRIMARY: No response within 100 ticks[0m
+[0;32mI (289473) PRIMARY: 17 byte packet received:[Hello World 25600][0m
+[0;32mI (289473) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (289473) PRIMARY: No response within 100 ticks[0m
+[0;32mI (291553) PRIMARY: 17 byte packet received:[Hello World 25808][0m
+[0;32mI (291553) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (291553) PRIMARY: No response within 100 ticks[0m
+[0;32mI (293633) PRIMARY: 17 byte packet received:[Hello World 26016][0m
+[0;32mI (293633) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (293633) PRIMARY: No response within 100 ticks[0m
+[0;32mI (295713) PRIMARY: 17 byte packet received:[Hello World 26224][0m
+[0;32mI (295713) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (295713) PRIMARY: No response within 100 ticks[0m
+[0;32mI (297793) PRIMARY: 17 byte packet received:[Hello World 26432][0m
+[0;32mI (297793) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (297793) PRIMARY: No response within 100 ticks[0m
+[0;32mI (299873) PRIMARY: 17 byte packet received:[Hello World 26640][0m
+[0;32mI (299873) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (299873) PRIMARY: No response within 100 ticks[0m
+[0;32mI (301953) PRIMARY: 17 byte packet received:[Hello World 26848][0m
+[0;32mI (301953) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (301953) PRIMARY: No response within 100 ticks[0m
+[0;32mI (304033) PRIMARY: 17 byte packet received:[Hello World 27056][0m
+[0;32mI (304033) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (304033) PRIMARY: No response within 100 ticks[0m
+[0;32mI (306113) PRIMARY: 17 byte packet received:[Hello World 27264][0m
+[0;32mI (306113) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (306113) PRIMARY: No response within 100 ticks[0m
+[0;32mI (308193) PRIMARY: 17 byte packet received:[Hello World 27472][0m
+[0;32mI (308193) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (308193) PRIMARY: No response within 100 ticks[0m
+[0;32mI (310273) PRIMARY: 17 byte packet received:[Hello World 27680][0m
+[0;32mI (310273) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (310273) PRIMARY: No response within 100 ticks[0m
+[0;32mI (312353) PRIMARY: 17 byte packet received:[Hello World 27888][0m
+[0;32mI (312353) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (312353) PRIMARY: No response within 100 ticks[0m
+[0;32mI (314433) PRIMARY: 17 byte packet received:[Hello World 28096][0m
+[0;32mI (314433) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (314433) PRIMARY: No response within 100 ticks[0m
+[0;32mI (316513) PRIMARY: 17 byte packet received:[Hello World 28304][0m
+[0;32mI (316513) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (316513) PRIMARY: No response within 100 ticks[0m
+[0;32mI (318593) PRIMARY: 17 byte packet received:[Hello World 28512][0m
+[0;32mI (318593) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (318593) PRIMARY: No response within 100 ticks[0m
+[0;32mI (320673) PRIMARY: 17 byte packet received:[Hello World 28720][0m
+[0;32mI (320673) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (320673) PRIMARY: No response within 100 ticks[0m
+[0;32mI (322753) PRIMARY: 17 byte packet received:[Hello World 28928][0m
+[0;32mI (322753) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (322753) PRIMARY: No response within 100 ticks[0m
+[0;32mI (324833) PRIMARY: 17 byte packet received:[Hello World 29136][0m
+[0;32mI (324833) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (324833) PRIMARY: No response within 100 ticks[0m
+[0;32mI (326913) PRIMARY: 17 byte packet received:[Hello World 29344][0m
+[0;32mI (326913) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (326913) PRIMARY: No response within 100 ticks[0m
+[0;32mI (328993) PRIMARY: 17 byte packet received:[Hello World 29552][0m
+[0;32mI (328993) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (328993) PRIMARY: No response within 100 ticks[0m
+[0;32mI (331073) PRIMARY: 17 byte packet received:[Hello World 29760][0m
+[0;32mI (331073) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (331073) PRIMARY: No response within 100 ticks[0m
+[0;32mI (333153) PRIMARY: 17 byte packet received:[Hello World 29968][0m
+[0;32mI (333153) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (333153) PRIMARY: No response within 100 ticks[0m
+[0;32mI (335233) PRIMARY: 17 byte packet received:[Hello World 30176][0m
+[0;32mI (335233) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (335233) PRIMARY: No response within 100 ticks[0m
+[0;32mI (337313) PRIMARY: 17 byte packet received:[Hello World 30384][0m
+[0;32mI (337313) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (337313) PRIMARY: No response within 100 ticks[0m
+[0;32mI (339393) PRIMARY: 17 byte packet received:[Hello World 30592][0m
+[0;32mI (339393) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (339393) PRIMARY: No response within 100 ticks[0m
+[0;32mI (341473) PRIMARY: 17 byte packet received:[Hello World 30800][0m
+[0;32mI (341473) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (341473) PRIMARY: No response within 100 ticks[0m
+[0;32mI (343553) PRIMARY: 17 byte packet received:[Hello World 31008][0m
+[0;32mI (343553) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (343553) PRIMARY: No response within 100 ticks[0m
+[0;32mI (345633) PRIMARY: 17 byte packet received:[Hello World 31216][0m
+[0;32mI (345633) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (345633) PRIMARY: No response within 100 ticks[0m
+[0;32mI (347713) PRIMARY: 17 byte packet received:[Hello World 31424][0m
+[0;32mI (347713) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (347713) PRIMARY: No response within 100 ticks[0m
+[0;32mI (349793) PRIMARY: 17 byte packet received:[Hello World 31632][0m
+[0;32mI (349793) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (349793) PRIMARY: No response within 100 ticks[0m
+[0;32mI (351873) PRIMARY: 17 byte packet received:[Hello World 31840][0m
+[0;32mI (351873) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (351873) PRIMARY: No response within 100 ticks[0m
+[0;32mI (353953) PRIMARY: 17 byte packet received:[Hello World 32048][0m
+[0;32mI (353953) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (353953) PRIMARY: No response within 100 ticks[0m
+[0;32mI (356033) PRIMARY: 17 byte packet received:[Hello World 32256][0m
+[0;32mI (356033) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (356033) PRIMARY: No response within 100 ticks[0m
+[0;32mI (358113) PRIMARY: 17 byte packet received:[Hello World 32464][0m
+[0;32mI (358113) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (358113) PRIMARY: No response within 100 ticks[0m
+[0;32mI (360193) PRIMARY: 17 byte packet received:[Hello World 32672][0m
+[0;32mI (360193) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (360193) PRIMARY: No response within 100 ticks[0m
+[0;32mI (362273) PRIMARY: 17 byte packet received:[Hello World 32880][0m
+[0;32mI (362273) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (362273) PRIMARY: No response within 100 ticks[0m
+[0;32mI (364353) PRIMARY: 17 byte packet received:[Hello World 33088][0m
+[0;32mI (364353) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (364353) PRIMARY: No response within 100 ticks[0m
+[0;32mI (366433) PRIMARY: 17 byte packet received:[Hello World 33296][0m
+[0;32mI (366433) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (366433) PRIMARY: No response within 100 ticks[0m
+[0;32mI (368513) PRIMARY: 17 byte packet received:[Hello World 33504][0m
+[0;32mI (368513) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (368513) PRIMARY: No response within 100 ticks[0m
+[0;32mI (370593) PRIMARY: 17 byte packet received:[Hello World 33712][0m
+[0;32mI (370593) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (370593) PRIMARY: No response within 100 ticks[0m
+[0;32mI (372673) PRIMARY: 17 byte packet received:[Hello World 33920][0m
+[0;32mI (372673) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (372673) PRIMARY: No response within 100 ticks[0m
+[0;32mI (374753) PRIMARY: 17 byte packet received:[Hello World 34128][0m
+[0;32mI (374753) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (374753) PRIMARY: No response within 100 ticks[0m
+[0;32mI (376833) PRIMARY: 17 byte packet received:[Hello World 34336][0m
+[0;32mI (376833) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (376833) PRIMARY: No response within 100 ticks[0m
+[0;32mI (378913) PRIMARY: 17 byte packet received:[Hello World 34544][0m
+[0;32mI (378913) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (378913) PRIMARY: No response within 100 ticks[0m
+[0;32mI (380993) PRIMARY: 17 byte packet received:[Hello World 34752][0m
+[0;32mI (380993) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (380993) PRIMARY: No response within 100 ticks[0m
+[0;32mI (383073) PRIMARY: 17 byte packet received:[Hello World 34960][0m
+[0;32mI (383073) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (383073) PRIMARY: No response within 100 ticks[0m
+[0;32mI (385153) PRIMARY: 17 byte packet received:[Hello World 35168][0m
+[0;32mI (385153) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (385153) PRIMARY: No response within 100 ticks[0m
+[0;32mI (387233) PRIMARY: 17 byte packet received:[Hello World 35376][0m
+[0;32mI (387233) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (387233) PRIMARY: No response within 100 ticks[0m
+[0;32mI (389313) PRIMARY: 17 byte packet received:[Hello World 35584][0m
+[0;32mI (389313) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (389313) PRIMARY: No response within 100 ticks[0m
+[0;32mI (391393) PRIMARY: 17 byte packet received:[Hello World 35792][0m
+[0;32mI (391393) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (391393) PRIMARY: No response within 100 ticks[0m
+[0;32mI (393473) PRIMARY: 17 byte packet received:[Hello World 36000][0m
+[0;32mI (393473) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (393473) PRIMARY: No response within 100 ticks[0m
+[0;32mI (395553) PRIMARY: 17 byte packet received:[Hello World 36208][0m
+[0;32mI (395553) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (395553) PRIMARY: No response within 100 ticks[0m
+[0;32mI (397633) PRIMARY: 17 byte packet received:[Hello World 36416][0m
+[0;32mI (397633) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (397633) PRIMARY: No response within 100 ticks[0m
+[0;32mI (399713) PRIMARY: 17 byte packet received:[Hello World 36624][0m
+[0;32mI (399713) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (399713) PRIMARY: No response within 100 ticks[0m
+[0;32mI (401793) PRIMARY: 17 byte packet received:[Hello World 36832][0m
+[0;32mI (401793) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (401793) PRIMARY: No response within 100 ticks[0m
+[0;32mI (403873) PRIMARY: 17 byte packet received:[Hello World 37040][0m
+[0;32mI (403873) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (403873) PRIMARY: No response within 100 ticks[0m
+[0;32mI (405953) PRIMARY: 17 byte packet received:[Hello World 37248][0m
+[0;32mI (405953) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (405953) PRIMARY: No response within 100 ticks[0m
+[0;32mI (408033) PRIMARY: 17 byte packet received:[Hello World 37456][0m
+[0;32mI (408033) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (408033) PRIMARY: No response within 100 ticks[0m
+[0;32mI (410113) PRIMARY: 17 byte packet received:[Hello World 37664][0m
+[0;32mI (410113) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (410113) PRIMARY: No response within 100 ticks[0m
+[0;32mI (412193) PRIMARY: 17 byte packet received:[Hello World 37872][0m
+[0;32mI (412193) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (412193) PRIMARY: No response within 100 ticks[0m
+[0;32mI (414273) PRIMARY: 17 byte packet received:[Hello World 38080][0m
+[0;32mI (414273) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (414273) PRIMARY: No response within 100 ticks[0m
+[0;32mI (416353) PRIMARY: 17 byte packet received:[Hello World 38288][0m
+[0;32mI (416353) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (416353) PRIMARY: No response within 100 ticks[0m
+[0;32mI (418433) PRIMARY: 17 byte packet received:[Hello World 38496][0m
+[0;32mI (418433) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (418433) PRIMARY: No response within 100 ticks[0m
+[0;32mI (420513) PRIMARY: 17 byte packet received:[Hello World 38704][0m
+[0;32mI (420513) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (420513) PRIMARY: No response within 100 ticks[0m
+[0;32mI (422593) PRIMARY: 17 byte packet received:[Hello World 38912][0m
+[0;32mI (422593) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (422593) PRIMARY: No response within 100 ticks[0m
+[0;32mI (424673) PRIMARY: 17 byte packet received:[Hello World 39120][0m
+[0;32mI (424673) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (424673) PRIMARY: No response within 100 ticks[0m
+[0;32mI (426753) PRIMARY: 17 byte packet received:[Hello World 39328][0m
+[0;32mI (426753) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (426753) PRIMARY: No response within 100 ticks[0m
+[0;32mI (428833) PRIMARY: 17 byte packet received:[Hello World 39536][0m
+[0;32mI (428833) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (428833) PRIMARY: No response within 100 ticks[0m
+[0;32mI (430913) PRIMARY: 17 byte packet received:[Hello World 39744][0m
+[0;32mI (430913) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (430913) PRIMARY: No response within 100 ticks[0m
+[0;32mI (432993) PRIMARY: 17 byte packet received:[Hello World 39952][0m
+[0;32mI (432993) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (432993) PRIMARY: No response within 100 ticks[0m
+[0;32mI (435073) PRIMARY: 17 byte packet received:[Hello World 40160][0m
+[0;32mI (435073) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (435073) PRIMARY: No response within 100 ticks[0m
+[0;32mI (437153) PRIMARY: 17 byte packet received:[Hello World 40368][0m
+[0;32mI (437153) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (437153) PRIMARY: No response within 100 ticks[0m
+[0;32mI (439233) PRIMARY: 17 byte packet received:[Hello World 40576][0m
+[0;32mI (439233) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (439233) PRIMARY: No response within 100 ticks[0m
+[0;32mI (441313) PRIMARY: 17 byte packet received:[Hello World 40784][0m
+[0;32mI (441313) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (441313) PRIMARY: No response within 100 ticks[0m
+[0;32mI (443393) PRIMARY: 17 byte packet received:[Hello World 40992][0m
+[0;32mI (443393) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (443393) PRIMARY: No response within 100 ticks[0m
+[0;32mI (445473) PRIMARY: 17 byte packet received:[Hello World 41200][0m
+[0;32mI (445473) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (445473) PRIMARY: No response within 100 ticks[0m
+[0;32mI (447553) PRIMARY: 17 byte packet received:[Hello World 41408][0m
+[0;32mI (447553) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (447553) PRIMARY: No response within 100 ticks[0m
+[0;32mI (449633) PRIMARY: 17 byte packet received:[Hello World 41616][0m
+[0;32mI (449633) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (449633) PRIMARY: No response within 100 ticks[0m
+[0;32mI (451713) PRIMARY: 17 byte packet received:[Hello World 41824][0m
+[0;32mI (451713) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (451713) PRIMARY: No response within 100 ticks[0m
+[0;32mI (453793) PRIMARY: 17 byte packet received:[Hello World 42032][0m
+[0;32mI (453793) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (453793) PRIMARY: No response within 100 ticks[0m
+[0;32mI (455873) PRIMARY: 17 byte packet received:[Hello World 42240][0m
+[0;32mI (455873) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (455873) PRIMARY: No response within 100 ticks[0m
+[0;32mI (457953) PRIMARY: 17 byte packet received:[Hello World 42448][0m
+[0;32mI (457953) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (457953) PRIMARY: No response within 100 ticks[0m
+[0;32mI (460033) PRIMARY: 17 byte packet received:[Hello World 42656][0m
+[0;32mI (460033) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (460033) PRIMARY: No response within 100 ticks[0m
+[0;32mI (462113) PRIMARY: 17 byte packet received:[Hello World 42864][0m
+[0;32mI (462113) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (462113) PRIMARY: No response within 100 ticks[0m
+[0;32mI (464193) PRIMARY: 17 byte packet received:[Hello World 43072][0m
+[0;32mI (464193) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (464193) PRIMARY: No response within 100 ticks[0m
+[0;32mI (466273) PRIMARY: 17 byte packet received:[Hello World 43280][0m
+[0;32mI (466273) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (466273) PRIMARY: No response within 100 ticks[0m
+[0;32mI (468353) PRIMARY: 17 byte packet received:[Hello World 43488][0m
+[0;32mI (468353) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (468353) PRIMARY: No response within 100 ticks[0m
+[0;32mI (470433) PRIMARY: 17 byte packet received:[Hello World 43696][0m
+[0;32mI (470433) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (470433) PRIMARY: No response within 100 ticks[0m
+[0;32mI (472513) PRIMARY: 17 byte packet received:[Hello World 43904][0m
+[0;32mI (472513) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (472513) PRIMARY: No response within 100 ticks[0m
+[0;32mI (474593) PRIMARY: 17 byte packet received:[Hello World 44112][0m
+[0;32mI (474593) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (474593) PRIMARY: No response within 100 ticks[0m
+[0;32mI (476673) PRIMARY: 17 byte packet received:[Hello World 44320][0m
+[0;32mI (476673) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (476673) PRIMARY: No response within 100 ticks[0m
+[0;32mI (478753) PRIMARY: 17 byte packet received:[Hello World 44528][0m
+[0;32mI (478753) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (478753) PRIMARY: No response within 100 ticks[0m
+[0;32mI (480833) PRIMARY: 17 byte packet received:[Hello World 44736][0m
+[0;32mI (480833) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (480833) PRIMARY: No response within 100 ticks[0m
+[0;32mI (482913) PRIMARY: 17 byte packet received:[Hello World 44944][0m
+[0;32mI (482913) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (482913) PRIMARY: No response within 100 ticks[0m
+[0;32mI (484993) PRIMARY: 17 byte packet received:[Hello World 45152][0m
+[0;32mI (484993) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (484993) PRIMARY: No response within 100 ticks[0m
+[0;32mI (487073) PRIMARY: 17 byte packet received:[Hello World 45360][0m
+[0;32mI (487073) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (487073) PRIMARY: No response within 100 ticks[0m
+[0;32mI (489153) PRIMARY: 17 byte packet received:[Hello World 45568][0m
+[0;32mI (489153) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (489153) PRIMARY: No response within 100 ticks[0m
+[0;32mI (491233) PRIMARY: 17 byte packet received:[Hello World 45776][0m
+[0;32mI (491233) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (491233) PRIMARY: No response within 100 ticks[0m
+[0;32mI (493313) PRIMARY: 17 byte packet received:[Hello World 45984][0m
+[0;32mI (493313) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (493313) PRIMARY: No response within 100 ticks[0m
+[0;32mI (495393) PRIMARY: 17 byte packet received:[Hello World 46192][0m
+[0;32mI (495393) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (495393) PRIMARY: No response within 100 ticks[0m
+[0;32mI (497473) PRIMARY: 17 byte packet received:[Hello World 46400][0m
+[0;32mI (497473) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (497473) PRIMARY: No response within 100 ticks[0m
+[0;32mI (499553) PRIMARY: 17 byte packet received:[Hello World 46608][0m
+[0;32mI (499553) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (499553) PRIMARY: No response within 100 ticks[0m
+[0;32mI (501633) PRIMARY: 17 byte packet received:[Hello World 46816][0m
+[0;32mI (501633) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (501633) PRIMARY: No response within 100 ticks[0m
+[0;32mI (503713) PRIMARY: 17 byte packet received:[Hello World 47024][0m
+[0;32mI (503713) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (503713) PRIMARY: No response within 100 ticks[0m
+[0;32mI (505793) PRIMARY: 17 byte packet received:[Hello World 47232][0m
+[0;32mI (505793) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (505793) PRIMARY: No response within 100 ticks[0m
+[0;32mI (507873) PRIMARY: 17 byte packet received:[Hello World 47440][0m
+[0;32mI (507873) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (507873) PRIMARY: No response within 100 ticks[0m
+[0;32mI (509953) PRIMARY: 17 byte packet received:[Hello World 47648][0m
+[0;32mI (509953) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (509953) PRIMARY: No response within 100 ticks[0m
+[0;32mI (512033) PRIMARY: 17 byte packet received:[Hello World 47856][0m
+[0;32mI (512033) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (512033) PRIMARY: No response within 100 ticks[0m
+[0;32mI (514113) PRIMARY: 17 byte packet received:[Hello World 48064][0m
+[0;32mI (514113) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (514113) PRIMARY: No response within 100 ticks[0m
+[0;32mI (516193) PRIMARY: 17 byte packet received:[Hello World 48272][0m
+[0;32mI (516193) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (516193) PRIMARY: No response within 100 ticks[0m
+[0;32mI (518273) PRIMARY: 17 byte packet received:[Hello World 48480][0m
+[0;32mI (518273) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (518273) PRIMARY: No response within 100 ticks[0m
+[0;32mI (520353) PRIMARY: 17 byte packet received:[Hello World 48688][0m
+[0;32mI (520353) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (520353) PRIMARY: No response within 100 ticks[0m
+[0;32mI (522433) PRIMARY: 17 byte packet received:[Hello World 48896][0m
+[0;32mI (522433) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (522433) PRIMARY: No response within 100 ticks[0m
+[0;32mI (524513) PRIMARY: 17 byte packet received:[Hello World 49104][0m
+[0;32mI (524513) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (524513) PRIMARY: No response within 100 ticks[0m
+[0;32mI (526593) PRIMARY: 17 byte packet received:[Hello World 49312][0m
+[0;32mI (526593) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (526593) PRIMARY: No response within 100 ticks[0m
+[0;32mI (528673) PRIMARY: 17 byte packet received:[Hello World 49520][0m
+[0;32mI (528673) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (528673) PRIMARY: No response within 100 ticks[0m
+[0;32mI (530753) PRIMARY: 17 byte packet received:[Hello World 49728][0m
+[0;32mI (530753) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (530753) PRIMARY: No response within 100 ticks[0m
+[0;32mI (532833) PRIMARY: 17 byte packet received:[Hello World 49936][0m
+[0;32mI (532833) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (532833) PRIMARY: No response within 100 ticks[0m
+[0;32mI (534913) PRIMARY: 17 byte packet received:[Hello World 50144][0m
+[0;32mI (534913) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (534913) PRIMARY: No response within 100 ticks[0m
+[0;32mI (536993) PRIMARY: 17 byte packet received:[Hello World 50352][0m
+[0;32mI (536993) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (536993) PRIMARY: No response within 100 ticks[0m
+[0;32mI (539073) PRIMARY: 17 byte packet received:[Hello World 50560][0m
+[0;32mI (539073) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (539073) PRIMARY: No response within 100 ticks[0m
+[0;32mI (541153) PRIMARY: 17 byte packet received:[Hello World 50768][0m
+[0;32mI (541153) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (541153) PRIMARY: No response within 100 ticks[0m
+[0;32mI (543233) PRIMARY: 17 byte packet received:[Hello World 50976][0m
+[0;32mI (543233) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (543233) PRIMARY: No response within 100 ticks[0m
+[0;32mI (545313) PRIMARY: 17 byte packet received:[Hello World 51184][0m
+[0;32mI (545313) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (545313) PRIMARY: No response within 100 ticks[0m
+[0;32mI (547393) PRIMARY: 17 byte packet received:[Hello World 51392][0m
+[0;32mI (547393) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (547393) PRIMARY: No response within 100 ticks[0m
+[0;32mI (549473) PRIMARY: 17 byte packet received:[Hello World 51600][0m
+[0;32mI (549473) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (549473) PRIMARY: No response within 100 ticks[0m
+[0;32mI (551553) PRIMARY: 17 byte packet received:[Hello World 51808][0m
+[0;32mI (551553) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (551553) PRIMARY: No response within 100 ticks[0m
+[0;32mI (553633) PRIMARY: 17 byte packet received:[Hello World 52016][0m
+[0;32mI (553633) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (553633) PRIMARY: No response within 100 ticks[0m
+[0;32mI (555713) PRIMARY: 17 byte packet received:[Hello World 52224][0m
+[0;32mI (555713) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (555713) PRIMARY: No response within 100 ticks[0m
+[0;32mI (557793) PRIMARY: 17 byte packet received:[Hello World 52432][0m
+[0;32mI (557793) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (557793) PRIMARY: No response within 100 ticks[0m
+[0;32mI (559873) PRIMARY: 17 byte packet received:[Hello World 52640][0m
+[0;32mI (559873) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (559873) PRIMARY: No response within 100 ticks[0m
+[0;32mI (561953) PRIMARY: 17 byte packet received:[Hello World 52848][0m
+[0;32mI (561953) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (561953) PRIMARY: No response within 100 ticks[0m
+[0;32mI (564033) PRIMARY: 17 byte packet received:[Hello World 53056][0m
+[0;32mI (564033) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (564033) PRIMARY: No response within 100 ticks[0m
+[0;32mI (566113) PRIMARY: 17 byte packet received:[Hello World 53264][0m
+[0;32mI (566113) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (566113) PRIMARY: No response within 100 ticks[0m
+[0;32mI (568193) PRIMARY: 17 byte packet received:[Hello World 53472][0m
+[0;32mI (568193) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (568193) PRIMARY: No response within 100 ticks[0m
+[0;32mI (570273) PRIMARY: 17 byte packet received:[Hello World 53680][0m
+[0;32mI (570273) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (570273) PRIMARY: No response within 100 ticks[0m
+[0;32mI (572353) PRIMARY: 17 byte packet received:[Hello World 53888][0m
+[0;32mI (572353) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (572353) PRIMARY: No response within 100 ticks[0m
+[0;32mI (574433) PRIMARY: 17 byte packet received:[Hello World 54096][0m
+[0;32mI (574433) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (574433) PRIMARY: No response within 100 ticks[0m
+[0;32mI (576513) PRIMARY: 17 byte packet received:[Hello World 54304][0m
+[0;32mI (576513) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (576513) PRIMARY: No response within 100 ticks[0m
+[0;32mI (578593) PRIMARY: 17 byte packet received:[Hello World 54512][0m
+[0;32mI (578593) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (578593) PRIMARY: No response within 100 ticks[0m
+[0;32mI (580673) PRIMARY: 17 byte packet received:[Hello World 54720][0m
+[0;32mI (580673) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (580673) PRIMARY: No response within 100 ticks[0m
+[0;32mI (582753) PRIMARY: 17 byte packet received:[Hello World 54928][0m
+[0;32mI (582753) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (582753) PRIMARY: No response within 100 ticks[0m
+[0;32mI (584833) PRIMARY: 17 byte packet received:[Hello World 55136][0m
+[0;32mI (584833) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (584833) PRIMARY: No response within 100 ticks[0m
+[0;32mI (586913) PRIMARY: 17 byte packet received:[Hello World 55344][0m
+[0;32mI (586913) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (586913) PRIMARY: No response within 100 ticks[0m
+[0;32mI (588993) PRIMARY: 17 byte packet received:[Hello World 55552][0m
+[0;32mI (588993) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (588993) PRIMARY: No response within 100 ticks[0m
+[0;32mI (591073) PRIMARY: 17 byte packet received:[Hello World 55760][0m
+[0;32mI (591073) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (591073) PRIMARY: No response within 100 ticks[0m
+[0;32mI (593153) PRIMARY: 17 byte packet received:[Hello World 55968][0m
+[0;32mI (593153) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (593153) PRIMARY: No response within 100 ticks[0m
+[0;32mI (595233) PRIMARY: 17 byte packet received:[Hello World 56176][0m
+[0;32mI (595233) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (595233) PRIMARY: No response within 100 ticks[0m
+[0;32mI (597313) PRIMARY: 17 byte packet received:[Hello World 56384][0m
+[0;32mI (597313) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (597313) PRIMARY: No response within 100 ticks[0m
+[0;32mI (599393) PRIMARY: 17 byte packet received:[Hello World 56592][0m
+[0;32mI (599393) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (599393) PRIMARY: No response within 100 ticks[0m
+[0;32mI (601473) PRIMARY: 17 byte packet received:[Hello World 56800][0m
+[0;32mI (601473) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (601473) PRIMARY: No response within 100 ticks[0m
+[0;32mI (603553) PRIMARY: 17 byte packet received:[Hello World 57008][0m
+[0;32mI (603553) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (603553) PRIMARY: No response within 100 ticks[0m
+[0;32mI (605633) PRIMARY: 17 byte packet received:[Hello World 57216][0m
+[0;32mI (605633) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (605633) PRIMARY: No response within 100 ticks[0m
+[0;32mI (607713) PRIMARY: 17 byte packet received:[Hello World 57424][0m
+[0;32mI (607713) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (607713) PRIMARY: No response within 100 ticks[0m
+[0;32mI (609793) PRIMARY: 17 byte packet received:[Hello World 57632][0m
+[0;32mI (609793) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (609793) PRIMARY: No response within 100 ticks[0m
+[0;32mI (611873) PRIMARY: 17 byte packet received:[Hello World 57840][0m
+[0;32mI (611873) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (611873) PRIMARY: No response within 100 ticks[0m
+[0;32mI (613953) PRIMARY: 17 byte packet received:[Hello World 58048][0m
+[0;32mI (613953) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (613953) PRIMARY: No response within 100 ticks[0m
+[0;32mI (616033) PRIMARY: 17 byte packet received:[Hello World 58256][0m
+[0;32mI (616033) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (616033) PRIMARY: No response within 100 ticks[0m
+[0;32mI (618113) PRIMARY: 17 byte packet received:[Hello World 58464][0m
+[0;32mI (618113) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (618113) PRIMARY: No response within 100 ticks[0m
+[0;32mI (620193) PRIMARY: 17 byte packet received:[Hello World 58672][0m
+[0;32mI (620193) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (620193) PRIMARY: No response within 100 ticks[0m
+[0;32mI (622273) PRIMARY: 17 byte packet received:[Hello World 58880][0m
+[0;32mI (622273) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (622273) PRIMARY: No response within 100 ticks[0m
+[0;32mI (624353) PRIMARY: 17 byte packet received:[Hello World 59088][0m
+[0;32mI (624353) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (624353) PRIMARY: No response within 100 ticks[0m
+[0;32mI (626433) PRIMARY: 17 byte packet received:[Hello World 59296][0m
+[0;32mI (626433) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (626433) PRIMARY: No response within 100 ticks[0m
+[0;32mI (628513) PRIMARY: 17 byte packet received:[Hello World 59504][0m
+[0;32mI (628513) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (628513) PRIMARY: No response within 100 ticks[0m
+[0;32mI (630593) PRIMARY: 17 byte packet received:[Hello World 59712][0m
+[0;32mI (630593) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (630593) PRIMARY: No response within 100 ticks[0m
+[0;32mI (632673) PRIMARY: 17 byte packet received:[Hello World 59920][0m
+[0;32mI (632673) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (632673) PRIMARY: No response within 100 ticks[0m
+[0;32mI (634753) PRIMARY: 17 byte packet received:[Hello World 60128][0m
+[0;32mI (634753) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (634753) PRIMARY: No response within 100 ticks[0m
+[0;32mI (636833) PRIMARY: 17 byte packet received:[Hello World 60336][0m
+[0;32mI (636833) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (636833) PRIMARY: No response within 100 ticks[0m
+[0;32mI (638913) PRIMARY: 17 byte packet received:[Hello World 60544][0m
+[0;32mI (638913) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (638913) PRIMARY: No response within 100 ticks[0m
+[0;32mI (640993) PRIMARY: 17 byte packet received:[Hello World 60752][0m
+[0;32mI (640993) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (640993) PRIMARY: No response within 100 ticks[0m
+[0;32mI (643073) PRIMARY: 17 byte packet received:[Hello World 60960][0m
+[0;32mI (643073) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (643073) PRIMARY: No response within 100 ticks[0m
+[0;32mI (645153) PRIMARY: 17 byte packet received:[Hello World 61168][0m
+[0;32mI (645153) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (645153) PRIMARY: No response within 100 ticks[0m
+[0;32mI (647233) PRIMARY: 17 byte packet received:[Hello World 61376][0m
+[0;32mI (647233) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (647233) PRIMARY: No response within 100 ticks[0m
+[0;32mI (649313) PRIMARY: 17 byte packet received:[Hello World 61584][0m
+[0;32mI (649313) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (649313) PRIMARY: No response within 100 ticks[0m
+[0;32mI (651393) PRIMARY: 17 byte packet received:[Hello World 61792][0m
+[0;32mI (651393) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (651393) PRIMARY: No response within 100 ticks[0m
+[0;32mI (653473) PRIMARY: 17 byte packet received:[Hello World 62000][0m
+[0;32mI (653473) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (653473) PRIMARY: No response within 100 ticks[0m
+[0;32mI (655553) PRIMARY: 17 byte packet received:[Hello World 62208][0m
+[0;32mI (655553) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (655553) PRIMARY: No response within 100 ticks[0m
+[0;32mI (657633) PRIMARY: 17 byte packet received:[Hello World 62416][0m
+[0;32mI (657633) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (657633) PRIMARY: No response within 100 ticks[0m
+[0;32mI (659713) PRIMARY: 17 byte packet received:[Hello World 62624][0m
+[0;32mI (659713) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (659713) PRIMARY: No response within 100 ticks[0m
+[0;32mI (661793) PRIMARY: 17 byte packet received:[Hello World 62832][0m
+[0;32mI (661793) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (661793) PRIMARY: No response within 100 ticks[0m
+[0;32mI (663873) PRIMARY: 17 byte packet received:[Hello World 63040][0m
+[0;32mI (663873) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (663873) PRIMARY: No response within 100 ticks[0m
+[0;32mI (665953) PRIMARY: 17 byte packet received:[Hello World 63248][0m
+[0;32mI (665953) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (665953) PRIMARY: No response within 100 ticks[0m
+[0;32mI (668033) PRIMARY: 17 byte packet received:[Hello World 63456][0m
+[0;32mI (668033) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (668033) PRIMARY: No response within 100 ticks[0m
+[0;32mI (670113) PRIMARY: 17 byte packet received:[Hello World 63664][0m
+[0;32mI (670113) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (670113) PRIMARY: No response within 100 ticks[0m
+[0;32mI (672193) PRIMARY: 17 byte packet received:[Hello World 63872][0m
+[0;32mI (672193) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (672193) PRIMARY: No response within 100 ticks[0m
+[0;32mI (674273) PRIMARY: 17 byte packet received:[Hello World 64080][0m
+[0;32mI (674273) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (674273) PRIMARY: No response within 100 ticks[0m
+[0;32mI (676353) PRIMARY: 17 byte packet received:[Hello World 64288][0m
+[0;32mI (676353) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (676353) PRIMARY: No response within 100 ticks[0m
+[0;32mI (678433) PRIMARY: 17 byte packet received:[Hello World 64496][0m
+[0;32mI (678433) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (678433) PRIMARY: No response within 100 ticks[0m
+[0;32mI (680513) PRIMARY: 17 byte packet received:[Hello World 64704][0m
+[0;32mI (680513) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (680513) PRIMARY: No response within 100 ticks[0m
+[0;32mI (682593) PRIMARY: 17 byte packet received:[Hello World 64912][0m
+[0;32mI (682593) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (682593) PRIMARY: No response within 100 ticks[0m
+[0;32mI (684673) PRIMARY: 17 byte packet received:[Hello World 65120][0m
+[0;32mI (684673) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (684673) PRIMARY: No response within 100 ticks[0m
+[0;32mI (686753) PRIMARY: 17 byte packet received:[Hello World 65328][0m
+[0;32mI (686753) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (686753) PRIMARY: No response within 100 ticks[0m
+[0;32mI (688833) PRIMARY: 17 byte packet received:[Hello World 65536][0m
+[0;32mI (688833) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (688833) PRIMARY: No response within 100 ticks[0m
+[0;32mI (690913) PRIMARY: 17 byte packet received:[Hello World 65744][0m
+[0;32mI (690913) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (690913) PRIMARY: No response within 100 ticks[0m
+[0;32mI (692993) PRIMARY: 17 byte packet received:[Hello World 65952][0m
+[0;32mI (692993) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (692993) PRIMARY: No response within 100 ticks[0m
+[0;32mI (695073) PRIMARY: 17 byte packet received:[Hello World 66160][0m
+[0;32mI (695073) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (695073) PRIMARY: No response within 100 ticks[0m
+[0;32mI (697153) PRIMARY: 17 byte packet received:[Hello World 66368][0m
+[0;32mI (697153) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (697153) PRIMARY: No response within 100 ticks[0m
+[0;32mI (699233) PRIMARY: 17 byte packet received:[Hello World 66576][0m
+[0;32mI (699233) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (699233) PRIMARY: No response within 100 ticks[0m
+[0;32mI (701313) PRIMARY: 17 byte packet received:[Hello World 66784][0m
+[0;32mI (701313) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (701313) PRIMARY: No response within 100 ticks[0m
+[0;32mI (703393) PRIMARY: 17 byte packet received:[Hello World 66992][0m
+[0;32mI (703393) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (703393) PRIMARY: No response within 100 ticks[0m
+[0;32mI (705473) PRIMARY: 17 byte packet received:[Hello World 67200][0m
+[0;32mI (705473) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (705473) PRIMARY: No response within 100 ticks[0m
+[0;32mI (707553) PRIMARY: 17 byte packet received:[Hello World 67408][0m
+[0;32mI (707553) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (707553) PRIMARY: No response within 100 ticks[0m
+[0;32mI (709633) PRIMARY: 17 byte packet received:[Hello World 67616][0m
+[0;32mI (709633) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (709633) PRIMARY: No response within 100 ticks[0m
+[0;32mI (711713) PRIMARY: 17 byte packet received:[Hello World 67824][0m
+[0;32mI (711713) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (711713) PRIMARY: No response within 100 ticks[0m
+[0;32mI (713793) PRIMARY: 17 byte packet received:[Hello World 68032][0m
+[0;32mI (713793) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (713793) PRIMARY: No response within 100 ticks[0m
+[0;32mI (715873) PRIMARY: 17 byte packet received:[Hello World 68240][0m
+[0;32mI (715873) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (715873) PRIMARY: No response within 100 ticks[0m
+[0;32mI (717953) PRIMARY: 17 byte packet received:[Hello World 68448][0m
+[0;32mI (717953) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (717953) PRIMARY: No response within 100 ticks[0m
+[0;32mI (720033) PRIMARY: 17 byte packet received:[Hello World 68656][0m
+[0;32mI (720033) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (720033) PRIMARY: No response within 100 ticks[0m
+[0;32mI (722113) PRIMARY: 17 byte packet received:[Hello World 68864][0m
+[0;32mI (722113) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (722113) PRIMARY: No response within 100 ticks[0m
+[0;32mI (724193) PRIMARY: 17 byte packet received:[Hello World 69072][0m
+[0;32mI (724193) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (724193) PRIMARY: No response within 100 ticks[0m
+[0;32mI (726273) PRIMARY: 17 byte packet received:[Hello World 69280][0m
+[0;32mI (726273) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (726273) PRIMARY: No response within 100 ticks[0m
+[0;32mI (728353) PRIMARY: 17 byte packet received:[Hello World 69488][0m
+[0;32mI (728353) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (728353) PRIMARY: No response within 100 ticks[0m
+[0;32mI (730433) PRIMARY: 17 byte packet received:[Hello World 69696][0m
+[0;32mI (730433) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (730433) PRIMARY: No response within 100 ticks[0m
+[0;32mI (732513) PRIMARY: 17 byte packet received:[Hello World 69904][0m
+[0;32mI (732513) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (732513) PRIMARY: No response within 100 ticks[0m
+[0;32mI (734593) PRIMARY: 17 byte packet received:[Hello World 70112][0m
+[0;32mI (734593) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (734593) PRIMARY: No response within 100 ticks[0m
+[0;32mI (736673) PRIMARY: 17 byte packet received:[Hello World 70320][0m
+[0;32mI (736673) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (736673) PRIMARY: No response within 100 ticks[0m
+[0;32mI (738753) PRIMARY: 17 byte packet received:[Hello World 70528][0m
+[0;32mI (738753) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (738753) PRIMARY: No response within 100 ticks[0m
+[0;32mI (740833) PRIMARY: 17 byte packet received:[Hello World 70736][0m
+[0;32mI (740833) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (740833) PRIMARY: No response within 100 ticks[0m
+[0;32mI (742913) PRIMARY: 17 byte packet received:[Hello World 70944][0m
+[0;32mI (742913) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (742913) PRIMARY: No response within 100 ticks[0m
+[0;32mI (744993) PRIMARY: 17 byte packet received:[Hello World 71152][0m
+[0;32mI (744993) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (744993) PRIMARY: No response within 100 ticks[0m
+[0;32mI (747073) PRIMARY: 17 byte packet received:[Hello World 71360][0m
+[0;32mI (747073) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (747073) PRIMARY: No response within 100 ticks[0m
+[0;32mI (749153) PRIMARY: 17 byte packet received:[Hello World 71568][0m
+[0;32mI (749153) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (749153) PRIMARY: No response within 100 ticks[0m
+[0;32mI (751233) PRIMARY: 17 byte packet received:[Hello World 71776][0m
+[0;32mI (751233) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (751233) PRIMARY: No response within 100 ticks[0m
+[0;32mI (753313) PRIMARY: 17 byte packet received:[Hello World 71984][0m
+[0;32mI (753313) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (753313) PRIMARY: No response within 100 ticks[0m
+[0;32mI (755393) PRIMARY: 17 byte packet received:[Hello World 72192][0m
+[0;32mI (755393) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (755393) PRIMARY: No response within 100 ticks[0m
+[0;32mI (757473) PRIMARY: 17 byte packet received:[Hello World 72400][0m
+[0;32mI (757473) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (757473) PRIMARY: No response within 100 ticks[0m
+[0;32mI (759553) PRIMARY: 17 byte packet received:[Hello World 72608][0m
+[0;32mI (759553) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (759553) PRIMARY: No response within 100 ticks[0m
+[0;32mI (761633) PRIMARY: 17 byte packet received:[Hello World 72816][0m
+[0;32mI (761633) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (761633) PRIMARY: No response within 100 ticks[0m
+[0;32mI (763713) PRIMARY: 17 byte packet received:[Hello World 73024][0m
+[0;32mI (763713) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (763713) PRIMARY: No response within 100 ticks[0m
+[0;32mI (765793) PRIMARY: 17 byte packet received:[Hello World 73232][0m
+[0;32mI (765793) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (765793) PRIMARY: No response within 100 ticks[0m
+[0;32mI (767873) PRIMARY: 17 byte packet received:[Hello World 73440][0m
+[0;32mI (767873) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (767873) PRIMARY: No response within 100 ticks[0m
+[0;32mI (769953) PRIMARY: 17 byte packet received:[Hello World 73648][0m
+[0;32mI (769953) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (769953) PRIMARY: No response within 100 ticks[0m
+[0;32mI (772033) PRIMARY: 17 byte packet received:[Hello World 73856][0m
+[0;32mI (772033) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (772033) PRIMARY: No response within 100 ticks[0m
+[0;32mI (774113) PRIMARY: 17 byte packet received:[Hello World 74064][0m
+[0;32mI (774113) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (774113) PRIMARY: No response within 100 ticks[0m
+[0;32mI (776193) PRIMARY: 17 byte packet received:[Hello World 74272][0m
+[0;32mI (776193) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (776193) PRIMARY: No response within 100 ticks[0m
+[0;32mI (778273) PRIMARY: 17 byte packet received:[Hello World 74480][0m
+[0;32mI (778273) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (778273) PRIMARY: No response within 100 ticks[0m
+[0;32mI (780353) PRIMARY: 17 byte packet received:[Hello World 74688][0m
+[0;32mI (780353) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (780353) PRIMARY: No response within 100 ticks[0m
+[0;32mI (782433) PRIMARY: 17 byte packet received:[Hello World 74896][0m
+[0;32mI (782433) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (782433) PRIMARY: No response within 100 ticks[0m
+[0;32mI (784513) PRIMARY: 17 byte packet received:[Hello World 75104][0m
+[0;32mI (784513) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (784513) PRIMARY: No response within 100 ticks[0m
+[0;32mI (786593) PRIMARY: 17 byte packet received:[Hello World 75312][0m
+[0;32mI (786593) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (786593) PRIMARY: No response within 100 ticks[0m
+[0;32mI (788673) PRIMARY: 17 byte packet received:[Hello World 75520][0m
+[0;32mI (788673) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (788673) PRIMARY: No response within 100 ticks[0m
+[0;32mI (790753) PRIMARY: 17 byte packet received:[Hello World 75728][0m
+[0;32mI (790753) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (790753) PRIMARY: No response within 100 ticks[0m
+[0;32mI (792833) PRIMARY: 17 byte packet received:[Hello World 75936][0m
+[0;32mI (792833) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (792833) PRIMARY: No response within 100 ticks[0m
+[0;32mI (794913) PRIMARY: 17 byte packet received:[Hello World 76144][0m
+[0;32mI (794913) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (794913) PRIMARY: No response within 100 ticks[0m
+[0;32mI (796993) PRIMARY: 17 byte packet received:[Hello World 76352][0m
+[0;32mI (796993) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (796993) PRIMARY: No response within 100 ticks[0m
+[0;32mI (799073) PRIMARY: 17 byte packet received:[Hello World 76560][0m
+[0;32mI (799073) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (799073) PRIMARY: No response within 100 ticks[0m
+[0;32mI (801153) PRIMARY: 17 byte packet received:[Hello World 76768][0m
+[0;32mI (801153) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (801153) PRIMARY: No response within 100 ticks[0m
+[0;32mI (803233) PRIMARY: 17 byte packet received:[Hello World 76976][0m
+[0;32mI (803233) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (803233) PRIMARY: No response within 100 ticks[0m
+[0;32mI (805313) PRIMARY: 17 byte packet received:[Hello World 77184][0m
+[0;32mI (805313) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (805313) PRIMARY: No response within 100 ticks[0m
+[0;32mI (807393) PRIMARY: 17 byte packet received:[Hello World 77392][0m
+[0;32mI (807393) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (807393) PRIMARY: No response within 100 ticks[0m
+[0;32mI (809473) PRIMARY: 17 byte packet received:[Hello World 77600][0m
+[0;32mI (809473) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (809473) PRIMARY: No response within 100 ticks[0m
+[0;32mI (811553) PRIMARY: 17 byte packet received:[Hello World 77808][0m
+[0;32mI (811553) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (811553) PRIMARY: No response within 100 ticks[0m
+[0;32mI (813633) PRIMARY: 17 byte packet received:[Hello World 78016][0m
+[0;32mI (813633) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (813633) PRIMARY: No response within 100 ticks[0m
+[0;32mI (815713) PRIMARY: 17 byte packet received:[Hello World 78224][0m
+[0;32mI (815713) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (815713) PRIMARY: No response within 100 ticks[0m
+[0;32mI (817793) PRIMARY: 17 byte packet received:[Hello World 78432][0m
+[0;32mI (817793) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (817793) PRIMARY: No response within 100 ticks[0m
+[0;32mI (819873) PRIMARY: 17 byte packet received:[Hello World 78640][0m
+[0;32mI (819873) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (819873) PRIMARY: No response within 100 ticks[0m
+[0;32mI (821953) PRIMARY: 17 byte packet received:[Hello World 78848][0m
+[0;32mI (821953) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (821953) PRIMARY: No response within 100 ticks[0m
+[0;32mI (824033) PRIMARY: 17 byte packet received:[Hello World 79056][0m
+[0;32mI (824033) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (824033) PRIMARY: No response within 100 ticks[0m
+[0;32mI (826113) PRIMARY: 17 byte packet received:[Hello World 79264][0m
+[0;32mI (826113) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (826113) PRIMARY: No response within 100 ticks[0m
+[0;32mI (828193) PRIMARY: 17 byte packet received:[Hello World 79472][0m
+[0;32mI (828193) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (828193) PRIMARY: No response within 100 ticks[0m
+[0;32mI (830273) PRIMARY: 17 byte packet received:[Hello World 79680][0m
+[0;32mI (830273) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (830273) PRIMARY: No response within 100 ticks[0m
+[0;32mI (832353) PRIMARY: 17 byte packet received:[Hello World 79888][0m
+[0;32mI (832353) PRIMARY: Response time is 1010 millisecond[0m
+[0;33mW (832353) PRIMARY: No response within 100 ticks[0m
+[0;31mE (834383) RA01S: WaitForIdle Timeout timeout=5000[0m
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x9 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3810,len:0x178c
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xcbc
+load:0x403cc700,len:0x2d9c
+entry 0x403c9914
+[0;32mI (27) boot: ESP-IDF v5.2.2 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Jun 25 2024 15:41:31[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (34) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (38) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (53) boot: Partition Table:[0m
+[0;32mI (57) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (64) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (72) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (79) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (87) boot: End of partition table[0m
+[0;32mI (91) esp_image: segment 0: paddr=00010020 vaddr=3c030020 size=0d5e0h ( 54752) map[0m
+[0;32mI (109) esp_image: segment 1: paddr=0001d608 vaddr=3fc94700 size=02a10h ( 10768) load[0m
+[0;32mI (112) esp_image: segment 2: paddr=00020020 vaddr=42000020 size=24074h (147572) map[0m
+[0;32mI (143) esp_image: segment 3: paddr=0004409c vaddr=3fc97110 size=00074h (   116) load[0m
+[0;32mI (143) esp_image: segment 4: paddr=00044118 vaddr=40374000 size=1063ch ( 67132) load[0m
+[0;32mI (170) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (170) boot: Disabling RNG early entropy source...[0m
+[0;32mI (181) cpu_start: Multicore app[0m
+[0;32mI (191) cpu_start: Pro cpu start user code[0m
+[0;32mI (191) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (191) cpu_start: Application information:[0m
+[0;32mI (194) cpu_start: Project name:     iLot[0m
+[0;32mI (199) cpu_start: App version:      930dcde-dirty[0m
+[0;32mI (205) cpu_start: Compile time:     Jun 25 2024 16:35:23[0m
+[0;32mI (211) cpu_start: ELF file SHA256:  398d0d4c4...[0m
+[0;32mI (216) cpu_start: ESP-IDF:          v5.2.2[0m
+[0;32mI (221) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (226) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (230) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (235) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (242) heap_init: At 3FC97A90 len 00051C80 (327 KiB): RAM[0m
+[0;32mI (248) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (255) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (261) heap_init: At 600FE010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (268) spi_flash: detected chip: gd[0m
+[0;32mI (271) spi_flash: flash io: dio[0m
+[0;33mW (275) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (288) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (295) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (303) main_task: Started on CPU0[0m
+[0;32mI (313) main_task: Calling app_main()[0m
+[0;32mI (313) MAIN: Frequency is 868MHz[0m
+[0;32mI (313) RA01S: CONFIG_MISO_GPIO=11[0m
+[0;32mI (323) RA01S: CONFIG_MOSI_GPIO=10[0m
+[0;32mI (323) RA01S: CONFIG_SCLK_GPIO=9[0m
+[0;32mI (323) RA01S: CONFIG_NSS_GPIO=8[0m
+[0;32mI (333) RA01S: CONFIG_RST_GPIO=12[0m
+[0;32mI (333) RA01S: CONFIG_BUSY_GPIO=13[0m
+[0;32mI (343) RA01S: CONFIG_TXEN_GPIO=-1[0m
+[0;32mI (343) RA01S: CONFIG_RXEN_GPIO=-1[0m
+[0;32mI (343) gpio: GPIO[8]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (353) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (363) gpio: GPIO[13]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (373) RA01S: spi_bus_initialize=0[0m
+[0;32mI (383) RA01S: spi_bus_add_device=0[0m
+[0;33mW (383) MAIN: Enable TCXO[0m
+[0;32mI (423) RA01S: Reset[0m
+[0;32mI (423) RA01S: syncWord=0x1424[0m
+[0;32mI (423) RA01S: SX126x installed[0m
+[0;33mW (423) RA01S: WriteCommand2 status=0a retry=1[0m
+[0;32mI (433) RA01S: tcxoVoltage=3.300000[0m
+[0;32mI (443) RA01S: useRegulatorLDO=1[0m
+[0;32mI (453) RA01S: SetStopRxTimerOnPreambleDetect enable=0[0m
+[0;32mI (463) PRIMARY: Start[0m
+[0;32mI (523) main_task: Returned from app_main()[0m
+[0;33mW (1533) PRIMARY: No response within 100 ticks[0m
+[0;33mW (3613) PRIMARY: No response within 100 ticks[0m
+[0;33mW (5693) PRIMARY: No response within 100 ticks[0m
+[0;33mW (7773) PRIMARY: No response within 100 ticks[0m
+[0;33mW (9853) PRIMARY: No response within 100 ticks[0m
+[0;33mW (11933) PRIMARY: No response within 100 ticks[0m
+[0;33mW (14013) PRIMARY: No response within 100 ticks[0m
+[0;33mW (16093) PRIMARY: No response within 100 ticks[0m
+[0;33mW (18173) PRIMARY: No response within 100 ticks[0m
+[0;33mW (20253) PRIMARY: No response within 100 ticks[0m
+[0;33mW (22333) PRIMARY: No response within 100 ticks[0m
+[0;33mW (24413) PRIMARY: No response within 100 ticks[0m
+[0;33mW (26493) PRIMARY: No response within 100 ticks[0m
+[0;33mW (28573) PRIMARY: No response within 100 ticks[0m
+[0;33mW (30653) PRIMARY: No response within 100 ticks[0m
+[0;33mW (32733) PRIMARY: No response within 100 ticks[0m
+[0;33mW (34813) PRIMARY: No response within 100 ticks[0m
+[0;33mW (36893) PRIMARY: No response within 100 ticks[0m
+[0;33mW (38973) PRIMARY: No response within 100 ticks[0m
+[0;33mW (41053) PRIMARY: No response within 100 ticks[0m
+[0;33mW (43133) PRIMARY: No response within 100 ticks[0m
+[0;33mW (45213) PRIMARY: No response within 100 ticks[0m
+[0;33mW (47293) PRIMARY: No response within 100 ticks[0m
+[0;33mW (49373) PRIMARY: No response within 100 ticks[0m
+[0;33mW (51453) PRIMARY: No response within 100 ticks[0m
+[0;33mW (53533) PRIMARY: No response within 100 ticks[0m
+[0;33mW (55613) PRIMARY: No response within 100 ticks[0m
+[0;33mW (57693) PRIMARY: No response within 100 ticks[0m
+[0;33mW (59773) PRIMARY: No response within 100 ticks[0m
+[0;33mW (61853) PRIMARY: No response within 100 ticks[0m
+[0;33mW (63933) PRIMARY: No response within 100 ticks[0m
+[0;33mW (66013) PRIMARY: No response within 100 ticks[0m
+[0;33mW (68093) PRIMARY: No response within 100 ticks[0m
+[0;33mW (70173) PRIMARY: No response within 100 ticks[0m
+[0;33mW (72253) PRIMARY: No response within 100 ticks[0m
+[0;33mW (74333) PRIMARY: No response within 100 ticks[0m
+[0;33mW (76413) PRIMARY: No response within 100 ticks[0m
+[0;33mW (78493) PRIMARY: No response within 100 ticks[0m
+[0;33mW (80573) PRIMARY: No response within 100 ticks[0m
+[0;33mW (82653) PRIMARY: No response within 100 ticks[0m
+[0;33mW (84733) PRIMARY: No response within 100 ticks[0m
+[0;33mW (86813) PRIMARY: No response within 100 ticks[0m
+[0;33mW (88893) PRIMARY: No response within 100 ticks[0m
+[0;33mW (90973) PRIMARY: No response within 100 ticks[0m
+[0;33mW (93053) PRIMARY: No response within 100 ticks[0m
+[0;33mW (95133) PRIMARY: No response within 100 ticks[0m
+[0;33mW (97213) PRIMARY: No response within 100 ticks[0m
+[0;33mW (99293) PRIMARY: No response within 100 ticks[0m
+[0;33mW (101373) PRIMARY: No response within 100 ticks[0m
+[0;33mW (103453) PRIMARY: No response within 100 ticks[0m
+[0;33mW (105533) PRIMARY: No response within 100 ticks[0m
+[0;33mW (107613) PRIMARY: No response within 100 ticks[0m
+[0;33mW (109693) PRIMARY: No response within 100 ticks[0m
+[0;33mW (111773) PRIMARY: No response within 100 ticks[0m
+[0;33mW (113853) PRIMARY: No response within 100 ticks[0m
+[0;33mW (115933) PRIMARY: No response within 100 ticks[0m
+[0;33mW (118013) PRIMARY: No response within 100 ticks[0m
+[0;33mW (120093) PRIMARY: No response within 100 ticks[0m
+[0;33mW (122173) PRIMARY: No response within 100 ticks[0m
+[0;33mW (124253) PRIMARY: No response within 100 ticks[0m
+[0;33mW (126333) PRIMARY: No response within 100 ticks[0m
+[0;33mW (128413) PRIMARY: No response within 100 ticks[0m
+[0;33mW (130493) PRIMARY: No response within 100 ticks[0m
+[0;33mW (132573) PRIMARY: No response within 100 ticks[0m
+[0;33mW (134653) PRIMARY: No response within 100 ticks[0m
+[0;33mW (136733) PRIMARY: No response within 100 ticks[0m
+[0;33mW (138813) PRIMARY: No response within 100 ticks[0m
+[0;33mW (140893) PRIMARY: No response within 100 ticks[0m
+[0;33mW (142973) PRIMARY: No response within 100 ticks[0m
+[0;33mW (145053) PRIMARY: No response within 100 ticks[0m
+[0;33mW (147133) PRIMARY: No response within 100 ticks[0m
+[0;33mW (149213) PRIMARY: No response within 100 ticks[0m
+[0;33mW (151293) PRIMARY: No response within 100 ticks[0m
+[0;33mW (153373) PRIMARY: No response within 100 ticks[0m
+[0;33mW (155453) PRIMARY: No response within 100 ticks[0m
+[0;33mW (157533) PRIMARY: No response within 100 ticks[0m
+[0;33mW (159613) PRIMARY: No response within 100 ticks[0m
+[0;33mW (161693) PRIMARY: No response within 100 ticks[0m
+[0;33mW (163773) PRIMARY: No response within 100 ticks[0m
+[0;33mW (165853) PRIMARY: No response within 100 ticks[0m
+[0;33mW (167933) PRIMARY: No response within 100 ticks[0m
+[0;33mW (170013) PRIMARY: No response within 100 ticks[0m
+[0;33mW (172093) PRIMARY: No response within 100 ticks[0m
+[0;33mW (174173) PRIMARY: No response within 100 ticks[0m
+[0;33mW (176253) PRIMARY: No response within 100 ticks[0m
+[0;33mW (178333) PRIMARY: No response within 100 ticks[0m
+[0;33mW (180413) PRIMARY: No response within 100 ticks[0m
+[0;33mW (182493) PRIMARY: No response within 100 ticks[0m
+[0;33mW (184573) PRIMARY: No response within 100 ticks[0m
+[0;33mW (186653) PRIMARY: No response within 100 ticks[0m
+[0;33mW (188733) PRIMARY: No response within 100 ticks[0m
+[0;33mW (190813) PRIMARY: No response within 100 ticks[0m
+[0;33mW (192893) PRIMARY: No response within 100 ticks[0m
+[0;33mW (194973) PRIMARY: No response within 100 ticks[0m
+[0;33mW (197053) PRIMARY: No response within 100 ticks[0m
+[0;33mW (199133) PRIMARY: No response within 100 ticks[0m
+[0;33mW (201213) PRIMARY: No response within 100 ticks[0m
+[0;33mW (203293) PRIMARY: No response within 100 ticks[0m
+[0;33mW (205373) PRIMARY: No response within 100 ticks[0m
+[0;33mW (207453) PRIMARY: No response within 100 ticks[0m
+[0;33mW (209533) PRIMARY: No response within 100 ticks[0m
+[0;33mW (211613) PRIMARY: No response within 100 ticks[0m
+[0;33mW (213693) PRIMARY: No response within 100 ticks[0m
+[0;33mW (215773) PRIMARY: No response within 100 ticks[0m
+[0;33mW (217853) PRIMARY: No response within 100 ticks[0m
+[0;33mW (219933) PRIMARY: No response within 100 ticks[0m
+[0;33mW (222013) PRIMARY: No response within 100 ticks[0m
+[0;33mW (224093) PRIMARY: No response within 100 ticks[0m
+[0;33mW (226173) PRIMARY: No response within 100 ticks[0m
+[0;33mW (228253) PRIMARY: No response within 100 ticks[0m
+[0;33mW (230333) PRIMARY: No response within 100 ticks[0m
+[0;33mW (232413) PRIMARY: No response within 100 ticks[0m
+[0;33mW (234493) PRIMARY: No response within 100 ticks[0m
+[0;33mW (236573) PRIMARY: No response within 100 ticks[0m
+[0;33mW (238653) PRIMARY: No response within 100 ticks[0m
+[0;33mW (240733) PRIMARY: No response within 100 ticks[0m
+[0;33mW (242813) PRIMARY: No response within 100 ticks[0m
+[0;33mW (244893) PRIMARY: No response within 100 ticks[0m
+[0;33mW (246973) PRIMARY: No response within 100 ticks[0m
+[0;33mW (249053) PRIMARY: No response within 100 ticks[0m
+[0;33mW (251133) PRIMARY: No response within 100 ticks[0m
+[0;33mW (253213) PRIMARY: No response within 100 ticks[0m
+[0;33mW (255293) PRIMARY: No response within 100 ticks[0m
+[0;33mW (257373) PRIMARY: No response within 100 ticks[0m
+[0;33mW (259453) PRIMARY: No response within 100 ticks[0m
+[0;33mW (261533) PRIMARY: No response within 100 ticks[0m
+[0;33mW (263613) PRIMARY: No response within 100 ticks[0m
+[0;33mW (265693) PRIMARY: No response within 100 ticks[0m
+[0;33mW (267773) PRIMARY: No response within 100 ticks[0m
+[0;33mW (269853) PRIMARY: No response within 100 ticks[0m
+[0;33mW (271933) PRIMARY: No response within 100 ticks[0m
+[0;33mW (274013) PRIMARY: No response within 100 ticks[0m
+[0;33mW (276093) PRIMARY: No response within 100 ticks[0m
+[0;33mW (278173) PRIMARY: No response within 100 ticks[0m
+[0;33mW (280253) PRIMARY: No response within 100 ticks[0m
+[0;33mW (282333) PRIMARY: No response within 100 ticks[0m
+[0;33mW (284413) PRIMARY: No response within 100 ticks[0m
+[0;33mW (286493) PRIMARY: No response within 100 ticks[0m
+[0;33mW (288573) PRIMARY: No response within 100 ticks[0m
+[0;33mW (290653) PRIMARY: No response within 100 ticks[0m
+[0;33mW (292733) PRIMARY: No response within 100 ticks[0m
+[0;33mW (294813) PRIMARY: No response within 100 ticks[0m
+[0;33mW (296893) PRIMARY: No response within 100 ticks[0m
+[0;33mW (298973) PRIMARY: No response within 100 ticks[0m
+[0;33mW (301053) PRIMARY: No response within 100 ticks[0m
+[0;33mW (303133) PRIMARY: No response within 100 ticks[0m
+[0;33mW (305213) PRIMARY: No response within 100 ticks[0m
+[0;33mW (307293) PRIMARY: No response within 100 ticks[0m
+[0;33mW (309373) PRIMARY: No response within 100 ticks[0m
+[0;33mW (311453) PRIMARY: No response within 100 ticks[0m
+[0;33mW (313533) PRIMARY: No response within 100 ticks[0m
+[0;33mW (315613) PRIMARY: No response within 100 ticks[0m
+[0;33mW (317693) PRIMARY: No response within 100 ticks[0m
+[0;33mW (319773) PRIMARY: No response within 100 ticks[0m
+[0;33mW (321853) PRIMARY: No response within 100 ticks[0m
+[0;33mW (323933) PRIMARY: No response within 100 ticks[0m
+[0;33mW (326013) PRIMARY: No response within 100 ticks[0m
+[0;33mW (328093) PRIMARY: No response within 100 ticks[0m
+[0;33mW (330173) PRIMARY: No response within 100 ticks[0m
+[0;33mW (332253) PRIMARY: No response within 100 ticks[0m
+[0;33mW (334333) PRIMARY: No response within 100 ticks[0m
+[0;33mW (336413) PRIMARY: No response within 100 ticks[0m
+[0;33mW (338493) PRIMARY: No response within 100 ticks[0m
+[0;33mW (340573) PRIMARY: No response within 100 ticks[0m
+[0;33mW (342653) PRIMARY: No response within 100 ticks[0m
+[0;33mW (344733) PRIMARY: No response within 100 ticks[0m
+[0;33mW (346813) PRIMARY: No response within 100 ticks[0m
+[0;33mW (348893) PRIMARY: No response within 100 ticks[0m
+[0;33mW (350973) PRIMARY: No response within 100 ticks[0m
+[0;33mW (353053) PRIMARY: No response within 100 ticks[0m
+[0;33mW (355133) PRIMARY: No response within 100 ticks[0m
+[0;33mW (357213) PRIMARY: No response within 100 ticks[0m
+[0;33mW (359293) PRIMARY: No response within 100 ticks[0m
+[0;33mW (361373) PRIMARY: No response within 100 ticks[0m
+[0;33mW (363453) PRIMARY: No response within 100 ticks[0m
+[0;33mW (365533) PRIMARY: No response within 100 ticks[0m
+[0;33mW (367613) PRIMARY: No response within 100 ticks[0m
+[0;33mW (369693) PRIMARY: No response within 100 ticks[0m
+[0;33mW (371773) PRIMARY: No response within 100 ticks[0m
+[0;33mW (373853) PRIMARY: No response within 100 ticks[0m
+[0;33mW (375933) PRIMARY: No response within 100 ticks[0m
+[0;33mW (378013) PRIMARY: No response within 100 ticks[0m
+[0;33mW (380093) PRIMARY: No response within 100 ticks[0m
+[0;33mW (382173) PRIMARY: No response within 100 ticks[0m
+[0;33mW (384253) PRIMARY: No response within 100 ticks[0m
+[0;33mW (386333) PRIMARY: No response within 100 ticks[0m
+[0;33mW (388413) PRIMARY: No response within 100 ticks[0m
+[0;33mW (390493) PRIMARY: No response within 100 ticks[0m
+[0;33mW (392573) PRIMARY: No response within 100 ticks[0m
+[0;33mW (394653) PRIMARY: No response within 100 ticks[0m
+[0;33mW (396733) PRIMARY: No response within 100 ticks[0m
+[0;33mW (398813) PRIMARY: No response within 100 ticks[0m
+[0;33mW (400893) PRIMARY: No response within 100 ticks[0m
+[0;33mW (402973) PRIMARY: No response within 100 ticks[0m
+[0;33mW (405053) PRIMARY: No response within 100 ticks[0m
+[0;33mW (407133) PRIMARY: No response within 100 ticks[0m
+[0;33mW (409213) PRIMARY: No response within 100 ticks[0m
+[0;33mW (411293) PRIMARY: No response within 100 ticks[0m
+[0;33mW (413373) PRIMARY: No response within 100 ticks[0m
+[0;33mW (415453) PRIMARY: No response within 100 ticks[0m
+[0;33mW (417533) PRIMARY: No response within 100 ticks[0m
+[0;33mW (419613) PRIMARY: No response within 100 ticks[0m
+[0;33mW (421693) PRIMARY: No response within 100 ticks[0m
+[0;33mW (423773) PRIMARY: No response within 100 ticks[0m
+[0;33mW (425853) PRIMARY: No response within 100 ticks[0m
+[0;33mW (427933) PRIMARY: No response within 100 ticks[0m
+[0;33mW (430013) PRIMARY: No response within 100 ticks[0m
+[0;33mW (432093) PRIMARY: No response within 100 ticks[0m
+[0;33mW (434173) PRIMARY: No response within 100 ticks[0m
+[0;33mW (436253) PRIMARY: No response within 100 ticks[0m
+[0;33mW (438333) PRIMARY: No response within 100 ticks[0m
+[0;33mW (440413) PRIMARY: No response within 100 ticks[0m
+[0;33mW (442493) PRIMARY: No response within 100 ticks[0m
+[0;33mW (444573) PRIMARY: No response within 100 ticks[0m
+[0;33mW (446653) PRIMARY: No response within 100 ticks[0m
+[0;33mW (448733) PRIMARY: No response within 100 ticks[0m
+[0;33mW (450813) PRIMARY: No response within 100 ticks[0m
+[0;33mW (452893) PRIMARY: No response within 100 ticks[0m
+[0;33mW (454973) PRIMARY: No response within 100 ticks[0m
+[0;33mW (457053) PRIMARY: No response within 100 ticks[0m
+[0;33mW (459133) PRIMARY: No response within 100 ticks[0m
+[0;33mW (461213) PRIMARY: No response within 100 ticks[0m
+[0;33mW (463293) PRIMARY: No response within 100 ticks[0m
+[0;33mW (465373) PRIMARY: No response within 100 ticks[0m
+[0;33mW (467453) PRIMARY: No response within 100 ticks[0m
+[0;33mW (469533) PRIMARY: No response within 100 ticks[0m
+[0;33mW (471613) PRIMARY: No response within 100 ticks[0m
+[0;33mW (473693) PRIMARY: No response within 100 ticks[0m
+[0;33mW (475773) PRIMARY: No response within 100 ticks[0m
+[0;33mW (477853) PRIMARY: No response within 100 ticks[0m
+[0;33mW (479933) PRIMARY: No response within 100 ticks[0m
+[0;33mW (482013) PRIMARY: No response within 100 ticks[0m
+[0;33mW (484093) PRIMARY: No response within 100 ticks[0m
+[0;33mW (486173) PRIMARY: No response within 100 ticks[0m
+[0;33mW (488253) PRIMARY: No response within 100 ticks[0m
+[0;33mW (490333) PRIMARY: No response within 100 ticks[0m
+[0;33mW (492413) PRIMARY: No response within 100 ticks[0m
+[0;33mW (494493) PRIMARY: No response within 100 ticks[0m
+[0;33mW (496573) PRIMARY: No response within 100 ticks[0m
+[0;33mW (498653) PRIMARY: No response within 100 ticks[0m
+[0;33mW (500733) PRIMARY: No response within 100 ticks[0m
+[0;33mW (502813) PRIMARY: No response within 100 ticks[0m
+[0;33mW (504893) PRIMARY: No response within 100 ticks[0m
+[0;33mW (506973) PRIMARY: No response within 100 ticks[0m
+[0;33mW (509053) PRIMARY: No response within 100 ticks[0m
+[0;33mW (511133) PRIMARY: No response within 100 ticks[0m
+[0;33mW (513213) PRIMARY: No response within 100 ticks[0m
+[0;33mW (515293) PRIMARY: No response within 100 ticks[0m
+[0;33mW (517373) PRIMARY: No response within 100 ticks[0m
+[0;33mW (519453) PRIMARY: No response within 100 ticks[0m
+[0;33mW (521533) PRIMARY: No response within 100 ticks[0m
+[0;33mW (523613) PRIMARY: No response within 100 ticks[0m
+[0;33mW (525693) PRIMARY: No response within 100 ticks[0m
+[0;33mW (527773) PRIMARY: No response within 100 ticks[0m
+[0;33mW (529853) PRIMARY: No response within 100 ticks[0m
+[0;33mW (531933) PRIMARY: No response within 100 ticks[0m
+[0;33mW (534013) PRIMARY: No response within 100 ticks[0m
+[0;33mW (536093) PRIMARY: No response within 100 ticks[0m
+[0;33mW (538173) PRIMARY: No response within 100 ticks[0m
+[0;33mW (540253) PRIMARY: No response within 100 ticks[0m
+[0;33mW (542333) PRIMARY: No response within 100 ticks[0m
+[0;33mW (544413) PRIMARY: No response within 100 ticks[0m
+[0;33mW (546493) PRIMARY: No response within 100 ticks[0m
+[0;33mW (548573) PRIMARY: No response within 100 ticks[0m
+[0;33mW (550653) PRIMARY: No response within 100 ticks[0m
+[0;33mW (552733) PRIMARY: No response within 100 ticks[0m
+[0;33mW (554813) PRIMARY: No response within 100 ticks[0m
+[0;33mW (556893) PRIMARY: No response within 100 ticks[0m
+[0;33mW (558973) PRIMARY: No response within 100 ticks[0m
+[0;33mW (561053) PRIMARY: No response within 100 ticks[0m
+[0;33mW (563133) PRIMARY: No response within 100 ticks[0m
+[0;33mW (565213) PRIMARY: No response within 100 ticks[0m
+[0;33mW (567293) PRIMARY: No response within 100 ticks[0m
+[0;33mW (569373) PRIMARY: No response within 100 ticks[0m
+[0;33mW (571453) PRIMARY: No response within 100 ticks[0m
+[0;33mW (573533) PRIMARY: No response within 100 ticks[0m
+[0;33mW (575613) PRIMARY: No response within 100 ticks[0m
+[0;33mW (577693) PRIMARY: No response within 100 ticks[0m
+[0;33mW (579773) PRIMARY: No response within 100 ticks[0m
+[0;33mW (581853) PRIMARY: No response within 100 ticks[0m
+[0;33mW (583933) PRIMARY: No response within 100 ticks[0m
+[0;33mW (586013) PRIMARY: No response within 100 ticks[0m
+[0;33mW (588093) PRIMARY: No response within 100 ticks[0m
+[0;33mW (590173) PRIMARY: No response within 100 ticks[0m
+[0;33mW (592253) PRIMARY: No response within 100 ticks[0m
+[0;33mW (594333) PRIMARY: No response within 100 ticks[0m
+[0;33mW (596413) PRIMARY: No response within 100 ticks[0m
+[0;33mW (598493) PRIMARY: No response within 100 ticks[0m
+[0;33mW (600573) PRIMARY: No response within 100 ticks[0m
+[0;33mW (602653) PRIMARY: No response within 100 ticks[0m
+[0;33mW (604733) PRIMARY: No response within 100 ticks[0m
+[0;33mW (606813) PRIMARY: No response within 100 ticks[0m
+[0;33mW (608893) PRIMARY: No response within 100 ticks[0m
+[0;33mW (610973) PRIMARY: No response within 100 ticks[0m
+[0;33mW (613053) PRIMARY: No response within 100 ticks[0m
+[0;33mW (615133) PRIMARY: No response within 100 ticks[0m
+[0;33mW (617213) PRIMARY: No response within 100 ticks[0m
+[0;33mW (619293) PRIMARY: No response within 100 ticks[0m
+[0;33mW (621373) PRIMARY: No response within 100 ticks[0m
+[0;33mW (623453) PRIMARY: No response within 100 ticks[0m
+[0;33mW (625533) PRIMARY: No response within 100 ticks[0m
+[0;33mW (627613) PRIMARY: No response within 100 ticks[0m
+[0;33mW (629693) PRIMARY: No response within 100 ticks[0m
+[0;33mW (631773) PRIMARY: No response within 100 ticks[0m
+[0;33mW (633853) PRIMARY: No response within 100 ticks[0m
+[0;33mW (635933) PRIMARY: No response within 100 ticks[0m
+[0;33mW (638013) PRIMARY: No response within 100 ticks[0m
+[0;33mW (640093) PRIMARY: No response within 100 ticks[0m
+[0;33mW (642173) PRIMARY: No response within 100 ticks[0m
+[0;33mW (644253) PRIMARY: No response within 100 ticks[0m
+[0;33mW (646333) PRIMARY: No response within 100 ticks[0m
+[0;33mW (648413) PRIMARY: No response within 100 ticks[0m
+[0;33mW (650493) PRIMARY: No response within 100 ticks[0m
+[0;33mW (652573) PRIMARY: No response within 100 ticks[0m
+[0;33mW (654653) PRIMARY: No response within 100 ticks[0m
+[0;33mW (656733) PRIMARY: No response within 100 ticks[0m
+[0;33mW (658813) PRIMARY: No response within 100 ticks[0m
+[0;33mW (660893) PRIMARY: No response within 100 ticks[0m
+[0;33mW (662973) PRIMARY: No response within 100 ticks[0m
+[0;33mW (665053) PRIMARY: No response within 100 ticks[0m
+[0;33mW (667133) PRIMARY: No response within 100 ticks[0m
+[0;33mW (669213) PRIMARY: No response within 100 ticks[0m
+[0;33mW (671293) PRIMARY: No response within 100 ticks[0m
+[0;33mW (673373) PRIMARY: No response within 100 ticks[0m
+[0;33mW (675453) PRIMARY: No response within 100 ticks[0m
+[0;33mW (677533) PRIMARY: No response within 100 ticks[0m
+[0;33mW (679613) PRIMARY: No response within 100 ticks[0m
+[0;33mW (681693) PRIMARY: No response within 100 ticks[0m
+[0;33mW (683773) PRIMARY: No response within 100 ticks[0m
+[0;33mW (685853) PRIMARY: No response within 100 ticks[0m
+[0;33mW (687933) PRIMARY: No response within 100 ticks[0m
+[0;33mW (690013) PRIMARY: No response within 100 ticks[0m
+[0;33mW (692093) PRIMARY: No response within 100 ticks[0m
+[0;33mW (694173) PRIMARY: No response within 100 ticks[0m
+[0;33mW (696253) PRIMARY: No response within 100 ticks[0m
+[0;33mW (698333) PRIMARY: No response within 100 ticks[0m
+[0;33mW (700413) PRIMARY: No response within 100 ticks[0m
+[0;33mW (702493) PRIMARY: No response within 100 ticks[0m
+[0;33mW (704573) PRIMARY: No response within 100 ticks[0m
+[0;33mW (706653) PRIMARY: No response within 100 ticks[0m
+[0;33mW (708733) PRIMARY: No response within 100 ticks[0m
+[0;33mW (710813) PRIMARY: No response within 100 ticks[0m
+[0;33mW (712893) PRIMARY: No response within 100 ticks[0m
+[0;33mW (714973) PRIMARY: No response within 100 ticks[0m
+[0;33mW (717053) PRIMARY: No response within 100 ticks[0m
+[0;33mW (719133) PRIMARY: No response within 100 ticks[0m
+[0;33mW (721213) PRIMARY: No response within 100 ticks[0m
+[0;33mW (723293) PRIMARY: No response within 100 ticks[0m
+[0;33mW (725373) PRIMARY: No response within 100 ticks[0m
+[0;33mW (727453) PRIMARY: No response within 100 ticks[0m
+[0;33mW (729533) PRIMARY: No response within 100 ticks[0m
+[0;33mW (731613) PRIMARY: No response within 100 ticks[0m
+[0;33mW (733693) PRIMARY: No response within 100 ticks[0m
+[0;33mW (735773) PRIMARY: No response within 100 ticks[0m
+[0;33mW (737853) PRIMARY: No response within 100 ticks[0m
+[0;33mW (739933) PRIMARY: No response within 100 ticks[0m
+[0;33mW (742013) PRIMARY: No response within 100 ticks[0m
+[0;33mW (744093) PRIMARY: No response within 100 ticks[0m
+[0;33mW (746173) PRIMARY: No response within 100 ticks[0m
+[0;33mW (748253) PRIMARY: No response within 100 ticks[0m
+[0;33mW (750333) PRIMARY: No response within 100 ticks[0m
+[0;33mW (752413) PRIMARY: No response within 100 ticks[0m
+[0;33mW (754493) PRIMARY: No response within 100 ticks[0m
+[0;33mW (756573) PRIMARY: No response within 100 ticks[0m
+[0;33mW (758653) PRIMARY: No response within 100 ticks[0m
+[0;33mW (760733) PRIMARY: No response within 100 ticks[0m
+[0;33mW (762813) PRIMARY: No response within 100 ticks[0m
+[0;33mW (764893) PRIMARY: No response within 100 ticks[0m
+[0;33mW (766973) PRIMARY: No response within 100 ticks[0m
+[0;33mW (769053) PRIMARY: No response within 100 ticks[0m
+[0;33mW (771133) PRIMARY: No response within 100 ticks[0m
+[0;33mW (773213) PRIMARY: No response within 100 ticks[0m
+[0;33mW (775293) PRIMARY: No response within 100 ticks[0m
+[0;33mW (777373) PRIMARY: No response within 100 ticks[0m
+[0;33mW (779453) PRIMARY: No response within 100 ticks[0m
+[0;33mW (781533) PRIMARY: No response within 100 ticks[0m
+[0;33mW (783613) PRIMARY: No response within 100 ticks[0m
+[0;33mW (785693) PRIMARY: No response within 100 ticks[0m
+[0;33mW (787773) PRIMARY: No response within 100 ticks[0m
+[0;33mW (789853) PRIMARY: No response within 100 ticks[0m
+[0;33mW (791933) PRIMARY: No response within 100 ticks[0m
+[0;33mW (794013) PRIMARY: No response within 100 ticks[0m
+[0;33mW (796093) PRIMARY: No response within 100 ticks[0m
+[0;33mW (798173) PRIMARY: No response within 100 ticks[0m
+[0;33mW (800253) PRIMARY: No response within 100 ticks[0m
+[0;33mW (802333) PRIMARY: No response within 100 ticks[0m
+[0;33mW (804413) PRIMARY: No response within 100 ticks[0m
+[0;33mW (806493) PRIMARY: No response within 100 ticks[0m
+[0;33mW (808573) PRIMARY: No response within 100 ticks[0m
+[0;33mW (810653) PRIMARY: No response within 100 ticks[0m
+[0;33mW (812733) PRIMARY: No response within 100 ticks[0m
+[0;33mW (814813) PRIMARY: No response within 100 ticks[0m
+[0;33mW (816893) PRIMARY: No response within 100 ticks[0m
+[0;33mW (818973) PRIMARY: No response within 100 ticks[0m
+[0;33mW (821053) PRIMARY: No response within 100 ticks[0m
+[0;33mW (823133) PRIMARY: No response within 100 ticks[0m
+[0;33mW (825213) PRIMARY: No response within 100 ticks[0m
+[0;33mW (827293) PRIMARY: No response within 100 ticks[0m
+[0;33mW (829373) PRIMARY: No response within 100 ticks[0m
+[0;33mW (831453) PRIMARY: No response within 100 ticks[0m
+[0;33mW (833533) PRIMARY: No response within 100 ticks[0m
+[0;33mW (835613) PRIMARY: No response within 100 ticks[0m
+[0;33mW (837693) PRIMARY: No response within 100 ticks[0m
+[0;33mW (839773) PRIMARY: No response within 100 ticks[0m
+[0;33mW (841853) PRIMARY: No response within 100 ticks[0m
+[0;33mW (843933) PRIMARY: No response within 100 ticks[0m
+[0;33mW (846013) PRIMARY: No response within 100 ticks[0m
+[0;33mW (848093) PRIMARY: No response within 100 ticks[0m
+[0;33mW (850173) PRIMARY: No response within 100 ticks[0m
+[0;33mW (852253) PRIMARY: No response within 100 ticks[0m
+[0;33mW (854333) PRIMARY: No response within 100 ticks[0m
+[0;33mW (856413) PRIMARY: No response within 100 ticks[0m
+[0;33mW (858493) PRIMARY: No response within 100 ticks[0m
+[0;33mW (860573) PRIMARY: No response within 100 ticks[0m
+[0;33mW (862653) PRIMARY: No response within 100 ticks[0m
+[0;33mW (864733) PRIMARY: No response within 100 ticks[0m
+[0;33mW (866813) PRIMARY: No response within 100 ticks[0m
+[0;33mW (868893) PRIMARY: No response within 100 ticks[0m
+[0;33mW (870973) PRIMARY: No response within 100 ticks[0m
+[0;33mW (873053) PRIMARY: No response within 100 ticks[0m
+[0;33mW (875133) PRIMARY: No response within 100 ticks[0m
+[0;33mW (877213) PRIMARY: No response within 100 ticks[0m
+[0;33mW (879293) PRIMARY: No response within 100 ticks[0m
+[0;33mW (881373) PRIMARY: No response within 100 ticks[0m
+[0;33mW (883453) PRIMARY: No response within 100 ticks[0m
+[0;33mW (885533) PRIMARY: No response within 100 ticks[0m
+[0;33mW (887613) PRIMARY: No response within 100 ticks[0m
+[0;33mW (889693) PRIMARY: No response within 100 ticks[0m
+[0;33mW (891773) PRIMARY: No response within 100 ticks[0m
+[0;33mW (893853) PRIMARY: No response within 100 ticks[0m
+[0;33mW (895933) PRIMARY: No response within 100 ticks[0m
+[0;33mW (898013) PRIMARY: No response within 100 ticks[0m
+[0;33mW (900093) PRIMARY: No response within 100 ticks[0m
+[0;33mW (902173) PRIMARY: No response within 100 ticks[0m
+[0;33mW (904253) PRIMARY: No response within 100 ticks[0m
+[0;33mW (906333) PRIMARY: No response within 100 ticks[0m
+[0;33mW (908413) PRIMARY: No response within 100 ticks[0m
+[0;33mW (910493) PRIMARY: No response within 100 ticks[0m
+[0;33mW (912573) PRIMARY: No response within 100 ticks[0m
+[0;33mW (914653) PRIMARY: No response within 100 ticks[0m
+[0;33mW (916733) PRIMARY: No response within 100 ticks[0m
+[0;33mW (918813) PRIMARY: No response within 100 ticks[0m
+[0;33mW (920893) PRIMARY: No response within 100 ticks[0m
+[0;33mW (922973) PRIMARY: No response within 100 ticks[0m
+[0;33mW (925053) PRIMARY: No response within 100 ticks[0m
+[0;33mW (927133) PRIMARY: No response within 100 ticks[0m
+[0;33mW (929213) PRIMARY: No response within 100 ticks[0m
+[0;33mW (931293) PRIMARY: No response within 100 ticks[0m
+[0;33mW (933373) PRIMARY: No response within 100 ticks[0m
+[0;33mW (935453) PRIMARY: No response within 100 ticks[0m
+[0;33mW (937533) PRIMARY: No response within 100 ticks[0m
+[0;33mW (939613) PRIMARY: No response within 100 ticks[0m
+[0;33mW (941693) PRIMARY: No response within 100 ticks[0m
+[0;33mW (943773) PRIMARY: No response within 100 ticks[0m
+[0;33mW (945853) PRIMARY: No response within 100 ticks[0m
+[0;33mW (947933) PRIMARY: No response within 100 ticks[0m
+[0;33mW (950013) PRIMARY: No response within 100 ticks[0m
+[0;33mW (952093) PRIMARY: No response within 100 ticks[0m
+[0;33mW (954173) PRIMARY: No response within 100 ticks[0m
+[0;33mW (956253) PRIMARY: No response within 100 ticks[0m
+[0;33mW (958333) PRIMARY: No response within 100 ticks[0m
+[0;33mW (960413) PRIMARY: No response within 100 ticks[0m
+[0;33mW (962493) PRIMARY: No response within 100 ticks[0m
+[0;33mW (964573) PRIMARY: No response within 100 ticks[0m
+[0;33mW (966653) PRIMARY: No response within 100 ticks[0m
+[0;33mW (968733) PRIMARY: No response within 100 ticks[0m
+[0;33mW (970813) PRIMARY: No response within 100 ticks[0m
+[0;33mW (972893) PRIMARY: No response within 100 ticks[0m
+[0;33mW (974973) PRIMARY: No response within 100 ticks[0m
+[0;33mW (977053) PRIMARY: No response within 100 ticks[0m
+[0;33mW (979133) PRIMARY: No response within 100 ticks[0m
+[0;33mW (981213) PRIMARY: No response within 100 ticks[0m
+[0;33mW (983293) PRIMARY: No response within 100 ticks[0m
+[0;33mW (985373) PRIMARY: No response within 100 ticks[0m
+[0;33mW (987453) PRIMARY: No response within 100 ticks[0m
+[0;33mW (989533) PRIMARY: No response within 100 ticks[0m
+[0;33mW (991613) PRIMARY: No response within 100 ticks[0m
+[0;33mW (993693) PRIMARY: No response within 100 ticks[0m
+[0;33mW (995773) PRIMARY: No response within 100 ticks[0m
+[0;33mW (997853) PRIMARY: No response within 100 ticks[0m
+[0;33mW (999933) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1002013) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1004093) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1006173) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1008253) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1010333) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1012413) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1014493) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1016573) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1018653) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1020733) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1022813) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1024893) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1026973) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1029053) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1031133) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1033213) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1035293) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1037373) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1039453) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1041533) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1043613) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1045693) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1047773) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1049853) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1051933) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1054013) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1056093) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1058173) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1060253) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1062333) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1064413) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1066493) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1068573) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1070653) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1072733) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1074813) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1076893) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1078973) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1081053) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1083133) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1085213) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1087293) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1089373) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1091453) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1093533) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1095613) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1097693) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1099773) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1101853) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1103933) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1106013) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1108093) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1110173) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1112253) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1114333) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1116413) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1118493) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1120573) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1122653) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1124733) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1126813) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1128893) PRIMARY: No response within 100 ticks[0m
+[0;33mW (1130973) PRIMARY: No response within 100 ticks[0m

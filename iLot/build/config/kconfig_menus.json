@@ -3333,6 +3333,16 @@
         "children": [],
         "depends_on": null,
         "help": null,
+        "id": "SOC_WIFI_PHY_NEEDS_USB_WORKAROUND",
+        "name": "SOC_WIFI_PHY_NEEDS_USB_WORKAROUND",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
         "id": "SOC_BLE_SUPPORTED",
         "name": "SOC_BLE_SUPPORTED",
         "range": null,
@@ -5168,6 +5178,16 @@
         "children": [],
         "depends_on": null,
         "help": null,
+        "id": "ESP_ROM_HAS_ENCRYPTED_WRITES_USING_LEGACY_DRV",
+        "name": "ESP_ROM_HAS_ENCRYPTED_WRITES_USING_LEGACY_DRV",
+        "range": null,
+        "title": null,
+        "type": "bool"
+    },
+    {
+        "children": [],
+        "depends_on": null,
+        "help": null,
         "id": "ESP_ROM_GET_CLK_FREQ",
         "name": "ESP_ROM_GET_CLK_FREQ",
         "range": null,
@@ -5976,6 +5996,330 @@
         "depends_on": null,
         "id": "partition-table",
         "title": "Partition Table",
+        "type": "menu"
+    },
+    {
+        "children": [
+            {
+                "children": [
+                    {
+                        "children": [],
+                        "depends_on": "<choice POLARITY>",
+                        "help": "As Echo Client.",
+                        "id": "PRIMARY",
+                        "name": "PRIMARY",
+                        "range": null,
+                        "title": "Primary",
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": "<choice POLARITY>",
+                        "help": "As Echo Server.",
+                        "id": "SECONDARY",
+                        "name": "SECONDARY",
+                        "range": null,
+                        "title": "Secondary",
+                        "type": "bool"
+                    }
+                ],
+                "depends_on": null,
+                "help": "Select Communication Polarity.",
+                "id": "application-configuration-communication-polarity",
+                "name": "POLARITY",
+                "title": "Communication Polarity",
+                "type": "choice"
+            },
+            {
+                "children": [
+                    {
+                        "children": [],
+                        "depends_on": "<choice FREQUENCY>",
+                        "help": "Frequency is 169MHz.",
+                        "id": "169MHZ",
+                        "name": "169MHZ",
+                        "range": null,
+                        "title": "169MHz",
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": "<choice FREQUENCY>",
+                        "help": "Frequency is 433MHz.",
+                        "id": "433MHZ",
+                        "name": "433MHZ",
+                        "range": null,
+                        "title": "433MHz",
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": "<choice FREQUENCY>",
+                        "help": "Frequency is 470MHz.",
+                        "id": "470MHZ",
+                        "name": "470MHZ",
+                        "range": null,
+                        "title": "470MHz",
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": "<choice FREQUENCY>",
+                        "help": "Frequency is 866MHz.",
+                        "id": "866MHZ",
+                        "name": "866MHZ",
+                        "range": null,
+                        "title": "866MHz",
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": "<choice FREQUENCY>",
+                        "help": "Frequency is 915MHz.",
+                        "id": "915MHZ",
+                        "name": "915MHZ",
+                        "range": null,
+                        "title": "915MHz",
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": "<choice FREQUENCY>",
+                        "help": "Other Frequency.",
+                        "id": "OTHER",
+                        "name": "OTHER",
+                        "range": null,
+                        "title": "Other",
+                        "type": "bool"
+                    }
+                ],
+                "depends_on": null,
+                "help": "Select Frequency to use.",
+                "id": "application-configuration-frequency-to-use",
+                "name": "FREQUENCY",
+                "title": "Frequency to use",
+                "type": "choice"
+            },
+            {
+                "children": [],
+                "depends_on": "OTHER",
+                "help": "Frequency to use[MHz].",
+                "id": "OTHER_FREQUENCY",
+                "name": "OTHER_FREQUENCY",
+                "range": [
+                    1,
+                    999
+                ],
+                "title": "Frequency to use[MHz]",
+                "type": "int"
+            },
+            {
+                "children": [
+                    {
+                        "children": [],
+                        "depends_on": "ADVANCED",
+                        "help": "Error coding rate.",
+                        "id": "CODING_RATE",
+                        "name": "CODING_RATE",
+                        "range": null,
+                        "title": "Error coding rate",
+                        "type": "int"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": "ADVANCED",
+                        "help": "Signal Bandwidth.",
+                        "id": "BANDWIDTH",
+                        "name": "BANDWIDTH",
+                        "range": null,
+                        "title": "Signal Bandwidth",
+                        "type": "int"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": "ADVANCED",
+                        "help": "Spreading Factor.",
+                        "id": "SF_RATE",
+                        "name": "SF_RATE",
+                        "range": null,
+                        "title": "Spreading Factor",
+                        "type": "int"
+                    }
+                ],
+                "depends_on": null,
+                "help": "Enable Advanced settings.",
+                "id": "ADVANCED",
+                "name": "ADVANCED",
+                "range": null,
+                "title": "Enable Advanced settings",
+                "type": "bool"
+            }
+        ],
+        "depends_on": null,
+        "id": "application-configuration",
+        "title": "Application Configuration",
+        "type": "menu"
+    },
+    {
+        "children": [
+            {
+                "children": [],
+                "depends_on": null,
+                "help": null,
+                "id": "GPIO_RANGE_MAX",
+                "name": "GPIO_RANGE_MAX",
+                "range": null,
+                "title": null,
+                "type": "int"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": "Pin Number to be used as the MISO SPI signal.",
+                "id": "MISO_GPIO",
+                "name": "MISO_GPIO",
+                "range": [
+                    0,
+                    48
+                ],
+                "title": "SX126X MISO GPIO",
+                "type": "int"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": "Pin Number to be used as the SCLK SPI signal.",
+                "id": "SCLK_GPIO",
+                "name": "SCLK_GPIO",
+                "range": [
+                    0,
+                    48
+                ],
+                "title": "SX126X SCLK GPIO",
+                "type": "int"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": "Pin Number to be used as the MOSI SPI signal.",
+                "id": "MOSI_GPIO",
+                "name": "MOSI_GPIO",
+                "range": [
+                    0,
+                    48
+                ],
+                "title": "SX126X MOSI GPIO",
+                "type": "int"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": "Pin Number to be used as the NSS SPI signal.",
+                "id": "NSS_GPIO",
+                "name": "NSS_GPIO",
+                "range": [
+                    0,
+                    48
+                ],
+                "title": "SX126X NSS GPIO",
+                "type": "int"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": "Pin Number to be used as the RST signal.",
+                "id": "RST_GPIO",
+                "name": "RST_GPIO",
+                "range": [
+                    0,
+                    48
+                ],
+                "title": "SX126X RST GPIO",
+                "type": "int"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": "Pin Number to be used as the BUSY signal.",
+                "id": "BUSY_GPIO",
+                "name": "BUSY_GPIO",
+                "range": [
+                    0,
+                    48
+                ],
+                "title": "SX126X BUSY GPIO",
+                "type": "int"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": "Pin Number to be used as the TXEN signal.",
+                "id": "TXEN_GPIO",
+                "name": "TXEN_GPIO",
+                "range": [
+                    -1,
+                    48
+                ],
+                "title": "SX126X TXEN GPIO",
+                "type": "int"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": "Pin Number to be used as the RXEN signal.",
+                "id": "RXEN_GPIO",
+                "name": "RXEN_GPIO",
+                "range": [
+                    -1,
+                    48
+                ],
+                "title": "SX126X RXEN GPIO",
+                "type": "int"
+            },
+            {
+                "children": [
+                    {
+                        "children": [],
+                        "depends_on": "<choice SPI_HOST>",
+                        "help": "Use SPI2_HOST. This is also called HSPI_HOST.",
+                        "id": "SPI2_HOST",
+                        "name": "SPI2_HOST",
+                        "range": null,
+                        "title": "SPI2_HOST",
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": "(IDF_TARGET_ESP32 || IDF_TARGET_ESP32S2 || IDF_TARGET_ESP32S3) && <choice SPI_HOST>",
+                        "help": "USE SPI3_HOST. This is also called VSPI_HOST",
+                        "id": "SPI3_HOST",
+                        "name": "SPI3_HOST",
+                        "range": null,
+                        "title": "SPI3_HOST",
+                        "type": "bool"
+                    }
+                ],
+                "depends_on": null,
+                "help": "Select SPI peripheral that controls this bus.",
+                "id": "sx126x-configuration-spi-peripheral-that-controls-this-bus",
+                "name": "SPI_HOST",
+                "title": "SPI peripheral that controls this bus",
+                "type": "choice"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": "Enable Temperature-Compensated Crystal Oscillator.",
+                "id": "USE_TCXO",
+                "name": "USE_TCXO",
+                "range": null,
+                "title": "Enable TCXO",
+                "type": "bool"
+            }
+        ],
+        "depends_on": null,
+        "id": "sx126x-configuration",
+        "title": "SX126X Configuration",
         "type": "menu"
     },
     {
@@ -10057,7 +10401,7 @@
                             {
                                 "children": [],
                                 "depends_on": "BT_NIMBLE_ENABLED && BT_NIMBLE_ENABLED",
-                                "help": "Time interval between RPA address change. This is applicable in case of\nHost based RPA",
+                                "help": "Time interval between RPA address change.",
                                 "id": "BT_NIMBLE_RPA_TIMEOUT",
                                 "name": "BT_NIMBLE_RPA_TIMEOUT",
                                 "range": null,
@@ -10864,6 +11208,156 @@
                                                 "range": null,
                                                 "title": "Uart port",
                                                 "type": "int"
+                                            },
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "depends_on": "<choice BT_NIMBLE_HCI_USE_UART_BAUDRATE>",
+                                                        "help": null,
+                                                        "id": "UART_BAUDRATE_115200",
+                                                        "name": "UART_BAUDRATE_115200",
+                                                        "range": null,
+                                                        "title": "115200",
+                                                        "type": "bool"
+                                                    },
+                                                    {
+                                                        "children": [],
+                                                        "depends_on": "<choice BT_NIMBLE_HCI_USE_UART_BAUDRATE>",
+                                                        "help": null,
+                                                        "id": "UART_BAUDRATE_230400",
+                                                        "name": "UART_BAUDRATE_230400",
+                                                        "range": null,
+                                                        "title": "230400",
+                                                        "type": "bool"
+                                                    },
+                                                    {
+                                                        "children": [],
+                                                        "depends_on": "<choice BT_NIMBLE_HCI_USE_UART_BAUDRATE>",
+                                                        "help": null,
+                                                        "id": "UART_BAUDRATE_460800",
+                                                        "name": "UART_BAUDRATE_460800",
+                                                        "range": null,
+                                                        "title": "460800",
+                                                        "type": "bool"
+                                                    },
+                                                    {
+                                                        "children": [],
+                                                        "depends_on": "<choice BT_NIMBLE_HCI_USE_UART_BAUDRATE>",
+                                                        "help": null,
+                                                        "id": "UART_BAUDRATE_921600",
+                                                        "name": "UART_BAUDRATE_921600",
+                                                        "range": null,
+                                                        "title": "921600",
+                                                        "type": "bool"
+                                                    }
+                                                ],
+                                                "depends_on": "BT_CONTROLLER_DISABLED && BT_NIMBLE_TRANSPORT_UART && BT_NIMBLE_ENABLED",
+                                                "help": "Uart Baud Rate",
+                                                "id": "component-config-bluetooth-nimble-options-host-controller-transport-enable-uart-transport-uart-hci-baud-rate",
+                                                "name": "BT_NIMBLE_HCI_USE_UART_BAUDRATE",
+                                                "title": "Uart Hci Baud Rate",
+                                                "type": "choice"
+                                            },
+                                            {
+                                                "children": [],
+                                                "depends_on": "BT_CONTROLLER_DISABLED && BT_NIMBLE_TRANSPORT_UART && BT_NIMBLE_ENABLED",
+                                                "help": null,
+                                                "id": "BT_NIMBLE_HCI_UART_BAUDRATE",
+                                                "name": "BT_NIMBLE_HCI_UART_BAUDRATE",
+                                                "range": null,
+                                                "title": null,
+                                                "type": "int"
+                                            },
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "depends_on": "<choice BT_NIMBLE_USE_HCI_UART_PARITY>",
+                                                        "help": null,
+                                                        "id": "UART_PARITY_NONE",
+                                                        "name": "UART_PARITY_NONE",
+                                                        "range": null,
+                                                        "title": "None",
+                                                        "type": "bool"
+                                                    },
+                                                    {
+                                                        "children": [],
+                                                        "depends_on": "<choice BT_NIMBLE_USE_HCI_UART_PARITY>",
+                                                        "help": null,
+                                                        "id": "UART_PARITY_ODD",
+                                                        "name": "UART_PARITY_ODD",
+                                                        "range": null,
+                                                        "title": "Odd",
+                                                        "type": "bool"
+                                                    },
+                                                    {
+                                                        "children": [],
+                                                        "depends_on": "<choice BT_NIMBLE_USE_HCI_UART_PARITY>",
+                                                        "help": null,
+                                                        "id": "UART_PARITY_EVEN",
+                                                        "name": "UART_PARITY_EVEN",
+                                                        "range": null,
+                                                        "title": "Even",
+                                                        "type": "bool"
+                                                    }
+                                                ],
+                                                "depends_on": "BT_CONTROLLER_DISABLED && BT_NIMBLE_TRANSPORT_UART && BT_NIMBLE_ENABLED",
+                                                "help": "Uart Parity",
+                                                "id": "component-config-bluetooth-nimble-options-host-controller-transport-enable-uart-transport-uart-parity",
+                                                "name": "BT_NIMBLE_USE_HCI_UART_PARITY",
+                                                "title": "Uart PARITY",
+                                                "type": "choice"
+                                            },
+                                            {
+                                                "children": [],
+                                                "depends_on": "BT_CONTROLLER_DISABLED && BT_NIMBLE_TRANSPORT_UART && BT_NIMBLE_ENABLED",
+                                                "help": null,
+                                                "id": "BT_NIMBLE_TRANSPORT_UART_PARITY_NONE",
+                                                "name": "BT_NIMBLE_TRANSPORT_UART_PARITY_NONE",
+                                                "range": null,
+                                                "title": null,
+                                                "type": "int"
+                                            },
+                                            {
+                                                "children": [],
+                                                "depends_on": "BT_CONTROLLER_DISABLED && BT_NIMBLE_TRANSPORT_UART && BT_NIMBLE_ENABLED",
+                                                "help": null,
+                                                "id": "BT_NIMBLE_TRANSPORT_UART_PARITY_ODD",
+                                                "name": "BT_NIMBLE_TRANSPORT_UART_PARITY_ODD",
+                                                "range": null,
+                                                "title": null,
+                                                "type": "int"
+                                            },
+                                            {
+                                                "children": [],
+                                                "depends_on": "BT_CONTROLLER_DISABLED && BT_NIMBLE_TRANSPORT_UART && BT_NIMBLE_ENABLED",
+                                                "help": null,
+                                                "id": "BT_NIMBLE_TRANSPORT_UART_PARITY_EVEN",
+                                                "name": "BT_NIMBLE_TRANSPORT_UART_PARITY_EVEN",
+                                                "range": null,
+                                                "title": null,
+                                                "type": "int"
+                                            },
+                                            {
+                                                "children": [],
+                                                "depends_on": "BT_CONTROLLER_DISABLED && BT_NIMBLE_TRANSPORT_UART && BT_NIMBLE_ENABLED",
+                                                "help": "Rx pin for Nimble Transport",
+                                                "id": "BT_NIMBLE_UART_RX_PIN",
+                                                "name": "BT_NIMBLE_UART_RX_PIN",
+                                                "range": null,
+                                                "title": "UART Rx pin",
+                                                "type": "int"
+                                            },
+                                            {
+                                                "children": [],
+                                                "depends_on": "BT_CONTROLLER_DISABLED && BT_NIMBLE_TRANSPORT_UART && BT_NIMBLE_ENABLED",
+                                                "help": "Tx pin for Nimble Transport",
+                                                "id": "BT_NIMBLE_UART_TX_PIN",
+                                                "name": "BT_NIMBLE_UART_TX_PIN",
+                                                "range": null,
+                                                "title": "UART Tx pin",
+                                                "type": "int"
                                             }
                                         ],
                                         "depends_on": "BT_CONTROLLER_DISABLED && BT_NIMBLE_ENABLED",
@@ -10873,96 +11367,6 @@
                                         "range": null,
                                         "title": "Enable Uart Transport",
                                         "type": "bool"
-                                    },
-                                    {
-                                        "children": [
-                                            {
-                                                "children": [],
-                                                "depends_on": "<choice BT_NIMBLE_USE_HCI_UART_PARITY>",
-                                                "help": null,
-                                                "id": "UART_PARITY_NONE",
-                                                "name": "UART_PARITY_NONE",
-                                                "range": null,
-                                                "title": "None",
-                                                "type": "bool"
-                                            },
-                                            {
-                                                "children": [],
-                                                "depends_on": "<choice BT_NIMBLE_USE_HCI_UART_PARITY>",
-                                                "help": null,
-                                                "id": "UART_PARITY_ODD",
-                                                "name": "UART_PARITY_ODD",
-                                                "range": null,
-                                                "title": "Odd",
-                                                "type": "bool"
-                                            },
-                                            {
-                                                "children": [],
-                                                "depends_on": "<choice BT_NIMBLE_USE_HCI_UART_PARITY>",
-                                                "help": null,
-                                                "id": "UART_PARITY_EVEN",
-                                                "name": "UART_PARITY_EVEN",
-                                                "range": null,
-                                                "title": "Even",
-                                                "type": "bool"
-                                            }
-                                        ],
-                                        "depends_on": "BT_NIMBLE_ENABLED",
-                                        "help": "Uart Parity",
-                                        "id": "component-config-bluetooth-nimble-options-host-controller-transport-uart-parity",
-                                        "name": "BT_NIMBLE_USE_HCI_UART_PARITY",
-                                        "title": "Uart PARITY",
-                                        "type": "choice"
-                                    },
-                                    {
-                                        "children": [],
-                                        "depends_on": "BT_NIMBLE_ENABLED",
-                                        "help": null,
-                                        "id": "BT_NIMBLE_TRANSPORT_UART_PARITY_NONE",
-                                        "name": "BT_NIMBLE_TRANSPORT_UART_PARITY_NONE",
-                                        "range": null,
-                                        "title": null,
-                                        "type": "int"
-                                    },
-                                    {
-                                        "children": [],
-                                        "depends_on": "BT_NIMBLE_ENABLED",
-                                        "help": null,
-                                        "id": "BT_NIMBLE_TRANSPORT_UART_PARITY_ODD",
-                                        "name": "BT_NIMBLE_TRANSPORT_UART_PARITY_ODD",
-                                        "range": null,
-                                        "title": null,
-                                        "type": "int"
-                                    },
-                                    {
-                                        "children": [],
-                                        "depends_on": "BT_NIMBLE_ENABLED",
-                                        "help": null,
-                                        "id": "BT_NIMBLE_TRANSPORT_UART_PARITY_EVEN",
-                                        "name": "BT_NIMBLE_TRANSPORT_UART_PARITY_EVEN",
-                                        "range": null,
-                                        "title": null,
-                                        "type": "int"
-                                    },
-                                    {
-                                        "children": [],
-                                        "depends_on": "BT_CONTROLLER_DISABLED && BT_NIMBLE_TRANSPORT_UART && BT_NIMBLE_ENABLED",
-                                        "help": "Rx pin for Nimble Transport",
-                                        "id": "BT_NIMBLE_UART_RX_PIN",
-                                        "name": "BT_NIMBLE_UART_RX_PIN",
-                                        "range": null,
-                                        "title": "UART Rx pin",
-                                        "type": "int"
-                                    },
-                                    {
-                                        "children": [],
-                                        "depends_on": "BT_CONTROLLER_DISABLED && BT_NIMBLE_TRANSPORT_UART && BT_NIMBLE_ENABLED",
-                                        "help": "Tx pin for Nimble Transport",
-                                        "id": "BT_NIMBLE_UART_TX_PIN",
-                                        "name": "BT_NIMBLE_UART_TX_PIN",
-                                        "range": null,
-                                        "title": "UART Tx pin",
-                                        "type": "int"
                                     },
                                     {
                                         "children": [
@@ -11071,7 +11475,7 @@
                             {
                                 "children": [],
                                 "depends_on": "BT_CONTROLLER_ENABLED",
-                                "help": "BLE ACL buffer have two methods to be allocated. One is persistent allocating\n(alloate when controller initialise, never free until controller de-initialise)\nanother is dynamically allocating (allocate before TX and free after TX).",
+                                "help": "BLE ACL buffer have two methods to be allocated. One is persistent allocating\n(allocate when controller initialise, never free until controller de-initialise)\nanother is dynamically allocating (allocate before TX and free after TX).",
                                 "id": "BT_CTRL_BLE_STATIC_ACL_TX_BUF_NB",
                                 "name": "BT_CTRL_BLE_STATIC_ACL_TX_BUF_NB",
                                 "range": null,
@@ -11161,11 +11565,11 @@
                             {
                                 "children": [],
                                 "depends_on": "BT_CONTROLLER_ENABLED",
-                                "help": "The maxinum number of suplicate scan filter",
+                                "help": "The maximum number of suplicate scan filter",
                                 "id": "BT_CTRL_ADV_DUP_FILT_MAX",
                                 "name": "BT_CTRL_ADV_DUP_FILT_MAX",
                                 "range": null,
-                                "title": "The maxinum number of 5.0 extend duplicate scan filter",
+                                "title": "The maximum number of 5.0 extend duplicate scan filter",
                                 "type": "int"
                             },
                             {
@@ -11871,6 +12275,26 @@
                                 "range": null,
                                 "title": "Enable aux packet when ext adv data length is zero",
                                 "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "BT_CONTROLLER_ENABLED",
+                                "help": "If this option is enabled, The Controller will records the communication quality\nfor each channel and then start a timer to check and update the channel map every 4 seconds.",
+                                "id": "BT_CTRL_CHAN_ASS_EN",
+                                "name": "BT_CTRL_CHAN_ASS_EN",
+                                "range": null,
+                                "title": "Enable channel assessment",
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "BT_CONTROLLER_ENABLED",
+                                "help": "If this option is disabled, The Controller will not start the LE authenticated payload timer.\nThis option is used for some compatibility problems related to LE ping procedure.",
+                                "id": "BT_CTRL_LE_PING_EN",
+                                "name": "BT_CTRL_LE_PING_EN",
+                                "range": null,
+                                "title": "Enable LE Ping procedure",
+                                "type": "bool"
                             }
                         ],
                         "depends_on": "BT_CONTROLLER_ENABLED",
@@ -11887,6 +12311,55 @@
                         "range": null,
                         "title": "Release Bluetooth text (READ DOCS FIRST)",
                         "type": "bool"
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "depends_on": "BT_HCI_LOG_DEBUG_EN",
+                                "help": "This option is to configure the buffer size of the hci data steam cache in hci debug mode.\nThis is a ring buffer, the new data will overwrite the oldest data if the buffer is full.",
+                                "id": "BT_HCI_LOG_DATA_BUFFER_SIZE",
+                                "name": "BT_HCI_LOG_DATA_BUFFER_SIZE",
+                                "range": null,
+                                "title": "Size of the cache used for HCI data in Bluetooth HCI debug mode (N*1024 bytes)",
+                                "type": "int"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "BT_HCI_LOG_DEBUG_EN",
+                                "help": "This option is to configure the buffer size of the hci adv report cache in hci debug mode.\nThis is a ring buffer, the new data will overwrite the oldest data if the buffer is full.",
+                                "id": "BT_HCI_LOG_ADV_BUFFER_SIZE",
+                                "name": "BT_HCI_LOG_ADV_BUFFER_SIZE",
+                                "range": null,
+                                "title": "Size of the cache used for adv report in Bluetooth HCI debug mode (N*1024 bytes)",
+                                "type": "int"
+                            }
+                        ],
+                        "depends_on": "BT_BLUEDROID_ENABLED || BT_NIMBLE_ENABLED",
+                        "help": "This option is used to enable bluetooth debug mode, which saves the hci layer data stream.",
+                        "id": "BT_HCI_LOG_DEBUG_EN",
+                        "name": "BT_HCI_LOG_DEBUG_EN",
+                        "range": null,
+                        "title": "Enable Bluetooth HCI debug mode",
+                        "type": "bool"
+                    },
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "depends_on": null,
+                                "help": "This option decides the maximum number of alarms which\ncould be used by Bluetooth host.",
+                                "id": "BT_ALARM_MAX_NUM",
+                                "name": "BT_ALARM_MAX_NUM",
+                                "range": null,
+                                "title": "Maximum number of Bluetooth alarms",
+                                "type": "int"
+                            }
+                        ],
+                        "depends_on": null,
+                        "id": "component-config-bluetooth-common-options",
+                        "title": "Common Options",
+                        "type": "menu"
                     }
                 ],
                 "depends_on": null,
@@ -16579,12 +17052,12 @@
                     },
                     {
                         "children": [],
-                        "depends_on": "SOC_USB_OTG_SUPPORTED || ESP_CONSOLE_USB_SERIAL_JTAG || ESP_CONSOLE_SECONDARY_USB_SERIAL_JTAG",
-                        "help": "When using USB Serial/JTAG/OTG/CDC, PHY should enable USB, otherwise USB module\ncan not work properly. Notice: Enabling this configuration option will slightly impact wifi performance.",
+                        "depends_on": "SOC_WIFI_PHY_NEEDS_USB_WORKAROUND",
+                        "help": "On some ESP targets, the USB PHY can interfere with WiFi thus lowering WiFi performance. As a result, on\nthose affected ESP targets, the ESP PHY library's initialization will automatically disable the USB PHY to\nget best WiFi performance. This option controls whether or not the ESP PHY library will keep the USB PHY\nenabled on initialization.\n\nNote: This option can be disabled to increase WiFi performance. However, disabling this option will also\nmean that the USB PHY cannot be used while WiFi is enabled.",
                         "id": "ESP_PHY_ENABLE_USB",
                         "name": "ESP_PHY_ENABLE_USB",
                         "range": null,
-                        "title": "Enable USB when phy init",
+                        "title": "Keep the USB PHY enabled when initializing WiFi",
                         "type": "bool"
                     },
                     {
@@ -16655,6 +17128,16 @@
                         "name": "ESP_PHY_IMPROVE_RX_11B",
                         "range": null,
                         "title": "Improve Wi-Fi receive 11b pkts",
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": "If enabled, there will be some logs while pll tracking",
+                        "id": "ESP_PHY_PLL_TRACK_DEBUG",
+                        "name": "ESP_PHY_PLL_TRACK_DEBUG",
+                        "range": null,
+                        "title": "Enable pll track logging",
                         "type": "bool"
                     }
                 ],
@@ -17672,7 +18155,7 @@
                             },
                             {
                                 "children": [],
-                                "depends_on": "<choice ESP_SYSTEM_PANIC>",
+                                "depends_on": "ESP_GDBSTUB_ENABLED && <choice ESP_SYSTEM_PANIC>",
                                 "help": "Invoke gdbstub on the serial port, allowing for gdb to attach to it to do a postmortem\nof the crash.",
                                 "id": "ESP_SYSTEM_PANIC_GDBSTUB",
                                 "name": "ESP_SYSTEM_PANIC_GDBSTUB",
@@ -19552,7 +20035,7 @@
                             },
                             {
                                 "children": [],
-                                "depends_on": "ESP_COREDUMP_DATA_FORMAT_ELF && IDF_TARGET_ESP32 && <choice ESP_COREDUMP_CHECKSUM>",
+                                "depends_on": "ESP_COREDUMP_DATA_FORMAT_ELF && <choice ESP_COREDUMP_CHECKSUM>",
                                 "help": null,
                                 "id": "ESP_COREDUMP_CHECKSUM_SHA256",
                                 "name": "ESP_COREDUMP_CHECKSUM_SHA256",
@@ -20483,6 +20966,16 @@
                                 "range": null,
                                 "title": "configUSE_TICKLESS_IDLE",
                                 "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": null,
+                                "help": "Enables task tagging functionality and its associated API (see configUSE_APPLICATION_TASK_TAG\ndocumentation for more details).",
+                                "id": "FREERTOS_USE_APPLICATION_TASK_TAG",
+                                "name": "FREERTOS_USE_APPLICATION_TASK_TAG",
+                                "range": null,
+                                "title": "configUSE_APPLICATION_TASK_TAG",
+                                "type": "bool"
                             }
                         ],
                         "depends_on": null,
@@ -20494,7 +20987,7 @@
                         "children": [
                             {
                                 "children": [],
-                                "depends_on": "COMPILER_OPTIMIZATION_DEBUG || ESP_COREDUMP_ENABLE || ESP_GDBSTUB_ENABLED",
+                                "depends_on": "COMPILER_OPTIMIZATION_DEBUG || ESP_COREDUMP_ENABLE || ESP_SYSTEM_PANIC_GDBSTUB || ESP_SYSTEM_GDBSTUB_RUNTIME",
                                 "help": "If enabled, all FreeRTOS task functions will be enclosed in a wrapper function. If a task function\nmistakenly returns (i.e. does not delete), the call flow will return to the wrapper function. The\nwrapper function will then log an error and abort the application. This option is also required for GDB\nbacktraces and C++ exceptions to work correctly inside top-level task functions.",
                                 "id": "FREERTOS_TASK_FUNCTION_WRAPPER",
                                 "name": "FREERTOS_TASK_FUNCTION_WRAPPER",
@@ -23649,7 +24142,7 @@
                                     }
                                 ],
                                 "depends_on": "MBEDTLS_DYNAMIC_BUFFER",
-                                "help": "Free private key and DHM data after its usage in handshake process.\n\nThe option will decrease heap cost when handshake, but also lead to problem:\n\nBecasue all certificate, private key and DHM data are freed so users should register\ncertificate and private key to ssl config object again.",
+                                "help": "Free private key and DHM data after its usage in handshake process.\n\nThe option will decrease heap cost when handshake, but also lead to problem:\n\nBecause all certificate, private key and DHM data are freed so users should register\ncertificate and private key to ssl config object again.",
                                 "id": "MBEDTLS_DYNAMIC_FREE_CONFIG_DATA",
                                 "name": "MBEDTLS_DYNAMIC_FREE_CONFIG_DATA",
                                 "range": null,
@@ -24067,6 +24560,16 @@
                                 "range": null,
                                 "title": "Enable partially hardware accelerated GCM",
                                 "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "MBEDTLS_HARDWARE_AES",
+                                "help": "Enable this config to support fallback to software definitions for a non-AES\ncipher GCM operation as we support hardware acceleration only for AES cipher.\nSome of the non-AES ciphers used in a GCM operation are DES, ARIA, CAMELLIA,\nCHACHA20, BLOWFISH.\n\nIf this config is disabled, performing a non-AES cipher GCM operation with\nthe config MBEDTLS_HARDWARE_AES enabled will result in calculation of an\nAES-GCM operation instead for the given input values and thus could lead\nto failure in certificate validation which would ultimately lead to a SSL\nhandshake failure.\n\nThis config being by-default enabled leads to an increase in binary size\nfootprint of ~2.5KB.\nIn case you are sure that your use case (for example, client and server\nconfigurations in case of a TLS handshake) would not involve any GCM\noperations using a non-AES cipher, you can safely disable this config,\nleading to reduction in binary size footprint.",
+                                "id": "MBEDTLS_GCM_SUPPORT_NON_AES_CIPHER",
+                                "name": "MBEDTLS_GCM_SUPPORT_NON_AES_CIPHER",
+                                "range": null,
+                                "title": "Enable support for non-AES ciphers in GCM operation",
+                                "type": "bool"
                             }
                         ],
                         "depends_on": "!SPIRAM_CACHE_WORKAROUND_STRATEGY_DUPLDST && SOC_AES_SUPPORTED",
@@ -24079,6 +24582,16 @@
                     },
                     {
                         "children": [
+                            {
+                                "children": [],
+                                "depends_on": "MBEDTLS_HARDWARE_MPI",
+                                "help": "Fallback to software implementation for RSA key lengths\nlarger than SOC_RSA_MAX_BIT_LEN. If this is not active\nthen the ESP will be unable to process keys greater\nthan SOC_RSA_MAX_BIT_LEN.",
+                                "id": "MBEDTLS_LARGE_KEY_SOFTWARE_MPI",
+                                "name": "MBEDTLS_LARGE_KEY_SOFTWARE_MPI",
+                                "range": null,
+                                "title": "Fallback to software implementation for larger MPI values",
+                                "type": "bool"
+                            },
                             {
                                 "children": [
                                     {
@@ -24657,7 +25170,7 @@
                             {
                                 "children": [],
                                 "depends_on": null,
-                                "help": "Support for parsing X.509 Certifificate Revocation Lists.",
+                                "help": "Support for parsing X.509 Certificate Revocation Lists.",
                                 "id": "MBEDTLS_X509_CRL_PARSE_C",
                                 "name": "MBEDTLS_X509_CRL_PARSE_C",
                                 "range": null,
@@ -24667,7 +25180,7 @@
                             {
                                 "children": [],
                                 "depends_on": null,
-                                "help": "Support for parsing X.509 Certifificate Signing Requests",
+                                "help": "Support for parsing X.509 Certificate Signing Requests",
                                 "id": "MBEDTLS_X509_CSR_PARSE_C",
                                 "name": "MBEDTLS_X509_CSR_PARSE_C",
                                 "range": null,
@@ -24946,12 +25459,12 @@
                     },
                     {
                         "children": [],
-                        "depends_on": "MBEDTLS_HARDWARE_MPI",
-                        "help": "Fallback to software implementation for RSA key lengths\nlarger than SOC_RSA_MAX_BIT_LEN. If this is not active\nthen the ESP will be unable to process keys greater\nthan SOC_RSA_MAX_BIT_LEN.",
-                        "id": "MBEDTLS_LARGE_KEY_SOFTWARE_MPI",
-                        "name": "MBEDTLS_LARGE_KEY_SOFTWARE_MPI",
+                        "depends_on": null,
+                        "help": "Enables mbedtls_strerror() for converting error codes to error strings.\nDisabling this config can save some code/rodata size as the error\nstring conversion implementation is replaced with an empty stub.",
+                        "id": "MBEDTLS_ERROR_STRINGS",
+                        "name": "MBEDTLS_ERROR_STRINGS",
                         "range": null,
-                        "title": "Fallback to software implementation for larger MPI values",
+                        "title": "Enable error code to error string conversion",
                         "type": "bool"
                     },
                     {
@@ -25946,6 +26459,16 @@
                     },
                     {
                         "children": [],
+                        "depends_on": "OPENTHREAD_ENABLED || OPENTHREAD_SPINEL_ONLY",
+                        "help": "The maximum number of backoffs the CSMA-CA algorithm will attempt before declaring a channel access\nfailure.",
+                        "id": "OPENTHREAD_MAC_MAX_CSMA_BACKOFFS_DIRECT",
+                        "name": "OPENTHREAD_MAC_MAX_CSMA_BACKOFFS_DIRECT",
+                        "range": null,
+                        "title": "Maximum backoffs times before declaring a channel access failure.",
+                        "type": "int"
+                    },
+                    {
+                        "children": [],
                         "depends_on": "OPENTHREAD_ENABLED",
                         "help": null,
                         "id": "OPENTHREAD_MLE_MAX_CHILDREN",
@@ -26088,7 +26611,7 @@
                     {
                         "children": [],
                         "depends_on": "OPENTHREAD_FTD || OPENTHREAD_MTD",
-                        "help": "Select this option to enable the radio statistics feature, you can use radio command to print some radio\nStatistics informations.",
+                        "help": "Select this option to enable the radio statistics feature, you can use radio command to print some radio\nStatistics information.",
                         "id": "OPENTHREAD_RADIO_STATS_ENABLE",
                         "name": "OPENTHREAD_RADIO_STATS_ENABLE",
                         "range": null,
@@ -26108,11 +26631,11 @@
                     {
                         "children": [],
                         "depends_on": null,
-                        "help": "Select this option to enable OpenThread radio capibility rx on when idle. Do not support this feature when\nSW coexistence is enabled.",
+                        "help": "Select this option to enable OpenThread radio capability rx on when idle. Do not support this feature when\nSW coexistence is enabled.",
                         "id": "OPENTHREAD_RX_ON_WHEN_IDLE",
                         "name": "OPENTHREAD_RX_ON_WHEN_IDLE",
                         "range": null,
-                        "title": "Enable OpenThread radio capibility rx on when idle",
+                        "title": "Enable OpenThread radio capability rx on when idle",
                         "type": "bool"
                     },
                     {

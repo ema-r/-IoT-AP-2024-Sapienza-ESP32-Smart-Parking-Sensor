@@ -318,7 +318,7 @@ rule C_STATIC_LIBRARY_LINKER____idf_main_
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /usr/bin/cmake --regenerate-during-build -S/home/fracchio/esp/esp-idf/components/bootloader/subproject -B/home/fracchio/Scrivania/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/bootloader
+  command = /usr/bin/cmake --regenerate-during-build -S/home/fracchio/esp/esp-idf/components/bootloader/subproject -B/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/bootloader
   description = Re-running CMake...
   generator = 1
 
@@ -335,7 +335,7 @@ rule CLEAN_ADDITIONAL
 # Rule for cleaning all built files.
 
 rule CLEAN
-  command = /usr/bin/ninja $FILE_ARG -t clean $TARGETS
+  command = /home/fracchio/.espressif/tools/ninja/1.11.1/ninja $FILE_ARG -t clean $TARGETS
   description = Cleaning all built files...
 
 
@@ -343,6 +343,6 @@ rule CLEAN
 # Rule for printing all primary targets available.
 
 rule HELP
-  command = /usr/bin/ninja -t targets
+  command = /home/fracchio/.espressif/tools/ninja/1.11.1/ninja -t targets
   description = All primary targets available:
 
