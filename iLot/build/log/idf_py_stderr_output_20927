@@ -1,0 +1,42 @@
+[0;33m--- esp-idf-monitor 1.4.0 on /dev/ttyUSB0 115200 ---[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---[0m
+[0;33m0x40375b9a: panic_abort at /home/fracchio/esp/esp-idf/components/esp_system/panic.c:466
+0x4037c1f9: esp_system_abort at /home/fracchio/esp/esp-idf/components/esp_system/port/esp_system_chip.c:93
+0x4038399d: __assert_func at /home/fracchio/esp/esp-idf/components/newlib/assert.c:81
+0x403822ce: tlsf_free at /home/fracchio/esp/esp-idf/components/heap/tlsf/tlsf.c:1120 (discriminator 1)
+0x40382154: multi_heap_free_impl at /home/fracchio/esp/esp-idf/components/heap/multi_heap.c:234
+0x403764c6: heap_caps_free at /home/fracchio/esp/esp-idf/components/heap/heap_caps.c:393
+0x403839b9: free at /home/fracchio/esp/esp-idf/components/newlib/heap.c:39
+0x4200934b: app_main at /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/main/iLot.c:76
+0x42036567: main_task at /home/fracchio/esp/esp-idf/components/freertos/app_startup.c:208
+0x4037cc61: vPortTaskWrapper at /home/fracchio/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x40375b10: esp_restart_noos at /home/fracchio/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m0x40375b9a: panic_abort at /home/fracchio/esp/esp-idf/components/esp_system/panic.c:466
+0x4037c1f9: esp_system_abort at /home/fracchio/esp/esp-idf/components/esp_system/port/esp_system_chip.c:93
+0x4038399d: __assert_func at /home/fracchio/esp/esp-idf/components/newlib/assert.c:81
+0x403822ce: tlsf_free at /home/fracchio/esp/esp-idf/components/heap/tlsf/tlsf.c:1120 (discriminator 1)
+0x40382154: multi_heap_free_impl at /home/fracchio/esp/esp-idf/components/heap/multi_heap.c:234
+0x403764c6: heap_caps_free at /home/fracchio/esp/esp-idf/components/heap/heap_caps.c:393
+0x403839b9: free at /home/fracchio/esp/esp-idf/components/newlib/heap.c:39
+0x4200934b: app_main at /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/main/iLot.c:76
+0x42036567: main_task at /home/fracchio/esp/esp-idf/components/freertos/app_startup.c:208
+0x4037cc61: vPortTaskWrapper at /home/fracchio/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x40375b10: esp_restart_noos at /home/fracchio/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m0x40375b9a: panic_abort at /home/fracchio/esp/esp-idf/components/esp_system/panic.c:466
+0x4037c1f9: esp_system_abort at /home/fracchio/esp/esp-idf/components/esp_system/port/esp_system_chip.c:93
+0x4038399d: __assert_func at /home/fracchio/esp/esp-idf/components/newlib/assert.c:81
+0x403822ce: tlsf_free at /home/fracchio/esp/esp-idf/components/heap/tlsf/tlsf.c:1120 (discriminator 1)
+0x40382154: multi_heap_free_impl at /home/fracchio/esp/esp-idf/components/heap/multi_heap.c:234
+0x403764c6: heap_caps_free at /home/fracchio/esp/esp-idf/components/heap/heap_caps.c:393
+0x403839b9: free at /home/fracchio/esp/esp-idf/components/newlib/heap.c:39
+0x4200934b: app_main at /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/main/iLot.c:76
+0x42036567: main_task at /home/fracchio/esp/esp-idf/components/freertos/app_startup.c:208
+0x4037cc61: vPortTaskWrapper at /home/fracchio/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x40375b10: esp_restart_noos at /home/fracchio/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0m

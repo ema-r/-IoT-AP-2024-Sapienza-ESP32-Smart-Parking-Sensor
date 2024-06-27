@@ -18,6 +18,7 @@ if("${CONFIG}" STREQUAL "" OR "${CONFIG}" STREQUAL "")
   "iLot.map"
   "ldgen_libraries"
   "ldgen_libraries.in"
+  "private_key_client.pem.S"
   "project_elf_src_esp32s3.c"
   "x509_crt_bundle.S"
   )

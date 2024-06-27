@@ -1,0 +1,295 @@
+generated siganture:
+4776a821f31624cc07d4a4eda4eb53aaa77cffd2351341fb8a71d147292c03a8896207655af9cb7f51eaa9d0920e628c993f7816187c9faaaca8551e196a918baf0ab5f6fc81fbaa5638672b1e64bbe8a4a36f6e50d113db6b26322b0e43885b020fe3970f53e7d76a16d951d77417aa2aabd8dd5c55abdb92800b92bfbc9439d29a92f69b3961a19c587465dafaf5e8a6f6aa4aff0961e7be0f183d696d62bfaaeef522fa0ea0614387a7a50c0aa91ebce147a7e38416a654a60593add8ea32830b55eed2755385c38509abc216ae94c0a5314c993afd9678b5b78edd556c72d84d0acde09dae7a917f783b8f08deb9a8c630f3b0697d0b5a7d52c641eb3164
+the signature lenght is 256
+I am sending this message: QQ==:MA==:d2FrZSB1cCBudW1iZXIgMA==:R3aoIfMWJMwH1KTtpOtTqqd8/9I1E0H7inHRRyksA6iJYgdlWvnLf1HqqdCSDmKMmT94Fhh8n6qsqFUeGWqRi68Ktfb8gfuqVjhnKx5ku+iko29uUNET22smMisOQ4hbAg/jlw9T59dqFtlR13QXqiqr2N1cVavbkoALkr+8lDnSmpL2mzlhoZxYdGXa+vXopvaqSv8JYee+Dxg9aW1iv6ru9SL6DqBhQ4enpQwKqR684Uen44QWplSmBZOt2OoygwtV7tJ1U4XDhQmrwhaulMClMUyZOv2WeLW3jt1VbHLYTQrN4J2uepF/eDuPCN65qMYw87BpfQtafVLGQesxZA==
+[0;32mI (1428) LORA: Start[0m
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x9 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3810,len:0x178c
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xcbc
+load:0x403cc700,len:0x2d9c
+entry 0x403c9914
+[0;32mI (27) boot: ESP-IDF v5.2.2 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Jun 26 2024 15:39:06[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (34) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (38) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (53) boot: Partition Table:[0m
+[0;32mI (57) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (64) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (72) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (79) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (87) boot: End of partition table[0m
+[0;32mI (91) esp_image: segment 0: paddr=00010020 vaddr=3c040020 size=1b238h (111160) map[0m
+[0;32mI (119) esp_image: segment 1: paddr=0002b260 vaddr=3fc95a00 size=02b5ch ( 11100) load[0m
+[0;32mI (122) esp_image: segment 2: paddr=0002ddc4 vaddr=40374000 size=02254h (  8788) load[0m
+[0;32mI (127) esp_image: segment 3: paddr=00030020 vaddr=42000020 size=373fch (226300) map[0m
+[0;32mI (174) esp_image: segment 4: paddr=00067424 vaddr=40376254 size=0f78ch ( 63372) load[0m
+[0;32mI (188) esp_image: segment 5: paddr=00076bb8 vaddr=50000000 size=00004h (     4) load[0m
+[0;32mI (189) esp_image: segment 6: paddr=00076bc4 vaddr=600fe000 size=00070h (   112) load[0m
+[0;32mI (201) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (201) boot: Disabling RNG early entropy source...[0m
+[0;32mI (217) cpu_start: Multicore app[0m
+[0;32mI (227) cpu_start: Pro cpu start user code[0m
+[0;32mI (227) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (227) cpu_start: Application information:[0m
+[0;32mI (230) cpu_start: Project name:     iLot[0m
+[0;32mI (235) cpu_start: App version:      8e7953c-dirty[0m
+[0;32mI (240) cpu_start: Compile time:     Jun 26 2024 15:38:49[0m
+[0;32mI (246) cpu_start: ELF file SHA256:  8fd9eb9d1...[0m
+[0;32mI (252) cpu_start: ESP-IDF:          v5.2.2[0m
+[0;32mI (256) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (261) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (266) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (271) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (278) heap_init: At 3FC99198 len 00050578 (321 KiB): RAM[0m
+[0;32mI (284) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (290) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (296) heap_init: At 600FE070 len 00001F78 (7 KiB): RTCRAM[0m
+[0;32mI (304) spif[0m
+[0;32mI (348) main_task: Calling app_main()[0m
+[0;32mI (348) LORA: Frequency is 868MHz[0m
+[0;32mI (348) RA01S: CONFIG_MISO_GPIO=11[0m
+[0;32mI (358) RA01S: CONFIG_MOSI_GPIO=10[0m
+[0;32mI (358) RA01S: CONFIG_SCLK_GPIO=9[0m
+[0;32mI (358) RA01S: CONFIG_NSS_GPIO=8[0m
+[0;32mI (368) RA01S: CONFIG_RST_GPIO=12[0m
+[0;32mI (368) RA01S: CONFIG_BUSY_GPIO=13[0m
+[0;32mI (378) RA01S: CONFIG_TXEN_GPIO=-1[0m
+[0;32mI (378) RA01S: CONFIG_RXEN_GPIO=-1[0m
+[0;32mI (378) gpio: GPIO[8]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (388) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (398) gpio: GPIO[13]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (408) RA01S: spi_bus_initialize=0[0m
+[0;32mI (418) RA01S: spi_bus_add_device=0[0m
+[0;33mW (418) LORA: Enable TCXO[0m
+[0;32mI (458) RA01S: Reset[0m
+[0;32mI (458) RA01S: syncWord=0x1424[0m
+[0;32mI (458) RA01S: SX126x installed[0m
+[0;33mW (458) RA01S: WriteCommand2 status=0a retry=1[0m
+[0;32mI (468) RA01S: tcxoVoltage=3.300000[0m
+[0;32mI (478) RA01S: useRegulatorLDO=1[0m
+[0;32mI (488) RA01S: SetStopRxTimerOnPreambleDetect enable=0[0m
+the private key is (in char*) and the lenght is1704:
+ -----BEGIN PRIVATE KEY-----
+MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDOi2NsBxPl7LBh
+QzrP3wL5vstzf99aHWHq4sh6m5RlxaK0bOsee13iJPw7LLDlw5SwqRDvsCD1JCtf
+PdpXf8aR9ujXK2s4/UgAsm6oKB3VI0/NYWXyXPlDDIWF6BJbApLzJRZUUSdQyvbo
+9vB0xO2Q1iJjOd9VCtlzfnu0Z9OgNqDzuQ+6cCmwXppPfEJDP6Pc9c7Dy2GDxFCn
+7gZGC4iB0gzam7sv/U53orhHnq17XlQih/3CvapEX8GHb6mVLfWHWwWeP/4ICDkM
+1VXRW28yWr8m8kAxBqBzXNGN7LxGKgWxuiWErRJAqxCU4HtD9we7WVfH9x5GKdfK
+D+vJzKUlAgMBAAECggEABF2fYhzrL4C3gLLMVzD6Td+Zyszw4mV9GJsnDCpmMlmB
+VSl5Ncl7REiuWSzaZ1zhM3O7YymYpL3ZOdfjmdZeUt8CcGvfRhLadwNOgfjpGoR2
+zxtILZ2H+kIVP22Wl7xf8Uo/JNSbTWKg4e84SWuRLu7LxsemIBTM4FtTz44jQ79i
+IXu46oNgBnNPviA+uygqd2F8BcO2STYC4BqiP3OR7sV+wPCd/Xx7GDAL7CITStrD
+DAK2KMNmU4kjDaBGs0wB9pdm8TXdS/78FXF7lmb+njPtw/Vryj0i64gjc3Fo7f+c
+ASAp5tPMiHbxzE5694xKmr5B3a7VgWHHob8424/3AQKBgQDso6bRnet9iY3DQIBC
+h8MsW4AzXEiEq6B4jD/Sht0OnKoCGKvkIGeMNMCzQxEd68Qnm4R6afrW8o4DL6AX
+t96NaV3iZX9q3MPrDFuLJnA+NQD16lIBVc1VTyKpMdWpf/bKst4YsuzcjuoOH3so
+Mnxl1d70ori0qby2DOu2CCymJQKBgQDfcWjLuGSaErPKRbwhG46lsrgEDMZyCqzc
+SobR7GZayPDfklPVAkjRtRysscLYJ97wdj29v97yAlBpDbCOBCxKwtvprjslGQL2
+L92gXmUFD+o3ZqJqz2jxkqMJh1BXB7S7QJ5pr2Lo0DRfC5cUIyBTz2tl4eRU9yic
+87tcSBpTAQKBgF0LyCc56gOVl5lDfmsqiLKjU9heG+GWvmVH+DxmbPs23J4wZz4v
+A6gcgfy6jTtvndRZERE1JL1p6C8WheNtl+OQn6rKb/xry9lbJY+kUJQVMUiAlzgR
+LciychWHE9UvDLIM/MlHaV0cEKn29O0MVN+R5bXZWbkn2JzYncIYmr3FAoGBAIY2
+M7EyR9M36qBTtMXaLJugtuFP3x7/BIepiEOtkGl1iyFvXkVzAtRbyiZ8+8Ekacfb
+7gf8qOiKtUv0uhkDrqsVUkyRp9sHo/zGEYRTTrB0t8WhM2ueu7Vm0+FUUtCDw246
+SSzH+UxISzzP1GZ3FuLgkuz2e1UBxHZJ/D9Y298BAoGAVTG9P5Ux5uG5kcaGuPLl
+gAO4n9d4jmhEkekENcqxoOFYNUbfwzDp90wShoqBbTyWhVtAgBI6U4JCJ+/NyNQU
+aUah6CWSTA3g12Q+d1qrWbtSR+oMaaXOewh+BBEBKZTuYE2HdUVxB1MWwCci2qt4
+jvd27g9pgoCJ/nI52b0qCo8=
+-----END PRIVATE KEY-----
+,
+the key is: 
+-----BEGIN RSA PRIVATE KEY-----
+MIIEowIBAAKCAQEAzotjbAcT5eywYUM6z98C+b7Lc3/fWh1h6uLIepuUZcWitGzr
+Hntd4iT8Oyyw5cOUsKkQ77Ag9SQrXz3aV3/Gkfbo1ytrOP1IALJuqCgd1SNPzWFl
+8lz5QwyFhegSWwKS8yUWVFEnUMr26PbwdMTtkNYiYznfVQrZc357tGfToDag87kP
+unApsF6aT3xCQz+j3PXOw8thg8RQp+4GRguIgdIM2pu7L/1Od6K4R56te15UIof9
+wr2qRF/Bh2+plS31h1sFnj/+CAg5DNVV0VtvMlq/JvJAMQagc1zRjey8RioFsbol
+hK0SQKsQlOB7Q/cHu1lXx/ceRinXyg/rycylJQIDAQABAoIBAARdn2Ic6y+At4Cy
+zFcw+k3fmcrM8OJlfRibJwwqZjJZgVUpeTXJe0RIrlks2mdc4TNzu2MpmKS92TnX
+45nWXlLfAnBr30YS2ncDToH46RqEds8bSC2dh/pCFT9tlpe8X/FKPyTUm01ioOHv
+OElrkS7uy8bHpiAUzOBbU8+OI0O/YiF7uOqDYAZzT74gPrsoKndhfAXDtkk2AuAa
+oj9zke7FfsDwnf18exgwC+wiE0rawwwCtijDZlOJIw2gRrNMAfaXZvE13Uv+/BVx
+e5Zm/p4z7cP1a8o9IuuII3NxaO3/nAEgKebTzIh28cxOeveMSpq+Qd2u1YFhx6G/
+ONuP9wECgYEA7KOm0Z3rfYmNw0CAQofDLFuAM1xIhKugeIw/0obdDpyqAhir5CBn
+jDTAs0MRHevEJ5uEemn61vKOAy+gF7fejWld4mV/atzD6wxbiyZwPjUA9epSAVXN
+VU8iqTHVqX/2yrLeGLLs3I7qDh97KDJ8ZdXe9KK4tKm8tgzrtggspiUCgYEA33Fo
+y7hkmhKzykW8IRuOpbK4BAzGcgqs3EqG0exmWsjw35JT1QJI0bUcrLHC2Cfe8HY9
+vb/e8gJQaQ2wjgQsSsLb6a47JRkC9i/doF5lBQ/qN2aias9o8ZKjCYdQVwe0u0Ce
+aa9i6NA0XwuXFCMgU89rZeHkVPconPO7XEgaUwECgYBdC8gnOeoDlZeZQ35rKoiy
+o1PYXhvhlr5lR/g8Zmz7NtyeMGc+LwOoHIH8uo07b53UWRERNSS9aegvFoXjbZfj
+kJ+qym/8a8vZWyWPpFCUFTFIgJc4ES3IsnIVhxPVLwyyDPzJR2ldHBCp9vTtDFTf
+keW12Vm5J9ic2J3CGJq9xQKBgQCGNjOxMkfTN+qgU7TF2iyboLbhT98e/wSHqYhD
+rZBpdYshb15FcwLUW8omfPvBJGnH2+4H/KjoirVL9LoZA66rFVJMkafbB6P8xhGE
+U06wdLfFoTNrnru1ZtPhVFLQg8NuOkksx/lMSEs8z9Rmdxbi4JLs9ntVAcR2Sfw/
+WNvfAQKBgFUxvT+VMebhuZHGhrjy5YADuJ/XeI5oRJHpBDXKsaDhWDVG38Mw6fdM
+EoaKgW08loVbQIASOlOCQifvzcjUFGlGoeglkkwN4NdkPndaq1m7UkfqDGmlznsI
+fgQRASmU7mBNh3VFcQdTFsAnItqreI73du4PaYKAif5yOdm9KgqP
+-----END RSA PRIVATE KEY-----
+
+starting digital signature process
+a3996cf32d6e5ed71d028532cd4341fd8751fca9ba1bca523b9589cec63398b9
+generated siganture:
+4776a821f31624cc07d4a4eda4eb53aaa77cffd2351341fb8a71d147292c03a8896207655af9cb7f51eaa9d0920e628c993f7816187c9faaaca8551e196a918baf0ab5f6fc81fbaa5638672b1e64bbe8a4a36f6e50d113db6b26322b0e43885b020fe3970f53e7d76a16d951d77417aa2aabd8dd5c55abdb92800b92bfbc9439d29a92f69b3961a19c587465dafaf5e8a6f6aa4aff0961e7be0f183d696d62bfaaeef522fa0ea0614387a7a50c0aa91ebce147a7e38416a654a60593add8ea32830b55eed2755385c38509abc216ae94c0a5314c993afd9678b5b78edd556c72d84d0acde09dae7a917f783b8f08deb9a8c630f3b0697d0b5a7d52c641eb3164
+the signature lenght is 256
+I am sending this message: QQ==:MA==:d2FrZSB1cCBudW1iZXIgMA==:R3aoIfMWJMwH1KTtpOtTqqd8/9I1E0H7inHRRyksA6iJYgdlWvnLf1HqqdCSDmKMmT94Fhh8n6qsqFUeGWqRi68Ktfb8gfuqVjhnKx5ku+iko29uUNET22smMisOQ4hbAg/jlw9T59dqFtlR13QXqiqr2N1cVavbkoALkr+8lDnSmpL2mzlhoZxYdGXa+vXopvaqSv8JYee+Dxg9aW1iv6ru9SL6DqBhQ4enpQwKqR684Uen44QWplSmBZOt2OoygwtV7tJ1U4XDhQmrwhaulMClMUyZOv2WeLW3jt1VbHLYTQrN4J2uepF/eDuPCN65qMYw87BpfQtafVLGQesxZA==
+[0;32mI (1428) LORA: Start[0m
+[0;32mI (1668) LORA: Send success[0m
+wake up number 0
+Entering deep sleep...
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x5 (DSLEEP),boot:0x9 (SPI_FAST_FLASH_BOOT)
+pro cpu reset by JTAG
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3810,len:0x178c
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xcbc
+load:0x403cc700,len:0x2d9c
+entry 0x403c9914
+[0;32mI (28) boot: ESP-IDF v5.2.2 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Jun 26 2024 15:39:06[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v0.2[0m
+[0;32mI (36) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (40) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (45) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (50) boot: Enabling RNG early entropy source...[0m
+[0;32mI (55) boot: Partition Table:[0m
+[0;32mI (59) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (66) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (74) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (81) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (89) boot: End of partition table[0m
+[0;32mI (93) esp_image: segment 0: paddr=00010020 vaddr=3c040020 size=1b238h (111160) map[0m
+[0;32mI (121) esp_image: segment 1: paddr=0002b260 vaddr=3fc95a00 size=02b5ch ( 11100) load[0m
+[0;32mI (124) esp_image: segment 2: paddr=0002ddc4 vaddr=40374000 size=02254h (  8788) load[0m
+[0;32mI (129) esp_image: segment 3: paddr=00030020 vaddr=42000020 size=373fch (226300) map[0m
+[0;32mI (176) esp_image: segment 4: paddr=00067424 vaddr=40376254 size=0f78ch ( 63372) load[0m
+[0;32mI (190) esp_image: segment 5: paddr=00076bb8 vaddr=50000000 size=00004h (     4) [0m
+[0;32mI (190) esp_image: segment 6: paddr=00076bc4 vaddr=600fe000 size=00070h (   112) [0m
+[0;32mI (202) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (203) boot: Disabling RNG early entropy source...[0m
+[0;32mI (218) cpu_start: Multicore app[0m
+[0;32mI (228) cpu_start: Pro cpu start user code[0m
+[0;32mI (228) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (228) cpu_start: Application information:[0m
+[0;32mI (231) cpu_start: Project name:     iLot[0m
+[0;32mI (236) cpu_start: App version:      8e7953c-dirty[0m
+[0;32mI (241) cpu_start: Compile time:     Jun 26 2024 15:38:49[0m
+[0;32mI (247) cpu_start: ELF file SHA256:  8fd9eb9d1...[0m
+[0;32mI (253) cpu_start: ESP-IDF:          v5.2.2[0m
+[0;32mI (258) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (262) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (267) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (272) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (279) heap_init: At 3FC99198 len 00050578 (321 KiB): RAM[0m
+[0;32mI (285) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (291) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (297) heap_init: At 600FE070 len 00001F78 (7 KiB): RTCRAM[0m
+[0;32mI (305) spi_flash: detected chip: gd[0m
+[0;32mI (308) spi_flash: flash io: dio[0m
+[0;33mW (312) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (325) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (332) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (339) main_task: Started on CPU0[0m
+[0;32mI (349) main_task: Calling app_main()[0m
+[0;32mI (349) LORA: Frequency is 868MHz[0m
+[0;32mI (349) RA01S: CONFIG_MISO_GPIO=11[0m
+[0;32mI (359) RA01S: CONFIG_MOSI_GPIO=10[0m
+[0;32mI (359) RA01S: CONFIG_SCLK_GPIO=9[0m
+[0;32mI (359) RA01S: CONFIG_NSS_GPIO=8[0m
+[0;32mI (369) RA01S: CONFIG_RST_GPIO=12[0m
+[0;32mI (369) RA01S: CONFIG_BUSY_GPIO=13[0m
+[0;32mI (379) RA01S: CONFIG_TXEN_GPIO=-1[0m
+[0;32mI (379) RA01S: CONFIG_RXEN_GPIO=-1[0m
+[0;32mI (379) gpio: GPIO[8]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (389) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (399) gpio: GPIO[13]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (409) RA01S: spi_bus_initialize=0[0m
+[0;32mI (419) RA01S: spi_bus_add_device=0[0m
+[0;33mW (419) LORA: Enable TCXO[0m
+[0;32mI (459) RA01S: Reset[0m
+[0;32mI (459) RA01S: syncWord=0x1424[0m
+[0;32mI (459) RA01S: SX126x installed[0m
+[0;33mW (459) RA01S: WriteCommand2 status=0a retry=1[0m
+[0;32mI (469) RA01S: tcxoVoltage=3.300000[0m
+[0;32mI (479) RA01S: useRegulatorLDO=1[0m
+[0;32mI (489) RA01S: SetStopRxTimerOnPreambleDetect enable=0[0m
+the private key is (in char*) and the lenght is1704:
+ -----BEGIN PRIVATE KEY-----
+MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDOi2NsBxPl7LBh
+QzrP3wL5vstzf99aHWHq4sh6m5RlxaK0bOsee13iJPw7LLDlw5SwqRDvsCD1JCtf
+PdpXf8aR9ujXK2s4/UgAsm6oKB3VI0/NYWXyXPlDDIWF6BJbApLzJRZUUSdQyvbo
+9vB0xO2Q1iJjOd9VCtlzfnu0Z9OgNqDzuQ+6cCmwXppPfEJDP6Pc9c7Dy2GDxFCn
+7gZGC4iB0gzam7sv/U53orhHnq17XlQih/3CvapEX8GHb6mVLfWHWwWeP/4ICDkM
+1VXRW28yWr8m8kAxBqBzXNGN7LxGKgWxuiWErRJAqxCU4HtD9we7WVfH9x5GKdfK
+D+vJzKUlAgMBAAECggEABF2fYhzrL4C3gLLMVzD6Td+Zyszw4mV9GJsnDCpmMlmB
+VSl5Ncl7REiuWSzaZ1zhM3O7YymYpL3ZOdfjmdZeUt8CcGvfRhLadwNOgfjpGoR2
+zxtILZ2H+kIVP22Wl7xf8Uo/JNSbTWKg4e84SWuRLu7LxsemIBTM4FtTz44jQ79i
+IXu46oNgBnNPviA+uygqd2G8s0wB9pdm8TXdS/78FXF7lmb+njPtw/Vryj0i64gjc3Fo7f+c
+ASAp5tPMiHbxzE5694xKmr5B3a7VgWHHob8424/3AQKBgQDso6bRnet9iY3DQIBC
+h8MsW4AzXEiEq6B4jD/Sht0OnKoCGKvkIGeMNMCzQxEd68Qnm4R6afrW8o4DL6AX
+t96NaV3iZX9q3MPrDFuLJnA+NQD16lIBVc1VTyKpMdWpf/bKst4YsuzcjuoOH3so
+Mnxl1d70ori0qby2DOu2CCymJQKBgQDfcWjLuGSaErPKRbwhG46lsrgEDMZyCqzc
+SobR7GZayPDfklPVAkjRtRysscLYJ97wdj29v97yAlBpDbCOBCxKwtvprjslGQL2
+L92gXmUFD+o3ZqJqz2jxkqMJh1BXB7S7QJ5pr2Lo0DRfC5cUIyBTz2tl4eRU9yic
+87tcSBpTAQKBgD0fmsqiLKjU9heG+GWvmVH+DxmbPs23J4wZz4v
+A6gcgfy6jTtvndRZERE1JL1p6C8WheNtl+OQn6rKb/xry9lbJY+kUJQVMUiAlzgR
+LciychWHE9UvDLIM/MlHaV0cEKn29O0MVN+R5bXZWbkn2JzYncIYmr3FAoGBAIY2
+M7EyR9M36qBTtMXaLJugtuFP3x7/BIepiEOtkGl1iyFvXkVzAtRbyiZ8+8Ekacfb
+7gf8qOiKtUv0uhkDrqsVUkyRp9sHo/zGEYRTTrB0t8WhM2ueu7Vm0+FUUtCDw246
+SSzH+UxISzzP1GZ3FuLgkuz2e1UBxHZJ/D9Y298BAoGAVTG9P5Ux5uG5kcaGuPLl
+gAO4n9d4jmhEkekENcqxoOFYNUbfwzDp90wShoqBbTyWhVtAgBZ6TuYE2HdUVxB1MWwCci2qt4
+jvd27g9pgoCJ/nI52b0qCo8=
+-----END PRIVATE KEY-----
+,
+the key is: 
+-----BEGIN RSA PRIVATE KEY-----
+MIIEowIBAAKCAQEAzotjbAcT5eywYUM6z98C+b7Lc3/fWh1h6uLIepuUZcWitGzr
+Hntd4iT8Oyyw5cOUsKkQ77Ag9SQrXz3aV3/Gkfbo1ytrOP1IALJuqCgd1SNPzWFl
+8lz5QwyFhegSWwKS8yUWVFEnUMr26PbwdMTtkNYiYznfVQrZc357tGfToDag87kP
+unApsF6aT3xCQz+j3PXOw8thg8RQp+4GRguIgdIM2pu7L/1Od6K4R56te15UIof9
+wr2qRF/Bh2+plS31h1sFnj/+CAg5DNVV0VtvMlq/JvJAMQagc1zRjey8RioFsbol
+hK0SQKsQlOB7Q/cHu1lXx/ceRinXyg/rycylJQIDAQABAoIBAARdn2Ic6y+At4Cy
+zFcw+k3fmcrM8OJlfRibJwwqZjJZgVUpeTXJe0RIrlks2mdc4TNzu2MpmKS92TnX
+45nWXlLfAnBr30YS2ncDToH46RqEds8bSC2dh/pCFT9tlpe8X/FKPyTUm01ioOHv
+OElrkS7uy8bHpiAUzOBbU8+OI0O/YiF7uOqDYAZzT74gPrsoKndhfAXDtkk2AuAa
+oj9zke7FfsDwnf18exgwC+wiE0rawwwCtijDZlOJIw2gRrNMAfaXZvE13Uv+/BVx
+e5Zm/p4z7cP1a8o9IuuII3NxaO3/nAEgKebTzIh28cxOeveMSpq+Qd2u1YFhx6G/
+ONuP9wECgYEA7KOm0Z3rfYmNw0CAQofDLFuAM1xIhKugeIw/0obdDpyqAhir5CBn
+jDTAs0MRHevEJ5uEemn61vKOAy+gF7fejWld4mV/atzD6wxbiyZwPjUA9epSAVXN
+VU8iqTHVqX/2yrLeGLLs3I7qDh97KDJ8ZdXe9KK4tKm8tgzrtggspiUCgYEA33Fo
+y7hkmhKzykW8IRuOpbK4BAzGcgqs3EqG0exmWsjw35JT1QJI0bUcrLHC2Cfe8HY9
+vb/e8gJQaQ2wjgQsSsLb6a47JRkC9i/doF5lBQ/qN2aias9o8ZKjCYdQVwe0u0Ce
+aa9i6NA0XwuXFCMgU89rZeHkVPconPO7XEgaUwECgYBdC8gnOeoDlZeZQ35rKoiy
+o1PYXhvhlr5lR/g8Zmz7NtyeMGc+LwOoHIH8uo07b53UWRERNSS9aegvFoXjbZfj
+kJ+qym/8a8vZWyWPpFCUFTFIgJc4ES3IsnIVhxPVLwyyDPzJR2ldHBCp9vTtDFTf
+keW12Vm5J9ic2J3CGJq9xQKBgQCGNjOxMkfTN+qgU7TF2iyboLbhT98e/wSHqYhD
+rZBpdYshb15FcwLUW8omfPvBJGnH2+4H/KjoirVL9LoZA66rFVJMkafbB6P8xhGE
+U06wdLfFoTNrnru1ZtPhVFLQg8NuOkksx/lMSEs8z9Rmdxbi4JLs9ntVAcR2Sfw/
+WNvfAQKBgFUxvT+VMebhuZHGhrjy5YADuJ/XeI5oRJHpBDXKsaDhWDVG38Mw6fdM
+EoaKgW08loVbQIASOlOCQifvzcjUFGlGoeglkkwN4NdkPndaq1m7UkfqDGmlznsI
+fgQRASmU7mBNh3VFcQdTFsAnItqreI73du4PaYKAif5yOdm9KgqP
+-----END RSA PRIVATE KEY-----
+
+starting digital signature process
+47255f5a64b5b16321394db970b98529c984b3ff252c222f7341bca558455813
+generated siganture:
+0879f46412eecd957af1d222972eaa9987fa14935b2c8b592aa6f94db14d9eec612d7d7ed95ca476b122cf251ed8da79f5b26e331ff2da28bdee503b9d9a5680b5dcc9bf4f9fe66aed8b1abfa97f1144bff451da672bdeda0cc7a3da2f891cf6b2baf5911c4fbce11932218bd965afd6756c5a28692ddce113b5b333f2304acb057269536688811caf610c7df080ff331ec0c37ac357cedc02a9e7d120527ba85eb7dbc0d7075c79115338756fa6b6a309618ef4897e1f3e098106199c1f5bee52f6a49e4c26913d13a8954f6896e78e655e412fd9e709dd8604e65b514004852a7c6433bba73f4fd3ded1031782e731c197fe42de36b3037f8adf4d8286c7c3
+the signature lenght is 256
+I am sending this message: QQ==:MA==:d2FrZSB1cCBudW1iZXIgMQ==:CHn0ZBLuzZV68dIily6qmYf6FJNbLItZKqb5TbFNnuxhLX1+2VykdrEizyUe2Np59bJuMx/y2ii97lA7nZpWgLXcyb9Pn+Zq7Ysav6l/EUS/9FHaZyve2gzHo9oviRz2srr1kRxPvOEZMiGL2WWv1nVsWihpLdzhE7WzM/IwSssFcmlTZoiBHK9hDH3wgP8zHsDDesNXztwCqefRIFJ7qF6328DXB1x5EVM4dW+mtqMJYY70iX4fPgmBBhmcH1vuUvaknkwmkT0TqJVPaJbnjmVeQS/Z5wndhgTmW1FABIUqfGQzu6c/T9Pe0QMXgucxwZf+Qt42swN/it9NgobHww==
+[0;32mI (1429) LORA: Start[0m
+[0;32mI (1679) LORA: Send success[0m
+wake up number 1
+Entering deep sleep...
