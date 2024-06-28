@@ -15,6 +15,9 @@
 #include "mbedtls/ecdsa.h"
 #include "mbedtls/error.h"
 
+#include "mbedtls/ecp.h"
+#include "esp32/sha.h"
+
 
 
 #define ECPARAMS MBEDTLS_ECP_DP_SECP256R1
@@ -36,7 +39,7 @@ int verify_signature(const unsigned char *message, size_t message_len,
                      mbedtls_pk_context *key);
 
 
-int generate_signature(const unsigned char *message, size_t message_len, 
+int generate_signature(const char *message, size_t message_len, 
                         unsigned char *signature, size_t *signature_len, 
                         mbedtls_pk_context *key, uint8_t* char_key);
 

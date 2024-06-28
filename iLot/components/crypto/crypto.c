@@ -160,17 +160,20 @@ int load_ecc_private_key(mbedtls_pk_context *pk, const uint8_t *key, size_t key_
 
 
 
-int generate_signature(const unsigned char *message, size_t message_len, 
+int generate_signature(const char *mess, size_t message_len, 
                        unsigned char *signature, size_t *signature_len, 
                        mbedtls_pk_context *key, uint8_t* char_key)
 {
+
+    unsigned char* message= *((unsigned char**)(&mess));
+    printf("the mess is %s\n", ( char*) message);
+
     mbedtls_ecdsa_context ctx_sign;
     mbedtls_ecp_point Q;
     mbedtls_ecp_point_init(&Q);
     mbedtls_entropy_context entropy;
     mbedtls_ctr_drbg_context ctr_drbg;
     unsigned char hash[32];
-    //unsigned char sig[MBEDTLS_ECDSA_MAX_LEN];
     const char *pers = "ecdsa";
     int ret;
 
@@ -203,6 +206,7 @@ int generate_signature(const unsigned char *message, size_t message_len,
     }
     printf("the private ec key is:\n");
     print_key(*key, 0);
+    print_key(*key, 1);
 
     ret = mbedtls_ecdsa_from_keypair(&ctx_sign, mbedtls_pk_ec(*key));
 
@@ -216,6 +220,15 @@ int generate_signature(const unsigned char *message, size_t message_len,
     }
 
 
+    /*unsigned char h[32];
+
+    printf("message is before hash: %s\n", (char*) message);
+
+    esp_sha(SHA2_256, (unsigned char*)message, message_len, h);
+        printf("the hashed esp sha message in hexadecimal is:\n");
+    print_exadecimal( h, 32);*/
+
+
 
 
 
@@ -223,9 +236,9 @@ int generate_signature(const unsigned char *message, size_t message_len,
     fflush(stdout);
 
     printf("the message in hexadecimal is:\n");
-    print_exadecimal( message, strlen(( char*)message));
+    print_exadecimal( message, message_len);
 
-    if ((ret = mbedtls_sha256(message, sizeof(message), hash, 0)) != 0) {
+    if ((ret = mbedtls_sha256(message, message_len, hash, 0)) != 0) {
         printf(" failed\n  ! mbedtls_sha256 returned %d\n", ret);
         mbedtls_ecdsa_free(&ctx_sign);
         mbedtls_ecp_point_free(&Q);
@@ -235,13 +248,15 @@ int generate_signature(const unsigned char *message, size_t message_len,
     }
 
     printf(" ok\n");
+
+
     print_exadecimal(hash, 32);
 
     printf("  . Signing message hash...");
     fflush(stdout);
 
     if ((ret = mbedtls_ecdsa_write_signature(&ctx_sign, MBEDTLS_MD_SHA256,
-                                             hash, sizeof(hash),
+                                             hash, 32,
                                              signature, MBEDTLS_ECDSA_MAX_LEN, signature_len,
                                              mbedtls_ctr_drbg_random, &ctr_drbg)) != 0) {
         printf(" failed\n  ! mbedtls_ecdsa_write_signature returned %d\n", ret);
@@ -254,14 +269,12 @@ int generate_signature(const unsigned char *message, size_t message_len,
     printf(" ok (signature length = %u)\n", (unsigned int) *signature_len);
 
 
-    mbedtls_ecdsa_free(&ctx_sign);
-    mbedtls_ecp_point_free(&Q);
-    mbedtls_ctr_drbg_free(&ctr_drbg);
-    mbedtls_entropy_free(&entropy);
-    return 0;
 
-/*
 
+
+
+
+// verification
     mbedtls_ecdsa_context ctx_verify;
     mbedtls_ecdsa_init(&ctx_verify);
 
@@ -274,29 +287,40 @@ int generate_signature(const unsigned char *message, size_t message_len,
 
     if ((ret = mbedtls_ecp_export(&ctx_sign, NULL, NULL, &Q)) != 0) {
         printf(" failed\n  ! mbedtls_ecp_export returned %d\n", ret);
-        goto exit;
+        return -1;
     }
 
     if ((ret = mbedtls_ecp_set_public_key(grp_id, &ctx_verify, &Q)) != 0) {
         printf(" failed\n  ! mbedtls_ecp_set_public_key returned %d\n", ret);
-        goto exit;
+        return -1;
     }
 
 
-    printf(" ok\n  . Verifying signature...");
+    printf(" ok\n  . Verifying signature... which has lenght %d\n", *signature_len);
     fflush(stdout);
+    printf("the signature to verify is:\n");
+    print_exadecimal(signature, *signature_len);
+
+
 
     if ((ret = mbedtls_ecdsa_read_signature(&ctx_verify,
-                                            hash, sizeof(hash),
-                                            signature, strlen((char *)signature))) != 0) {
-        printf(" failed\n  ! mbedtls_ecdsa_read_signature returned %d\n", ret);
-        goto exit;
+                                            hash, 32,
+                                            signature, *signature_len)) != 0) {
+        char buf[1024];
+        mbedtls_strerror(ret, buf, sizeof(buf));
+        printf(" failed\n  ! mbedtls_ecdsa_read_signature returned %s\n", buf);
+        return -1;
+    } else{
+        printf(" the signature is valid!\n");
     }
 
 
 
-*/
-
+    mbedtls_ecdsa_free(&ctx_sign);
+    mbedtls_ecp_point_free(&Q);
+    mbedtls_ctr_drbg_free(&ctr_drbg);
+    mbedtls_entropy_free(&entropy);
+    return 0;
 
    
 }

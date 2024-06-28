@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "iLot",
-    "project_version":    "0511eb6-dirty",
+    "project_version":    "6f0ba61-dirty",
     "project_path":       "/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot",
     "idf_path":           "/home/fracchio/esp/esp-idf",
     "build_dir":          "/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build",
