@@ -1,0 +1,84 @@
+[1/12] Performing build step for 'bootloader'
+[1/1] cd /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/bootloader/esp-idf/esptool_py && /home/fracchio/.espressif/python_env/idf5.2_py3.11_env/bin/python /home/fracchio/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/bootloader/bootloader.bin
+Bootloader binary size 0x5250 bytes. 0x2db0 bytes (36%) free.
+[2/12] Building C object esp-idf/crypto/CMakeFiles/__idf_crypto.dir/crypto.c.obj
+FAILED: esp-idf/crypto/CMakeFiles/__idf_crypto.dir/crypto.c.obj 
+/home/fracchio/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc -DESP_PLATFORM -DIDF_VER=\"v5.2.2\" -DMBEDTLS_CONFIG_FILE=\"mbedtls/esp_config.h\" -DSOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE -DSOC_XTAL_FREQ_MHZ=CONFIG_XTAL_FREQ -D_GLIBCXX_HAVE_POSIX_SEMAPHORE -D_GLIBCXX_USE_POSIX_SEMAPHORE -D_GNU_SOURCE -D_POSIX_READER_WRITER_LOCKS -I/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/config -I/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/components/crypto -I/home/fracchio/esp/esp-idf/components/newlib/platform_include -I/home/fracchio/esp/esp-idf/components/freertos/config/include -I/home/fracchio/esp/esp-idf/components/freertos/config/include/freertos -I/home/fracchio/esp/esp-idf/components/freertos/config/xtensa/include -I/home/fracchio/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include -I/home/fracchio/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include -I/home/fracchio/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos -I/home/fracchio/esp/esp-idf/components/freertos/esp_additions/include -I/home/fracchio/esp/esp-idf/components/esp_hw_support/include -I/home/fracchio/esp/esp-idf/components/esp_hw_support/include/soc -I/home/fracchio/esp/esp-idf/components/esp_hw_support/include/soc/esp32s3 -I/home/fracchio/esp/esp-idf/components/esp_hw_support/port/esp32s3/. -I/home/fracchio/esp/esp-idf/components/heap/include -I/home/fracchio/esp/esp-idf/components/log/include -I/home/fracchio/esp/esp-idf/components/soc/include -I/home/fracchio/esp/esp-idf/components/soc/esp32s3 -I/home/fracchio/esp/esp-idf/components/soc/esp32s3/include -I/home/fracchio/esp/esp-idf/components/hal/platform_port/include -I/home/fracchio/esp/esp-idf/components/hal/esp32s3/include -I/home/fracchio/esp/esp-idf/components/hal/include -I/home/fracchio/esp/esp-idf/components/esp_rom/include -I/home/fracchio/esp/esp-idf/components/esp_rom/include/esp32s3 -I/home/fracchio/esp/esp-idf/components/esp_rom/esp32s3 -I/home/fracchio/esp/esp-idf/components/esp_common/include -I/home/fracchio/esp/esp-idf/components/esp_system/include -I/home/fracchio/esp/esp-idf/components/esp_system/port/soc -I/home/fracchio/esp/esp-idf/components/esp_system/port/include/private -I/home/fracchio/esp/esp-idf/components/xtensa/esp32s3/include -I/home/fracchio/esp/esp-idf/components/xtensa/include -I/home/fracchio/esp/esp-idf/components/xtensa/deprecated_include -I/home/fracchio/esp/esp-idf/components/lwip/include -I/home/fracchio/esp/esp-idf/components/lwip/include/apps -I/home/fracchio/esp/esp-idf/components/lwip/include/apps/sntp -I/home/fracchio/esp/esp-idf/components/lwip/lwip/src/include -I/home/fracchio/esp/esp-idf/components/lwip/port/include -I/home/fracchio/esp/esp-idf/components/lwip/port/freertos/include -I/home/fracchio/esp/esp-idf/components/lwip/port/esp32xx/include -I/home/fracchio/esp/esp-idf/components/lwip/port/esp32xx/include/arch -I/home/fracchio/esp/esp-idf/components/lwip/port/esp32xx/include/sys -I/home/fracchio/esp/esp-idf/components/mbedtls/port/include -I/home/fracchio/esp/esp-idf/components/mbedtls/mbedtls/include -I/home/fracchio/esp/esp-idf/components/mbedtls/mbedtls/library -I/home/fracchio/esp/esp-idf/components/mbedtls/esp_crt_bundle/include -I/home/fracchio/esp/esp-idf/components/mbedtls/mbedtls/3rdparty/everest/include -I/home/fracchio/esp/esp-idf/components/mbedtls/mbedtls/3rdparty/p256-m -I/home/fracchio/esp/esp-idf/components/mbedtls/mbedtls/3rdparty/p256-m/p256-m -mlongcalls  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -fdiagnostics-color=always -ffunction-sections -fdata-sections -Wall -Werror=all -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=unused-but-set-variable -Wno-error=deprecated-declarations -Wextra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -Og -fno-shrink-wrap -fmacro-prefix-map=/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot=. -fmacro-prefix-map=/home/fracchio/esp/esp-idf=/IDF -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -std=gnu17 -Wno-old-style-declaration -MD -MT esp-idf/crypto/CMakeFiles/__idf_crypto.dir/crypto.c.obj -MF esp-idf/crypto/CMakeFiles/__idf_crypto.dir/crypto.c.obj.d -o esp-idf/crypto/CMakeFiles/__idf_crypto.dir/crypto.c.obj -c /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/components/crypto/crypto.c
+In file included from /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/components/crypto/crypto.h:19,
+                 from /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/components/crypto/crypto.c:1:
+/home/fracchio/esp/esp-idf/components/mbedtls/port/include/esp32/sha.h:20:2: warning: #warning esp32/sha.h is deprecated, please use sha_parallel_engine.h instead [-Wcpp]
+   20 | #warning esp32/sha.h is deprecated, please use sha_parallel_engine.h instead
+      |  ^~~~~~~
+/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/components/crypto/crypto.c: In function 'base64stringcat':
+/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/components/crypto/crypto.c:7:15: warning: unused variable 'j' [-Wunused-variable]
+    7 |     size_t i, j;
+      |               ^
+/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/components/crypto/crypto.c: At top level:
+/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/components/crypto/crypto.c:140:5: error: conflicting types for 'load_ecc_private_key'; have 'int(mbedtls_pk_context *, const char *)'
+  140 | int load_ecc_private_key(mbedtls_pk_context *pk, const char* char_key) {
+      |     ^~~~~~~~~~~~~~~~~~~~
+/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/components/crypto/crypto.h:47:5: note: previous declaration of 'load_ecc_private_key' with type 'int(mbedtls_pk_context *, const uint8_t *)' {aka 'int(mbedtls_pk_context *, const unsigned char *)'}
+   47 | int load_ecc_private_key(mbedtls_pk_context *pk, const uint8_t *key);
+      |     ^~~~~~~~~~~~~~~~~~~~
+/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/components/crypto/crypto.c: In function 'load_ecc_private_key':
+/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/components/crypto/crypto.c:142:21: error: 'key' undeclared (first use in this function)
+  142 |     mbedtls_pk_init(key);
+      |                     ^~~
+/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/components/crypto/crypto.c:142:21: note: each undeclared identifier is reported only once for each function it appears in
+/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/components/crypto/crypto.c:143:5: error: 'ret' undeclared (first use in this function)
+  143 |     ret= mbedtls_pk_parse_key(key, char_key, strlen((char*) char_key)+1, NULL, 0, mbedtls_ctr_drbg_random, &ctr_drbg);
+      |     ^~~
+/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/components/crypto/crypto.c:143:109: error: 'ctr_drbg' undeclared (first use in this function)
+  143 |     ret= mbedtls_pk_parse_key(key, char_key, strlen((char*) char_key)+1, NULL, 0, mbedtls_ctr_drbg_random, &ctr_drbg);
+      |                                                                                                             ^~~~~~~~
+/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/components/crypto/crypto.c:143:36: error: pointer targets in passing argument 2 of 'mbedtls_pk_parse_key' differ in signedness [-Werror=pointer-sign]
+  143 |     ret= mbedtls_pk_parse_key(key, char_key, strlen((char*) char_key)+1, NULL, 0, mbedtls_ctr_drbg_random, &ctr_drbg);
+      |                                    ^~~~~~~~
+      |                                    |
+      |                                    const char *
+In file included from /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/components/crypto/crypto.h:6:
+/home/fracchio/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/pk.h:1102:47: note: expected 'const unsigned char *' but argument is of type 'const char *'
+ 1102 |                          const unsigned char *key, size_t keylen,
+      |                          ~~~~~~~~~~~~~~~~~~~~~^~~
+/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/components/crypto/crypto.c:146:29: error: 'ctx_sign' undeclared (first use in this function)
+  146 |         mbedtls_ecdsa_free(&ctx_sign);
+      |                             ^~~~~~~~
+/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/components/crypto/crypto.c:147:33: error: 'Q' undeclared (first use in this function)
+  147 |         mbedtls_ecp_point_free(&Q);
+      |                                 ^
+/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/components/crypto/crypto.c:149:31: error: 'entropy' undeclared (first use in this function)
+  149 |         mbedtls_entropy_free(&entropy);
+      |                               ^~~~~~~
+/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/components/crypto/crypto.c: In function 'verify_signature':
+/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/components/crypto/crypto.c:274:10: error: 'ret' undeclared (first use in this function)
+  274 |     if ((ret = mbedtls_sha256(message, message_len, hash, 0)) != 0) {
+      |          ^~~
+/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/components/crypto/crypto.c:293:59: error: 'Q' undeclared (first use in this function)
+  293 |     if ((ret = mbedtls_ecp_export(&ctx_sign, NULL, NULL, &Q)) != 0) {
+      |                                                           ^
+/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/components/crypto/crypto.c:308:69: error: invalid type argument of unary '*' (have 'size_t' {aka 'unsigned int'})
+  308 |     printf(" ok\n  . Verifying signature... which has lenght %d\n", *signature_len);
+      |                                                                     ^~~~~~~~~~~~~~
+/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/components/crypto/crypto.c:315:56: error: invalid type argument of unary '*' (have 'size_t' {aka 'unsigned int'})
+  315 |                                             signature, *signature_len)) != 0) {
+      |                                                        ^~~~~~~~~~~~~~
+/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/components/crypto/crypto.c: At top level:
+/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/components/crypto/crypto.c:2:21: warning: 'TAG' defined but not used [-Wunused-variable]
+    2 | static const char * TAG = "CRYPTO_WRAPPER";
+      |                     ^~~
+cc1: some warnings being treated as errors
+[3/12] No install step for 'bootloader'
+[4/12] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/iLot.c.obj
+In file included from /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/components/crypto/crypto.h:19,
+                 from /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/main/iLot.c:9:
+/home/fracchio/esp/esp-idf/components/mbedtls/port/include/esp32/sha.h:20:2: warning: #warning esp32/sha.h is deprecated, please use sha_parallel_engine.h instead [-Wcpp]
+   20 | #warning esp32/sha.h is deprecated, please use sha_parallel_engine.h instead
+      |  ^~~~~~~
+/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/main/iLot.c: In function 'create_message':
+/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/main/iLot.c:41:30: warning: passing argument 6 of 'generate_signature' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   41 |                         &pk, client_pri_key_start, &res_ctx);
+      |                              ^~~~~~~~~~~~~~~~~~~~
+/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/components/crypto/crypto.h:44:59: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'const uint8_t *' {aka 'const unsigned char *'}
+   44 |                         mbedtls_pk_context *key, uint8_t* char_key,  mbedtls_ecdsa_context* res_ctx);
+      |                                                  ~~~~~~~~~^~~~~~~~
+ninja: build stopped: subcommand failed.

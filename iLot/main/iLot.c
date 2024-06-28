@@ -24,31 +24,37 @@ RTC_DATA_ATTR int boot_num=0;
 
 char* create_message(char * message){
 
-
-    mbedtls_pk_context pk;
-
-    load_ecc_private_key(&pk, client_pri_key_start, strlen((char*) client_pri_key_start));
-
     unsigned char* signature=(unsigned char*) malloc(MBEDTLS_ECDSA_MAX_LEN *sizeof(unsigned char));
 
     size_t sig_len;
 
+    mbedtls_ecdsa_context res_ctx;
+    mbedtls_ecp_point Q;
+    mbedtls_entropy_context entropy;
+    mbedtls_ctr_drbg_context ctr_drbg;
+    init_crypto(&Q, &entropy, &ctr_drbg);
+
+    mbedtls_pk_context pk;
+
+    load_ecc_private_key(&pk, (unsigned char*) client_pri_key_start, entropy, ctr_drbg);
+
+
     generate_signature(message, strlen(message), 
                         signature, &sig_len, 
-                        &pk, client_pri_key_start);
+                        &pk, &res_ctx, Q, entropy, ctr_drbg);
+
 
     
     print_exadecimal(signature, MBEDTLS_ECDSA_MAX_LEN);
 
-
-
-    /*
+    
     int ret= verify_signature((unsigned char*) message, strlen(message), 
-                        signature, strlen((char*) signature), 
-                        &pk);
+                        signature, &sig_len, 
+                        &pk, res_ctx, Q, entropy, ctr_drbg);
 
 
-    printf("the result of the signature verification is %d\n", ret);*/
+    free_crypto(Q, entropy, ctr_drbg);
+    printf("the result of the signature verification is %d\n", ret);
 
 
     char* strings[]={"A", "0", message, (char*)signature};
@@ -71,7 +77,7 @@ void app_main(void)
     char* mes="wake up number ";
     char message[25];
     snprintf(message, sizeof(message), "%s%d",  mes, boot_num);
-    char * m=create_message(message);
+    char * m=create_message("aaaaa");
     printf("I am sending this message: %s\n of size %d", m, strlen(m));
 
     send_lora_message(m);
