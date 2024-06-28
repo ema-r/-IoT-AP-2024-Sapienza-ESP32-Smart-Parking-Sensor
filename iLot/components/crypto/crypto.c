@@ -3,7 +3,7 @@ static const char * TAG = "CRYPTO_WRAPPER";
 
 
 
-void base64stringcat(char **input_array, size_t array_size, char **output_buffer) {
+void base64stringcat(char **input_array, size_t array_size, char **output_buffer, size_t sig_len) {
     size_t i, j;
     size_t output_len = 0;
     size_t base64_len = 0;
@@ -11,7 +11,12 @@ void base64stringcat(char **input_array, size_t array_size, char **output_buffer
     const char delimiter = ':';
 
     for (i = 0; i < array_size; i++) {
-        size_t input_len = strlen(input_array[i]);
+        size_t input_len;
+        if(i==3){
+            input_len = sig_len;
+        } else {
+            input_len = strlen(input_array[i]);
+        }
         mbedtls_base64_encode(NULL, 0, &base64_len, (unsigned char *)input_array[i], input_len);
         output_len += base64_len;
         if (i < array_size - 1) {
@@ -27,7 +32,12 @@ void base64stringcat(char **input_array, size_t array_size, char **output_buffer
     (*output_buffer)[0] = '\0';
 
     for (i = 0; i < array_size; i++) {
-        size_t input_len = strlen(input_array[i]);
+        size_t input_len;
+        if(i==3){
+            input_len = sig_len;
+        } else {
+            input_len = strlen(input_array[i]);
+        }
         base64_len = 0;
         mbedtls_base64_encode(NULL, 0, &base64_len, (unsigned char *)input_array[i], input_len);
         base64_buffer = (unsigned char *)malloc(base64_len + 1);
@@ -161,7 +171,6 @@ int generate_signature(const unsigned char *message, size_t message_len,
     mbedtls_ctr_drbg_context ctr_drbg;
     unsigned char hash[32];
     //unsigned char sig[MBEDTLS_ECDSA_MAX_LEN];
-    size_t sig_len;
     const char *pers = "ecdsa";
     int ret;
 
@@ -192,6 +201,8 @@ int generate_signature(const unsigned char *message, size_t message_len,
         mbedtls_entropy_free(&entropy);
         return -1;
     }
+    printf("the private ec key is:\n");
+    print_key(*key, 0);
 
     ret = mbedtls_ecdsa_from_keypair(&ctx_sign, mbedtls_pk_ec(*key));
 
@@ -211,6 +222,9 @@ int generate_signature(const unsigned char *message, size_t message_len,
     printf("  . Computing message hash...");
     fflush(stdout);
 
+    printf("the message in hexadecimal is:\n");
+    print_exadecimal( message, strlen(( char*)message));
+
     if ((ret = mbedtls_sha256(message, sizeof(message), hash, 0)) != 0) {
         printf(" failed\n  ! mbedtls_sha256 returned %d\n", ret);
         mbedtls_ecdsa_free(&ctx_sign);
@@ -228,7 +242,7 @@ int generate_signature(const unsigned char *message, size_t message_len,
 
     if ((ret = mbedtls_ecdsa_write_signature(&ctx_sign, MBEDTLS_MD_SHA256,
                                              hash, sizeof(hash),
-                                             signature, MBEDTLS_ECDSA_MAX_LEN, &sig_len,
+                                             signature, MBEDTLS_ECDSA_MAX_LEN, signature_len,
                                              mbedtls_ctr_drbg_random, &ctr_drbg)) != 0) {
         printf(" failed\n  ! mbedtls_ecdsa_write_signature returned %d\n", ret);
         mbedtls_ecdsa_free(&ctx_sign);
@@ -237,7 +251,7 @@ int generate_signature(const unsigned char *message, size_t message_len,
         mbedtls_entropy_free(&entropy);
         return -1;
     }
-    printf(" ok (signature length = %u)\n", (unsigned int) sig_len);
+    printf(" ok (signature length = %u)\n", (unsigned int) *signature_len);
 
 
     mbedtls_ecdsa_free(&ctx_sign);

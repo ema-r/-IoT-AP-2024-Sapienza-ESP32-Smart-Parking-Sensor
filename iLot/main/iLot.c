@@ -30,11 +30,15 @@ char* create_message(char * message){
 
     unsigned char* signature=(unsigned char*) malloc(MBEDTLS_ECDSA_MAX_LEN *sizeof(unsigned char));
 
+    size_t sig_len;
+
     generate_signature((unsigned char*) message, strlen(message), 
-                        signature, MBEDTLS_ECDSA_MAX_LEN, 
+                        signature, &sig_len, 
                         &pk, client_pri_key_start);
 
     print_exadecimal(signature, MBEDTLS_ECDSA_MAX_LEN);
+
+
 
     /*
     int ret= verify_signature((unsigned char*) message, strlen(message), 
@@ -46,8 +50,9 @@ char* create_message(char * message){
 
 
     char* strings[]={"A", "0", message, (char*)signature};
+
     char *output_buffer = NULL;
-    base64stringcat(strings, 4, &output_buffer);
+    base64stringcat(strings, 4, &output_buffer, sig_len);
     if (output_buffer == NULL) {
         printf("error in encoding to base64 + delimiter\n");
     }

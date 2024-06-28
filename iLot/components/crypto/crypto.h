@@ -23,7 +23,7 @@ void digital_sign_pem(const unsigned char* message, mbedtls_pk_context pk, size_
 
 void print_key(mbedtls_pk_context pk, int k);
 
-void base64stringcat(char **input_array, size_t array_size, char **output_buffer);
+void base64stringcat(char **input_array, size_t array_size, char **output_buffer, size_t sig_len);
 
 mbedtls_pk_context get_local_private_key(const uint8_t* key_char);
 

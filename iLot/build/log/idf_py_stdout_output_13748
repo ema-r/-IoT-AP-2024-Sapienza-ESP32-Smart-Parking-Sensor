@@ -1,0 +1,91 @@
+[1/10] Performing build step for 'bootloader'
+[1/1] cd /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/bootloader/esp-idf/esptool_py && /home/fracchio/.espressif/python_env/idf5.2_py3.11_env/bin/python /home/fracchio/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/bootloader/bootloader.bin
+Bootloader binary size 0x5250 bytes. 0x2db0 bytes (36%) free.
+[2/10] No install step for 'bootloader'
+[3/10] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/iLot.c.obj
+In file included from /home/fracchio/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/pk.h:28,
+                 from /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/components/crypto/crypto.h:6,
+                 from /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/main/iLot.c:9:
+/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/main/iLot.c: In function 'create_message':
+/home/fracchio/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/ecdsa.h:45:5: warning: passing argument 4 of 'generate_signature' makes pointer from integer without a cast [-Wint-conversion]
+   45 |     (/*T,L of SEQUENCE*/ ((bits) >= 61 * 8 ? 3 : 2) +              \
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |     |
+      |     int
+   46 |      /*T,L of r,s*/ 2 * (((bits) >= 127 * 8 ? 3 : 2) +     \
+      |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   47 |                          /*V of r,s*/ ((bits) + 8) / 8))
+      |                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fracchio/esp/esp-idf/components/mbedtls/mbedtls/include/mbedtls/ecdsa.h:50:32: note: in expansion of macro 'MBEDTLS_ECDSA_MAX_SIG_LEN'
+   50 | #define MBEDTLS_ECDSA_MAX_LEN  MBEDTLS_ECDSA_MAX_SIG_LEN(MBEDTLS_ECP_MAX_BITS)
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/main/iLot.c:34:36: note: in expansion of macro 'MBEDTLS_ECDSA_MAX_LEN'
+   34 |                         signature, MBEDTLS_ECDSA_MAX_LEN,
+      |                                    ^~~~~~~~~~~~~~~~~~~~~
+/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/components/crypto/crypto.h:40:59: note: expected 'size_t *' {aka 'unsigned int *'} but argument is of type 'int'
+   40 |                         unsigned char *signature, size_t *signature_len,
+      |                                                   ~~~~~~~~^~~~~~~~~~~~~
+/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/main/iLot.c:35:30: warning: passing argument 6 of 'generate_signature' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   35 |                         &pk, client_pri_key_start);
+      |                              ^~~~~~~~~~~~~~~~~~~~
+/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/components/crypto/crypto.h:41:59: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'const uint8_t *' {aka 'const unsigned char *'}
+   41 |                         mbedtls_pk_context *key, uint8_t* char_key);
+      |                                                  ~~~~~~~~~^~~~~~~~
+[4/10] Completed 'bootloader'
+[5/10] Linking C static library esp-idf/main/libmain.a
+[6/10] Generating ld/sections.ld
+[7/10] Linking CXX executable iLot.elf
+[8/10] Generating binary image from built executable
+esptool.py v4.7.0
+Creating esp32s3 image...
+Merged 3 ELF sections
+Successfully created esp32s3 image.
+Generated /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/iLot.bin
+[9/10] cd /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/esp-idf/esptool_py && /home/fracchio/.espressif/python_env/idf5.2_py3.11_env/bin/python /home/fracchio/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/partition_table/partition-table.bin /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/iLot.bin
+iLot.bin binary size 0x61b90 bytes. Smallest app partition is 0x100000 bytes. 0x9e470 bytes (62%) free.
+[9/10] cd /home/fracchio/esp/esp-idf/components/esptool_py && /usr/bin/cmake -D IDF_PATH=/home/fracchio/esp/esp-idf -D "SERIAL_TOOL=/home/fracchio/.espressif/python_env/idf5.2_py3.11_env/bin/python;;/home/fracchio/esp/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32s3" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build -P /home/fracchio/esp/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32s3 -p /dev/ttyUSB0 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 80m --flash_size 2MB 0x0 bootloader/bootloader.bin 0x10000 iLot.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.7.0
+Serial port /dev/ttyUSB0
+Connecting....
+Chip is ESP32-S3 (QFN56) (revision v0.2)
+Features: WiFi, BLE, Embedded Flash 8MB (GD)
+Crystal is 40MHz
+MAC: 48:27:e2:e2:e5:e4
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00000000 to 0x00005fff...
+Flash will be erased from 0x00010000 to 0x00071fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Compressed 21072 bytes to 13057...
+Writing at 0x00000000... (100 %)
+Wrote 21072 bytes (13057 compressed) at 0x00000000 in 0.8 seconds (effective 204.5 kbit/s)...
+Hash of data verified.
+Compressed 400272 bytes to 224622...
+Writing at 0x00010000... (7 %)
+Writing at 0x0001c7b0... (14 %)
+Writing at 0x0002254a... (21 %)
+Writing at 0x00028aca... (28 %)
+Writing at 0x0002fe08... (35 %)
+Writing at 0x0003628c... (42 %)
+Writing at 0x0003c98c... (50 %)
+Writing at 0x00042a3d... (57 %)
+Writing at 0x00048f7c... (64 %)
+Writing at 0x0004ea84... (71 %)
+Writing at 0x00054b25... (78 %)
+Writing at 0x0005edfb... (85 %)
+Writing at 0x000667f7... (92 %)
+Writing at 0x0006d190... (100 %)
+Wrote 400272 bytes (224622 compressed) at 0x00010000 in 9.6 seconds (effective 334.2 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.1 seconds (effective 299.3 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
