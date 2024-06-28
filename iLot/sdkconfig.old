@@ -518,9 +518,10 @@ CONFIG_PRIMARY=y
 # CONFIG_169MHZ is not set
 # CONFIG_433MHZ is not set
 # CONFIG_470MHZ is not set
-CONFIG_866MHZ=y
+# CONFIG_866MHZ is not set
 # CONFIG_915MHZ is not set
-# CONFIG_OTHER is not set
+CONFIG_OTHER=y
+CONFIG_OTHER_FREQUENCY=868
 # CONFIG_ADVANCED is not set
 # end of Application Configuration
 

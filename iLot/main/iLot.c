@@ -24,29 +24,37 @@ RTC_DATA_ATTR int boot_num=0;
 
 char* create_message(char * message){
 
-    mbedtls_pk_context pk;
-
-    load_ecc_private_key(&pk, client_pri_key_start, strlen((char*) client_pri_key_start));
-
     unsigned char* signature=(unsigned char*) malloc(MBEDTLS_ECDSA_MAX_LEN *sizeof(unsigned char));
 
     size_t sig_len;
 
-    generate_signature((unsigned char*) message, strlen(message), 
-                        signature, &sig_len, 
-                        &pk, client_pri_key_start);
+    mbedtls_ecdsa_context res_ctx;
+    mbedtls_ecp_point Q;
+    mbedtls_entropy_context entropy;
+    mbedtls_ctr_drbg_context ctr_drbg;
+    init_crypto(&Q, &entropy, &ctr_drbg);
 
+    mbedtls_pk_context pk;
+
+    load_ecc_private_key(&pk, (unsigned char*) client_pri_key_start, entropy, ctr_drbg);
+
+
+    generate_signature(message, strlen(message), 
+                        signature, &sig_len, 
+                        &pk, &res_ctx, Q, entropy, ctr_drbg);
+
+
+    
     print_exadecimal(signature, MBEDTLS_ECDSA_MAX_LEN);
 
-
-
-    /*
+    
     int ret= verify_signature((unsigned char*) message, strlen(message), 
-                        signature, strlen((char*) signature), 
-                        &pk);
+                        signature, &sig_len, 
+                        &pk, res_ctx, Q, entropy, ctr_drbg);
 
 
-    printf("the result of the signature verification is %d\n", ret);*/
+    free_crypto(Q, entropy, ctr_drbg);
+    printf("the result of the signature verification is %d\n", ret);
 
 
     char* strings[]={"A", "0", message, (char*)signature};
@@ -58,35 +66,6 @@ char* create_message(char * message){
     }
     free(signature);
     return output_buffer;
-
-    /*mbedtls_pk_context pk=get_local_private_key(client_pri_key_start);
-    print_key(pk, 0);
-
-
-    unsigned char* sig=(unsigned char*)malloc((MBEDTLS_PK_SIGNATURE_MAX_SIZE+1)*sizeof(unsigned char));
-    memset(sig, 0, (MBEDTLS_PK_SIGNATURE_MAX_SIZE+1));
-    size_t signature_len;
-    digital_sign_pem((unsigned char*) message, pk, &signature_len, sig);
-    sig[MBEDTLS_PK_SIGNATURE_MAX_SIZE]='\0';
-    printf("the signature lenght is %d\n", signature_len);
-
-
-
-    unsigned char* result= (unsigned char*) malloc((signature_len+1)*sizeof(unsigned char));
-    memcpy(result, sig, signature_len);
-    result[signature_len]='\0';
-    free(sig);
-
-
-
-    char* strings[]={"A", "0", message, (char*)result};
-    char *output_buffer = NULL;
-    base64stringcat(strings, 4, &output_buffer);
-    if (output_buffer == NULL) {
-        printf("error in encoding to base64 + delimiter\n");
-    }
-    free(result);
-    return output_buffer;*/
 }
 
 
@@ -98,7 +77,7 @@ void app_main(void)
     char* mes="wake up number ";
     char message[25];
     snprintf(message, sizeof(message), "%s%d",  mes, boot_num);
-    char * m=create_message(message);
+    char * m=create_message("aaaaa");
     printf("I am sending this message: %s\n of size %d", m, strlen(m));
 
     send_lora_message(m);

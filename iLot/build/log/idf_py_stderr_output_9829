@@ -1,0 +1,110 @@
+[0;33m--- esp-idf-monitor 1.4.0 on /dev/ttyUSB0 115200 ---[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---[0m
+[0;33m0x40056f36: __memcpy_aux in ROM
+[0m
+[0;33m0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m0x40056f36: __memcpy_aux in ROM
+[0m
+[0;33m0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m0x40056f33: __memcpy_aux in ROM
+0x42012f9e: ecdsa_signature_to_asn1 at /home/fracchio/esp/esp-idf/components/mbedtls/mbedtls/library/ecdsa.c:630
+0x420133cb: mbedtls_ecdsa_write_signature_restartable at /home/fracchio/esp/esp-idf/components/mbedtls/mbedtls/library/ecdsa.c:676
+0x4201340a: mbedtls_ecdsa_write_signature at /home/fracchio/esp/esp-idf/components/mbedtls/mbedtls/library/ecdsa.c:695
+0x4200a31d: generate_signature at /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/components/crypto/crypto.c:259
+0x42008d27: create_message at /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/main/iLot.c:36 (discriminator 1)
+0x42008d82: app_main at /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/main/iLot.c:74
+0x42035247: main_task at /home/fracchio/esp/esp-idf/components/freertos/app_startup.c:208
+0x4037cc61: vPortTaskWrapper at /home/fracchio/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x40375b10: esp_restart_noos at /home/fracchio/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m0x40056f36: __memcpy_aux in ROM
+[0m
+[0;33m0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m0x40056f33: __memcpy_aux in ROM
+0x42012f9e: ecdsa_signature_to_asn1 at /home/fracchio/esp/esp-idf/components/mbedtls/mbedtls/library/ecdsa.c:630
+0x420133cb: mbedtls_ecdsa_write_signature_restartable at /home/fracchio/esp/esp-idf/components/mbedtls/mbedtls/library/ecdsa.c:676
+0x4201340a: mbedtls_ecdsa_write_signature at /home/fracchio/esp/esp-idf/components/mbedtls/mbedtls/library/ecdsa.c:695
+0x4200a31d: generate_signature at /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/components/crypto/crypto.c:259
+0x42008d27: create_message at /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/main/iLot.c:36 (discriminator 1)
+0x42008d82: app_main at /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/main/iLot.c:74
+0x42035247: main_task at /home/fracchio/esp/esp-idf/components/freertos/app_startup.c:208
+0x4037cc61: vPortTaskWrapper at /home/fracchio/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x40375b10: esp_restart_noos at /home/fracchio/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m0x40056f36: __memcpy_aux in ROM
+[0m
+[0;33m0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m0x40056f33: __memcpy_aux in ROM
+0x42012f9e: ecdsa_signature_to_asn1 at /home/fracchio/esp/esp-idf/components/mbedtls/mbedtls/library/ecdsa.c:630
+0x420133cb: mbedtls_ecdsa_write_signature_restartable at /home/fracchio/esp/esp-idf/components/mbedtls/mbedtls/library/ecdsa.c:676
+0x4201340a: mbedtls_ecdsa_write_signature at /home/fracchio/esp/esp-idf/components/mbedtls/mbedtls/library/ecdsa.c:695
+0x4200a31d: generate_signature at /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/components/crypto/crypto.c:259
+0x42008d27: create_message at /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/main/iLot.c:36 (discriminator 1)
+0x42008d82: app_main at /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/main/iLot.c:74
+0x42035247: main_task at /home/fracchio/esp/esp-idf/components/freertos/app_startup.c:208
+0x4037cc61: vPortTaskWrapper at /home/fracchio/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x40375b10: esp_restart_noos at /home/fracchio/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m0x40056f36: __memcpy_aux in ROM
+[0m
+[0;33m0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m0x40056f33: __memcpy_aux in ROM
+0x42012f9e: ecdsa_signature_to_asn1 at /home/fracchio/esp/esp-idf/components/mbedtls/mbedtls/library/ecdsa.c:630
+0x420133cb: mbedtls_ecdsa_write_signature_restartable at /home/fracchio/esp/esp-idf/components/mbedtls/mbedtls/library/ecdsa.c:676
+0x4201340a: mbedtls_ecdsa_write_signature at /home/fracchio/esp/esp-idf/components/mbedtls/mbedtls/library/ecdsa.c:695
+0x4200a31d: generate_signature at /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/components/crypto/crypto.c:259
+0x42008d27: create_message at /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/main/iLot.c:36 (discriminator 1)
+0x42008d82: app_main at /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/main/iLot.c:74
+0x42035247: main_task at /home/fracchio/esp/esp-idf/components/freertos/app_startup.c:208
+0x4037cc61: vPortTaskWrapper at /home/fracchio/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x40375b10: esp_restart_noos at /home/fracchio/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m0x40056f36: __memcpy_aux in ROM
+[0m
+[0;33m0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m0x40056f33: __memcpy_aux in ROM
+0x42012f9e: ecdsa_signature_to_asn1 at /home/fracchio/esp/esp-idf/components/mbedtls/mbedtls/library/ecdsa.c:630
+0x420133cb: mbedtls_ecdsa_write_signature_restartable at /home/fracchio/esp/esp-idf/components/mbedtls/mbedtls/library/ecdsa.c:676
+0x4201340a: mbedtls_ecdsa_write_signature at /home/fracchio/esp/esp-idf/components/mbedtls/mbedtls/library/ecdsa.c:695
+0x4200a31d: generate_signature at /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/components/crypto/crypto.c:259
+0x42008d27: create_message at /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/main/iLot.c:36 (discriminator 1)
+0x42008d82: app_main at /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/main/iLot.c:74
+0x42035247: main_task at /home/fracchio/esp/esp-idf/components/freertos/app_startup.c:208
+0x4037cc61: vPortTaskWrapper at /home/fracchio/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x40375b10: esp_restart_noos at /home/fracchio/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m0x40056f36: __memcpy_aux in ROM
+[0m
+[0;33m0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m0x40056f33: __memcpy_aux in ROM
+0x42012f9e: ecdsa_signature_to_asn1 at /home/fracchio/esp/esp-idf/components/mbedtls/mbedtls/library/ecdsa.c:630
+0x420133cb: mbedtls_ecdsa_write_signature_restartable at /home/fracchio/esp/esp-idf/components/mbedtls/mbedtls/library/ecdsa.c:676
+0x4201340a: mbedtls_ecdsa_write_signature at /home/fracchio/esp/esp-idf/components/mbedtls/mbedtls/library/ecdsa.c:695
+0x4200a31d: generate_signature at /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/components/crypto/crypto.c:259
+0x42008d27: create_message at /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/main/iLot.c:36 (discriminator 1)
+0x42008d82: app_main at /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/main/iLot.c:74
+0x42035247: main_task at /home/fracchio/esp/esp-idf/components/freertos/app_startup.c:208
+0x4037cc61: vPortTaskWrapper at /home/fracchio/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x40375b10: esp_restart_noos at /home/fracchio/esp/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0m

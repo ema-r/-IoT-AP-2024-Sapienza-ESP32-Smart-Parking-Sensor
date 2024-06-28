@@ -1,0 +1,110 @@
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x9 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3810,len:0x178c
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xcbc
+load:0x403cc700,len:0x2d9c
+entry 0x403c9914
+[0;32mI (27) boot: ESP-IDF v5.2.2 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Jun 28 2024 16:44:58[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (34) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (38) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (53) boot: Partition Table:[0m
+[0;32mI (57) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (64) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (72) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (79) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (87) boot: End of partition table[0m
+[0;32mI (91) esp_image: segment 0: paddr=00010020 vaddr=3c040020 size=1ada8h (109992) map[0m
+[0;32mI (119) esp_image: segment 1: paddr=0002add0 vaddr=3fc95a00 size=02b5ch ( 11100) load[0m
+[0;32mI (122) esp_image: segment 2: paddr=0002d934 vaddr=40374000 size=026e4h (  9956) load[0m
+[0;32mI (127) esp_image: segment 3: paddr=00030020 vaddr=42000020 size=376a8h (226984) map[0m
+[0;32mI (174) esp_image: segment 4: paddr=000676d0 vaddr=403766e4 size=0f2fch ( 62204) load[0m
+[0;32mI (188) esp_image: segment 5: paddr=000769d4 vaddr=50000000 size=00004h (     4) load[0m
+[0;32mI (188) esp_image: segment 6: paddr=000769e0 vaddr=600fe000 size=00070h (   112) load[0m
+[0;32mI (201) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (201) boot: Disabling RNG early entropy source...[0m
+[0;32mI (216) cpu_start: Multicore app[0m
+[0;32mI (227) cpu_start: Pro cpu start user code[0m
+[0;32mI (227) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (227) cpu_start: Application information:[0m
+[0;32mI (230) cpu_start: Project name:     iLot[0m
+[0;32mI (234) cpu_start: App version:      6f0ba61-dirty[0m
+[0;32mI (240) cpu_start: Compile time:     Jun 28 2024 16:44:50[0m
+[0;32mI (246) cpu_start: ELF file SHA256:  29d481ab2...[0m
+[0;32mI (251) cpu_start: ESP-IDF:          v5.2.2[0m
+[0;32mI (256) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (261) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (266) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (270) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (278) heap_init: At 3FC99098 len 00050678 (321 KiB): RAM[0m
+[0;32mI (284) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (290) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (296) heap_init: At 600FE070 len 00001F78 (7 KiB): RTCRAM[0m
+[0;32mI (303) spi_flash: detected chip: gd[0m
+[0;32mI (306) spi_flash: flash io: dio[0m
+[0;33mW (310) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (324) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (330) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (338) main_task: Started on CPU0[0m
+[0;32mI (348) main_task: Calling app_main()[0m
+[0;32mI (348) LORA: Frequency is 868MHz[0m
+[0;32mI (348) RA01S: CONFIG_MISO_GPIO=11[0m
+[0;32mI (358) RA01S: CONFIG_MOSI_GPIO=10[0m
+[0;32mI (358) RA01S: CONFIG_SCLK_GPIO=9[0m
+[0;32mI (358) RA01S: CONFIG_NSS_GPIO=8[0m
+[0;32mI (368) RA01S: CONFIG_RST_GPIO=12[0m
+[0;32mI (368) RA01S: CONFIG_BUSY_GPIO=13[0m
+[0;32mI (378) RA01S: CONFIG_TXEN_GPIO=-1[0m
+[0;32mI (378) RA01S: CONFIG_RXEN_GPIO=-1[0m
+[0;32mI (378) gpio: GPIO[8]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (388) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (398) gpio: GPIO[13]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (408) RA01S: spi_bus_initialize=0[0m
+[0;32mI (418) RA01S: spi_bus_add_device=0[0m
+[0;33mW (418) LORA: Enable TCXO[0m
+[0;32mI (458) RA01S: Reset[0m
+[0;32mI (458) RA01S: syncWord=0x1424[0m
+[0;32mI (458) RA01S: SX126x installed[0m
+[0;33mW (458) RA01S: WriteCommand2 status=0a retry=1[0m
+[0;32mI (468) RA01S: tcxoVoltage=3.300000[0m
+[0;32mI (478) RA01S: useRegulatorLDO=1[0m
+[0;32mI (488) RA01S: SetStopRxTimerOnPreambleDetect enable=0[0m
+the mess is wake up number 0
+the private ec key is:
+the key is: 
+-----BEGIN EC PRIVATE KEY-----
+MHcCAQEEILas2/EI5Vu1KQNWMZ3xDez7SmB4P7bBR8NCqq2/7Ea+oAoGCCqGSM49
+AwEHoUQDQgAEeaFGXLLGEEHOjNIUL1yefddMF6y4tbi+k4slCGpb1AoLg9Qk1V+p
+gdT4r7qnoOm/q18B1A5nvVAZVyi6SvCwSg==
+-----END EC PRIVATE KEY-----
+
+the key is: 
+-----BEGIN PUBLIC KEY-----
+MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEeaFGXLLGEEHOjNIUL1yefddMF6y4
+tbi+k4slCGpb1AoLg9Qk1V+pgdT4r7qnoOm/q18B1A5nvVAZVyi6SvCwSg==
+-----END PUBLIC KEY-----
+
+  . Computing message hash...the message in hexadecimal is:
+77616b65207570206e756d6265722030
+ ok
+a3996cf32d6e5ed71d028532cd4341fd8751fca9ba1bca523b9589cec63398b9
+  . Signing message hash... ok (signature length = 70)
+  . Preparing verification context... ok
+  . Verifying signature... which has lenght 
+ failed
+  ! mbedtls_ecdsa_read_signature returned ECP - Bad input parameters to function : ASN1 - Out of data when parsing an ASN1 data structure
+304402207b272030c3270e00b12825f10f403548ea84e2a40f8890e85a2cf7bd20d2d1ef022029785e80dfafedf2aeb5961e2737697d5043fc50f0abc3af52d783e5221802de000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+I am sending this message: QQ==:MA==:d2FrZSB1cCBudW1iZXIgMA==:MEQCIHsnIDDDJw4AsSgl8Q9ANUjqhOKkD4iQ6Fos970g0tHvAiApeF6A36/t8q61
+ of size 99[0;32mI (658) LORA: Start[0m
+I am sending in lora this: QQ==:MA==:d2FrZSB1cCBudW1iZXIgMA==:MEQCIHsnIDDDJw4AsSgl8Q9ANUjqhOKkD4iQ6Fos970g0tHvAiApeF6A36/t8q61
+[0;32mI (868) LORA: Send success[0m
+wake up number 0
+Entering deep sleep...
