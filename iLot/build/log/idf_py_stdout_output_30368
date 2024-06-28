@@ -1,0 +1,84 @@
+[0/1] Re-running CMake...
+-- Building ESP-IDF components for target esp32s3
+-- Project sdkconfig file /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/sdkconfig
+-- Compiler supported targets: xtensa-esp-elf
+-- App "iLot" version: 713f792-dirty
+-- Adding linker script /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/esp-idf/esp_system/ld/memory.ld
+-- Adding linker script /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/esp-idf/esp_system/ld/sections.ld.in
+-- Adding linker script /home/fracchio/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.ld
+-- Adding linker script /home/fracchio/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.api.ld
+-- Adding linker script /home/fracchio/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.libgcc.ld
+-- Adding linker script /home/fracchio/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.newlib.ld
+-- Adding linker script /home/fracchio/esp/esp-idf/components/esp_rom/esp32s3/ld/esp32s3.rom.version.ld
+-- Adding linker script /home/fracchio/esp/esp-idf/components/soc/esp32s3/ld/esp32s3.peripherals.ld
+-- Components: app_trace app_update bootloader bootloader_support bt cmock console crypto cxx driver efuse esp-tls esp_adc esp_app_format esp_bootloader_format esp_coex esp_common esp_eth esp_event esp_gdbstub esp_hid esp_http_client esp_http_server esp_https_ota esp_https_server esp_hw_support esp_lcd esp_local_ctrl esp_mm esp_netif esp_netif_stack esp_partition esp_phy esp_pm esp_psram esp_ringbuf esp_rom esp_system esp_timer esp_wifi espcoredump esptool_py fatfs freertos hal heap http_parser idf_test ieee802154 json log lora_communication lwip main mbedtls mqtt newlib nvs_flash nvs_sec_provider openthread partition_table perfmon protobuf-c protocomm pthread ra01s sdmmc soc spi_flash spiffs tcp_transport touch_element ulp unity usb vfs wear_levelling wifi_provisioning wpa_supplicant xtensa
+-- Component paths: /home/fracchio/esp/esp-idf/components/app_trace /home/fracchio/esp/esp-idf/components/app_update /home/fracchio/esp/esp-idf/components/bootloader /home/fracchio/esp/esp-idf/components/bootloader_support /home/fracchio/esp/esp-idf/components/bt /home/fracchio/esp/esp-idf/components/cmock /home/fracchio/esp/esp-idf/components/console /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/components/crypto /home/fracchio/esp/esp-idf/components/cxx /home/fracchio/esp/esp-idf/components/driver /home/fracchio/esp/esp-idf/components/efuse /home/fracchio/esp/esp-idf/components/esp-tls /home/fracchio/esp/esp-idf/components/esp_adc /home/fracchio/esp/esp-idf/components/esp_app_format /home/fracchio/esp/esp-idf/components/esp_bootloader_format /home/fracchio/esp/esp-idf/components/esp_coex /home/fracchio/esp/esp-idf/components/esp_common /home/fracchio/esp/esp-idf/components/esp_eth /home/fracchio/esp/esp-idf/components/esp_event /home/fracchio/esp/esp-idf/components/esp_gdbstub /home/fracchio/esp/esp-idf/components/esp_hid /home/fracchio/esp/esp-idf/components/esp_http_client /home/fracchio/esp/esp-idf/components/esp_http_server /home/fracchio/esp/esp-idf/components/esp_https_ota /home/fracchio/esp/esp-idf/components/esp_https_server /home/fracchio/esp/esp-idf/components/esp_hw_support /home/fracchio/esp/esp-idf/components/esp_lcd /home/fracchio/esp/esp-idf/components/esp_local_ctrl /home/fracchio/esp/esp-idf/components/esp_mm /home/fracchio/esp/esp-idf/components/esp_netif /home/fracchio/esp/esp-idf/components/esp_netif_stack /home/fracchio/esp/esp-idf/components/esp_partition /home/fracchio/esp/esp-idf/components/esp_phy /home/fracchio/esp/esp-idf/components/esp_pm /home/fracchio/esp/esp-idf/components/esp_psram /home/fracchio/esp/esp-idf/components/esp_ringbuf /home/fracchio/esp/esp-idf/components/esp_rom /home/fracchio/esp/esp-idf/components/esp_system /home/fracchio/esp/esp-idf/components/esp_timer /home/fracchio/esp/esp-idf/components/esp_wifi /home/fracchio/esp/esp-idf/components/espcoredump /home/fracchio/esp/esp-idf/components/esptool_py /home/fracchio/esp/esp-idf/components/fatfs /home/fracchio/esp/esp-idf/components/freertos /home/fracchio/esp/esp-idf/components/hal /home/fracchio/esp/esp-idf/components/heap /home/fracchio/esp/esp-idf/components/http_parser /home/fracchio/esp/esp-idf/components/idf_test /home/fracchio/esp/esp-idf/components/ieee802154 /home/fracchio/esp/esp-idf/components/json /home/fracchio/esp/esp-idf/components/log /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/components/lora_communication /home/fracchio/esp/esp-idf/components/lwip /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/main /home/fracchio/esp/esp-idf/components/mbedtls /home/fracchio/esp/esp-idf/components/mqtt /home/fracchio/esp/esp-idf/components/newlib /home/fracchio/esp/esp-idf/components/nvs_flash /home/fracchio/esp/esp-idf/components/nvs_sec_provider /home/fracchio/esp/esp-idf/components/openthread /home/fracchio/esp/esp-idf/components/partition_table /home/fracchio/esp/esp-idf/components/perfmon /home/fracchio/esp/esp-idf/components/protobuf-c /home/fracchio/esp/esp-idf/components/protocomm /home/fracchio/esp/esp-idf/components/pthread /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/components/ra01s /home/fracchio/esp/esp-idf/components/sdmmc /home/fracchio/esp/esp-idf/components/soc /home/fracchio/esp/esp-idf/components/spi_flash /home/fracchio/esp/esp-idf/components/spiffs /home/fracchio/esp/esp-idf/components/tcp_transport /home/fracchio/esp/esp-idf/components/touch_element /home/fracchio/esp/esp-idf/components/ulp /home/fracchio/esp/esp-idf/components/unity /home/fracchio/esp/esp-idf/components/usb /home/fracchio/esp/esp-idf/components/vfs /home/fracchio/esp/esp-idf/components/wear_levelling /home/fracchio/esp/esp-idf/components/wifi_provisioning /home/fracchio/esp/esp-idf/components/wpa_supplicant /home/fracchio/esp/esp-idf/components/xtensa
+-- Configuring done (2.3s)
+-- Generating done (0.2s)
+-- Build files have been written to: /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build
+[1/12] Building C object esp-idf/esp_app_format/CMakeFiles/__idf_esp_app_format.dir/esp_app_desc.c.obj
+[2/12] Performing build step for 'bootloader'
+[1/1] cd /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/bootloader/esp-idf/esptool_py && /home/fracchio/.espressif/python_env/idf5.2_py3.11_env/bin/python /home/fracchio/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/bootloader/bootloader.bin
+Bootloader binary size 0x5250 bytes. 0x2db0 bytes (36%) free.
+[3/12] No install step for 'bootloader'
+[4/12] Linking C static library esp-idf/esp_app_format/libesp_app_format.a
+[5/12] Completed 'bootloader'
+[6/12] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/iLot.c.obj
+[7/12] Linking C static library esp-idf/main/libmain.a
+[8/12] Generating ld/sections.ld
+[9/12] Linking CXX executable iLot.elf
+[10/12] Generating binary image from built executable
+esptool.py v4.7.0
+Creating esp32s3 image...
+Merged 3 ELF sections
+Successfully created esp32s3 image.
+Generated /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/iLot.bin
+[11/12] cd /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/esp-idf/esptool_py && /home/fracchio/.espressif/python_env/idf5.2_py3.11_env/bin/python /home/fracchio/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/partition_table/partition-table.bin /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/iLot.bin
+iLot.bin binary size 0x66c90 bytes. Smallest app partition is 0x100000 bytes. 0x99370 bytes (60%) free.
+[11/12] cd /home/fracchio/esp/esp-idf/components/esptool_py && /usr/bin/cmake -D IDF_PATH=/home/fracchio/esp/esp-idf -D "SERIAL_TOOL=/home/fracchio/.espressif/python_env/idf5.2_py3.11_env/bin/python;;/home/fracchio/esp/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32s3" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build -P /home/fracchio/esp/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32s3 -p /dev/ttyUSB0 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 80m --flash_size 2MB 0x0 bootloader/bootloader.bin 0x10000 iLot.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.7.0
+Serial port /dev/ttyUSB0
+Connecting....
+Chip is ESP32-S3 (QFN56) (revision v0.2)
+Features: WiFi, BLE, Embedded Flash 8MB (GD)
+Crystal is 40MHz
+MAC: 48:27:e2:e2:e5:e4
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00000000 to 0x00005fff...
+Flash will be erased from 0x00010000 to 0x00076fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Compressed 21072 bytes to 13057...
+Writing at 0x00000000... (100 %)
+Wrote 21072 bytes (13057 compressed) at 0x00000000 in 0.7 seconds (effective 242.6 kbit/s)...
+Hash of data verified.
+Compressed 421008 bytes to 234082...
+Writing at 0x00010000... (6 %)
+Writing at 0x0001c6f7... (13 %)
+Writing at 0x00024254... (20 %)
+Writing at 0x000293ae... (26 %)
+Writing at 0x00031c21... (33 %)
+Writing at 0x00037f8e... (40 %)
+Writing at 0x0003e66b... (46 %)
+Writing at 0x00044522... (53 %)
+Writing at 0x00049f88... (60 %)
+Writing at 0x0004ff3f... (66 %)
+Writing at 0x000567c2... (73 %)
+Writing at 0x0006066b... (80 %)
+Writing at 0x0006838d... (86 %)
+Writing at 0x0006e2a7... (93 %)
+Writing at 0x00074b5e... (100 %)
+Wrote 421008 bytes (234082 compressed) at 0x00010000 in 9.2 seconds (effective 364.6 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.1 seconds (effective 300.5 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

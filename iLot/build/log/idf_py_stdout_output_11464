@@ -1,0 +1,75 @@
+[1/10] Performing build step for 'bootloader'
+[1/1] cd /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/bootloader/esp-idf/esptool_py && /home/fracchio/.espressif/python_env/idf5.2_py3.11_env/bin/python /home/fracchio/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/bootloader/bootloader.bin
+Bootloader binary size 0x5250 bytes. 0x2db0 bytes (36%) free.
+[2/10] No install step for 'bootloader'
+[3/10] Building C object esp-idf/crypto/CMakeFiles/__idf_crypto.dir/crypto.c.obj
+/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/components/crypto/crypto.c: In function 'base64stringcat':
+/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/components/crypto/crypto.c:7:15: warning: unused variable 'j' [-Wunused-variable]
+    7 |     size_t i, j;
+      |               ^
+/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/components/crypto/crypto.c: In function 'generate_signature':
+/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/components/crypto/crypto.c:262:9: warning: unused variable 'exit_code' [-Wunused-variable]
+  262 |     int exit_code=ret;
+      |         ^~~~~~~~~
+/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/components/crypto/crypto.c: At top level:
+/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/components/crypto/crypto.c:2:21: warning: 'TAG' defined but not used [-Wunused-variable]
+    2 | static const char * TAG = "CRYPTO_WRAPPER";
+      |                     ^~~
+[4/10] Completed 'bootloader'
+[5/10] Linking C static library esp-idf/crypto/libcrypto.a
+[6/10] Generating ld/sections.ld
+[7/10] Linking CXX executable iLot.elf
+[8/10] Generating binary image from built executable
+esptool.py v4.7.0
+Creating esp32s3 image...
+Merged 3 ELF sections
+Successfully created esp32s3 image.
+Generated /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/iLot.bin
+[9/10] cd /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/esp-idf/esptool_py && /home/fracchio/.espressif/python_env/idf5.2_py3.11_env/bin/python /home/fracchio/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/partition_table/partition-table.bin /home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/iLot.bin
+iLot.bin binary size 0x60b00 bytes. Smallest app partition is 0x100000 bytes. 0x9f500 bytes (62%) free.
+[9/10] cd /home/fracchio/esp/esp-idf/components/esptool_py && /usr/bin/cmake -D IDF_PATH=/home/fracchio/esp/esp-idf -D "SERIAL_TOOL=/home/fracchio/.espressif/python_env/idf5.2_py3.11_env/bin/python;;/home/fracchio/esp/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32s3" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build -P /home/fracchio/esp/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32s3 -p /dev/ttyUSB0 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 80m --flash_size 2MB 0x0 bootloader/bootloader.bin 0x10000 iLot.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.7.0
+Serial port /dev/ttyUSB0
+Connecting....
+Chip is ESP32-S3 (QFN56) (revision v0.2)
+Features: WiFi, BLE, Embedded Flash 8MB (GD)
+Crystal is 40MHz
+MAC: 48:27:e2:e2:e5:e4
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00000000 to 0x00005fff...
+Flash will be erased from 0x00010000 to 0x00070fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Compressed 21072 bytes to 13057...
+Writing at 0x00000000... (100 %)
+Wrote 21072 bytes (13057 compressed) at 0x00000000 in 0.8 seconds (effective 206.2 kbit/s)...
+Hash of data verified.
+Compressed 396032 bytes to 222124...
+Writing at 0x00010000... (7 %)
+Writing at 0x0001c7e5... (14 %)
+Writing at 0x0002259d... (21 %)
+Writing at 0x0002993d... (28 %)
+Writing at 0x0002fb91... (35 %)
+Writing at 0x00035ff8... (42 %)
+Writing at 0x0003c6ce... (50 %)
+Writing at 0x00042782... (57 %)
+Writing at 0x00048cc8... (64 %)
+Writing at 0x0004e7f0... (71 %)
+Writing at 0x000549bb... (78 %)
+Writing at 0x0005f4a9... (85 %)
+Writing at 0x0006697a... (92 %)
+Writing at 0x0006d23f... (100 %)
+Wrote 396032 bytes (222124 compressed) at 0x00010000 in 9.4 seconds (effective 337.0 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.1 seconds (effective 306.5 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

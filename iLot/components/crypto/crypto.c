@@ -119,7 +119,8 @@ void digital_sign_pem(const unsigned char* message, mbedtls_pk_context pk, size_
 
     printf("generated siganture:\n");
 
-    print_exadecimal(sig, strlen((char*)sig));
+    print_exadecimal(sig, MBEDTLS_PK_SIGNATURE_MAX_SIZE);
+    printf("generated signature length %d\n", sig_len);
     *signature_len= sig_len;
 }
 
@@ -139,3 +140,200 @@ mbedtls_pk_context get_local_private_key(const uint8_t* key_char){
     }
     return pk;
 }
+
+
+int load_ecc_private_key(mbedtls_pk_context *pk, const uint8_t *key, size_t key_len) {
+
+    return -1;
+   
+}
+
+
+
+int generate_signature(const unsigned char *message, size_t message_len, 
+                       unsigned char *signature, size_t *signature_len, 
+                       mbedtls_pk_context *key, uint8_t* char_key)
+{
+    mbedtls_ecdsa_context ctx_sign;
+    mbedtls_ecp_point Q;
+    mbedtls_ecp_point_init(&Q);
+    mbedtls_entropy_context entropy;
+    mbedtls_ctr_drbg_context ctr_drbg;
+    unsigned char hash[32];
+    //unsigned char sig[MBEDTLS_ECDSA_MAX_LEN];
+    size_t sig_len;
+    const char *pers = "ecdsa";
+    int ret;
+
+    mbedtls_ecdsa_init(&ctx_sign);
+    mbedtls_ctr_drbg_init(&ctr_drbg);
+
+    memset(signature, 0, MBEDTLS_ECDSA_MAX_LEN);
+     mbedtls_entropy_init(&entropy);
+    if ((ret = mbedtls_ctr_drbg_seed(&ctr_drbg, mbedtls_entropy_func, &entropy,
+                                     (const unsigned char *) pers,
+                                     strlen(pers))) != 0) {
+        printf(" failed\n  ! mbedtls_ctr_drbg_seed returned %d\n", ret);
+        mbedtls_ecdsa_free(&ctx_sign);
+        mbedtls_ecp_point_free(&Q);
+        mbedtls_ctr_drbg_free(&ctr_drbg);
+        mbedtls_entropy_free(&entropy);
+        return -1;
+    }
+
+    //here he generates the key, i have to upload it (124-138)
+    mbedtls_pk_init(key);
+    ret= mbedtls_pk_parse_key(key, char_key, strlen((char*) char_key)+1, NULL, 0, mbedtls_ctr_drbg_random, &ctr_drbg);
+    if(ret != 0){
+        printf("failed to parse the key\n");
+        mbedtls_ecdsa_free(&ctx_sign);
+        mbedtls_ecp_point_free(&Q);
+        mbedtls_ctr_drbg_free(&ctr_drbg);
+        mbedtls_entropy_free(&entropy);
+        return -1;
+    }
+
+    ret = mbedtls_ecdsa_from_keypair(&ctx_sign, mbedtls_pk_ec(*key));
+
+    if(ret != 0){
+        printf("failed to load the ecdsa key\n");
+        mbedtls_ecdsa_free(&ctx_sign);
+        mbedtls_ecp_point_free(&Q);
+        mbedtls_ctr_drbg_free(&ctr_drbg);
+        mbedtls_entropy_free(&entropy);
+        return -1;      
+    }
+
+
+
+
+
+    printf("  . Computing message hash...");
+    fflush(stdout);
+
+    if ((ret = mbedtls_sha256(message, sizeof(message), hash, 0)) != 0) {
+        printf(" failed\n  ! mbedtls_sha256 returned %d\n", ret);
+        mbedtls_ecdsa_free(&ctx_sign);
+        mbedtls_ecp_point_free(&Q);
+        mbedtls_ctr_drbg_free(&ctr_drbg);
+        mbedtls_entropy_free(&entropy);
+        return -1;
+    }
+
+    printf(" ok\n");
+    print_exadecimal(hash, 32);
+
+    printf("  . Signing message hash...");
+    fflush(stdout);
+
+    if ((ret = mbedtls_ecdsa_write_signature(&ctx_sign, MBEDTLS_MD_SHA256,
+                                             hash, sizeof(hash),
+                                             signature, MBEDTLS_ECDSA_MAX_LEN, &sig_len,
+                                             mbedtls_ctr_drbg_random, &ctr_drbg)) != 0) {
+        printf(" failed\n  ! mbedtls_ecdsa_write_signature returned %d\n", ret);
+        mbedtls_ecdsa_free(&ctx_sign);
+        mbedtls_ecp_point_free(&Q);
+        mbedtls_ctr_drbg_free(&ctr_drbg);
+        mbedtls_entropy_free(&entropy);
+        return -1;
+    }
+    printf(" ok (signature length = %u)\n", (unsigned int) sig_len);
+
+
+    mbedtls_ecdsa_free(&ctx_sign);
+    mbedtls_ecp_point_free(&Q);
+    mbedtls_ctr_drbg_free(&ctr_drbg);
+    mbedtls_entropy_free(&entropy);
+    return 0;
+
+/*
+
+    mbedtls_ecdsa_context ctx_verify;
+    mbedtls_ecdsa_init(&ctx_verify);
+
+
+
+    printf("  . Preparing verification context...");
+    fflush(stdout);
+
+    mbedtls_ecp_group_id grp_id = mbedtls_ecp_keypair_get_group_id(&ctx_sign);
+
+    if ((ret = mbedtls_ecp_export(&ctx_sign, NULL, NULL, &Q)) != 0) {
+        printf(" failed\n  ! mbedtls_ecp_export returned %d\n", ret);
+        goto exit;
+    }
+
+    if ((ret = mbedtls_ecp_set_public_key(grp_id, &ctx_verify, &Q)) != 0) {
+        printf(" failed\n  ! mbedtls_ecp_set_public_key returned %d\n", ret);
+        goto exit;
+    }
+
+
+    printf(" ok\n  . Verifying signature...");
+    fflush(stdout);
+
+    if ((ret = mbedtls_ecdsa_read_signature(&ctx_verify,
+                                            hash, sizeof(hash),
+                                            signature, strlen((char *)signature))) != 0) {
+        printf(" failed\n  ! mbedtls_ecdsa_read_signature returned %d\n", ret);
+        goto exit;
+    }
+
+
+
+*/
+
+
+   
+}
+
+
+
+int verify_signature(const unsigned char *message, size_t message_len, 
+                     const unsigned char *signature, size_t signature_len, 
+                     mbedtls_pk_context *key)
+{
+    /*mbedtls_ecdsa_context ctx_verify;
+    mbedtls_ecdsa_init(&ctx_verify);
+
+
+
+    mbedtls_printf("  . Preparing verification context...");
+    fflush(stdout);
+
+    if ((ret = mbedtls_ecp_export(&ctx_sign, NULL, NULL, &Q)) != 0) {
+        mbedtls_printf(" failed\n  ! mbedtls_ecp_export returned %d\n", ret);
+        goto exit;
+    }
+
+    if ((ret = mbedtls_ecp_set_public_key(grp_id, &ctx_verify, &Q)) != 0) {
+        mbedtls_printf(" failed\n  ! mbedtls_ecp_set_public_key returned %d\n", ret);
+        goto exit;
+    }
+
+    */
+   /*
+     * Verify signature
+     */
+    /*
+
+    mbedtls_printf(" ok\n  . Verifying signature...");
+    fflush(stdout);
+
+    if ((ret = mbedtls_ecdsa_read_signature(&ctx_verify,
+                                            hash, sizeof(hash),
+                                            sig, sig_len)) != 0) {
+        mbedtls_printf(" failed\n  ! mbedtls_ecdsa_read_signature returned %d\n", ret);
+        goto exit;
+    }
+
+    mbedtls_printf(" ok\n");
+
+    exit_code = MBEDTLS_EXIT_SUCCESS;
+
+    goto exit;*/
+
+    return -1;
+}
+
+
