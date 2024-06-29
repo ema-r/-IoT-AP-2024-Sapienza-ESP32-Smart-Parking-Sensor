@@ -77,7 +77,7 @@ void app_main(void)
     char* mes="wake up number ";
     char message[25];
     snprintf(message, sizeof(message), "%s%d",  mes, boot_num);
-    char * m=create_message("aaaaa");
+    char * m=create_message(message);
     printf("I am sending this message: %s\n of size %d", m, strlen(m));
 
     send_lora_message(m);

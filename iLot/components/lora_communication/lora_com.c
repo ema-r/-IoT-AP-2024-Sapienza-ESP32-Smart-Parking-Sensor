@@ -94,7 +94,6 @@ void send_lora_message(const char* message) {
     ESP_LOGI(TAG, "Start");
     TickType_t nowTick = xTaskGetTickCount();
     int txLen = sprintf((char *)txData, message, nowTick);
-    printf("I am sending in lora this: %s\n", txData);
     //uint8_t len = strlen((char *)txData);
 
     // Wait for transmission to complete
