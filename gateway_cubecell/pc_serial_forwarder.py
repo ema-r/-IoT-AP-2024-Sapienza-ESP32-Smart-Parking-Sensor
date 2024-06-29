@@ -17,10 +17,8 @@ from cryptography.hazmat.primitives import serialization
 def load_ec_key_and_verify_signature(certificate, message, signature):
     try:
 
-        print(f"Message (hex): {binascii.hexlify(message).decode('utf-8')}")
-        print(f"Signature (hex): {binascii.hexlify(signature).decode('utf-8')}")
-        # Load the certificate
-        #certificate = x509.load_pem_x509_certificate(pem_data, default_backend())
+        #print(f"Message (hex): {binascii.hexlify(message).decode('utf-8')}")
+        #print(f"Signature (hex): {binascii.hexlify(signature).decode('utf-8')}")
         
         # Extract the public key from the certificate
         public_key = certificate.public_key()
