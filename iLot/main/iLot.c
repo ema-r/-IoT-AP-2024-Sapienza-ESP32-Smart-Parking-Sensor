@@ -7,6 +7,7 @@
 #include "driver/rtc_io.h"
 #include "lora_com.h"
 #include "crypto.h"
+#include "pspot.h"
 
 
 
