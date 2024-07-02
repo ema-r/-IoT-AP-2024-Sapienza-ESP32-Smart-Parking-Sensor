@@ -96,7 +96,7 @@ void app_main(void)
     char * m=create_message(message);
     printf("I am sending this message: %s\n of size %d", m, strlen(m));
 
-    //send_lora_message(m);
+    send_lora_message(m);
 
     free(m);
     
