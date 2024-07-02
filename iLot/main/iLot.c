@@ -8,8 +8,7 @@
 #include "lora_com.h"
 #include "crypto.h"
 #include "pspot.h"
-
-
+#include "permstorage.h"
 
 RTC_DATA_ATTR extern const uint8_t client_pri_key_start[] asm("_binary_private_key_client_pem_start");
 
@@ -17,10 +16,11 @@ RTC_DATA_ATTR extern const uint8_t client_pri_key_start[] asm("_binary_private_k
 
 // Define the ADC1 channel 0 pin (verify the correct GPIO number for your setup)
 #define ADC1_CHANNEL_0 ADC1_CHANNEL_0
+#define NVS_BOOTCOUNT_NAME "bootcount"
 
 // GPIO number for ADC1 channel 0 (based on ESP32-S3 datasheet, update as necessary)
 #define GPIO_NUM_ADC1_CH0 GPIO_NUM_1 // Update GPIO number accordingly
-RTC_DATA_ATTR int boot_num=0;
+RTC_DATA_ATTR uint32_t boot_num=0;
 
 
 char* create_message(char * message){
@@ -73,30 +73,42 @@ char* create_message(char * message){
 void app_main(void)
 {
     init_lora();
+    init_nvs();
+    setup_sleeping_src();
 
+    if (boot_num == 0) {
+      // Check if there's a boot count written on the NVS
+      uint32_t nvs_bootcount_buffer = 0;
+      read_u32_from_nvs(NVS_BOOTCOUNT_NAME, &nvs_bootcount_buffer);
+      printf("wake up number on nvs: %ld\n", nvs_bootcount_buffer);
+      if (nvs_bootcount_buffer != 0) {
+        boot_num = nvs_bootcount_buffer;
+      } // Add some else code that generates a random starting number
+    }
 
-    char* mes="wake up number ";
-    char message[25];
-    snprintf(message, sizeof(message), "%s%d",  mes, boot_num);
+    printf("wake up number %ld\n", boot_num);
+
+    // Get wakeup num, create message by concat'ing boot_num:wakeup_pin
+    uint64_t wakeup_pin = get_triggered_wakeup_pin();
+    char message[80];
+    snprintf(message, sizeof(message), "%ld:%lld",  boot_num, wakeup_pin);
+    printf("\nWRITTEN MESSAGE IS %s\n", message);
     char * m=create_message(message);
     printf("I am sending this message: %s\n of size %d", m, strlen(m));
 
-    send_lora_message(m);
+    //send_lora_message(m);
 
     free(m);
     
-    printf("wake up number %d\n", boot_num);
     boot_num++;
-
-    esp_sleep_enable_ext0_wakeup(GPIO_NUM_ADC1_CH0, 1); // Wake up on high level
-    ESP_ERROR_CHECK(rtc_gpio_pulldown_en(GPIO_NUM_1));
+    // Write the updated boot count to nvs memory in case power is completely lost.
+    write_u32_to_nvs(NVS_BOOTCOUNT_NAME, boot_num);
 
     printf("Entering deep sleep...\n");
 
-            // Enter deep sleep
+    //        // Enter deep sleep
     esp_deep_sleep_start();
 
 
 
 }
-
