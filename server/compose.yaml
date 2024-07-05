@@ -1,0 +1,18 @@
+services:
+  flask_app:
+    build: ./flask_app
+    ports:
+      - "15000:5000"
+
+  redis:
+    image: "redis:alpine"
+  
+  mosquitto:
+    image: eclipse-mosquitto
+    restart: unless-stopped
+    ports: 
+      - "1883:1883"
+      - "9001:9001"
+    volumes:
+      - ./msqt_app:/etc/mosquitto
+      - ./msqt_app/mosquitto.conf:/mosquitto/config/mosquitto.conf
