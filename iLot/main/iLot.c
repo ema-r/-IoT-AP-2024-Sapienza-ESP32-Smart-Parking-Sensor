@@ -105,6 +105,7 @@ void app_main(void)
     printf("wake up number %ld\n", boot_num);
 
     uint64_t wakeup_pin = get_triggered_wakeup_pin();
+    char message[80];
     //snprintf(message, sizeof(message), "%02X%02X%02X%02X%02X%02X:%ld:%lld", mac_buf[0], mac_buf[1], mac_buf[2], mac_buf[3], mac_buf[4], mac_buf[5], boot_num, wakeup_pin);
     snprintf(message, sizeof(message), "%lld", wakeup_pin);
 

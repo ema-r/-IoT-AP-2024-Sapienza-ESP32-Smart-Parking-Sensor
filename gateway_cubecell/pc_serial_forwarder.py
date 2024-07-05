@@ -16,6 +16,7 @@ pid = "1"
 mqtt_broker_uri = "localhost"
 
 parking_spots = {}
+parking_nonces = {}
 
 def load_ec_key_and_verify_signature(certificate, message, signature):
     try:
@@ -114,6 +115,17 @@ def convert_mac_to_parking_spot_id(mac, spot_num):
         parking_spots[mac] = next_id
         return next_id + spot_num
 
+def nonce_is_valid(mac, nonce):
+    if mac in parking_nonces:
+        if (parking_nonces[mac]+1) == nonce:
+            parking_nonces[mac] = parking_nonces[mac]+1
+            return True
+        else:
+            return False
+    else:
+        parking_nonces[mac] = nonce
+        return True
+
 # Event handler for Paho MQTT client. We only need to publish
 def on_publish(client, userdata, mid, reason_code, properties):
     try:
@@ -155,19 +167,20 @@ def main():
                     name, nonce, message, signature = parse_and_decode_string(data)
                     print_hexadecimal(signature)
 
-                    if name != None && nonce != None && != message != None:
-                    # Check nonce validity
-                    
+                    if (name is not None and nonce is not None and message is not None):
                         certificate = get_certificate_by_filename(certs, name)
-                        to_be_verified = name + nonce + message
+                        to_be_verified = str(name) + str(nonce) + str(message)
                         is_valid = load_ec_key_and_verify_signature(certificate, to_be_verified, signature)
                         print(f"Signature is valid: {is_valid}")
 
-                        # get pspot (the mac) from received message
-                        msg_info = mqttc.publish(pid+"/pspot/"+pspot+"/", "change", qos = 2)
-                        unacked_publish.add(msg_info)
+                        if is_valid and nonce_is_valid(name, nonce):
 
-                        msg_info.wait_for_publish()
+                            # get pspot (the mac) from received message
+                            pspot = convert_mac_to_parking_spot_id(name, message)
+                            msg_info = mqttc.publish(pid+"/pspot/"+pspot+"/", "change", qos = 2)
+                            unacked_publish.add(msg_info)
+
+                            msg_info.wait_for_publish()
             
             mqttc.disconnect()
             mqttc.loop_stop()
