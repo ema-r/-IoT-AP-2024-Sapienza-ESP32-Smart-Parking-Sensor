@@ -1,7 +1,9 @@
+#include <stdint.h>
 #include <stdio.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "esp_sleep.h"
+#include "esp_mac.h"
 #include "driver/gpio.h"
 #include "esp_err.h"
 #include "driver/rtc_io.h"
@@ -22,6 +24,11 @@ RTC_DATA_ATTR extern const uint8_t client_pri_key_start[] asm("_binary_private_k
 #define GPIO_NUM_ADC1_CH0 GPIO_NUM_1 // Update GPIO number accordingly
 RTC_DATA_ATTR uint32_t boot_num=0;
 
+void get_unique_MAC_address(uint8_t mac[6]){
+  esp_efuse_mac_get_default(mac);
+  esp_read_mac(mac, ESP_MAC_WIFI_STA);
+  return;  
+}
 
 char* create_message(char * message){
 
@@ -39,15 +46,20 @@ char* create_message(char * message){
 
     load_ecc_private_key(&pk, (unsigned char*) client_pri_key_start, entropy, ctr_drbg);
 
+    uint8_t mac_buf[6];
+    get_unique_MAC_address(mac_buf);
+
+    char boot_num_string[20];
+    snprintf(boot_num_string, sizeof(boot_num_string), "%ld", boot_num);
+
+    char sign_buffer[160];
+    snprintf(sign_buffer, sizeof(sign_buffer), "%02X:%02X:%02X:%02X:%02X:%02X%ld%s", mac_buf[0], mac_buf[1], mac_buf[2], mac_buf[3], mac_buf[4], mac_buf[5], boot_num, message);
 
     generate_signature(message, strlen(message), 
                         signature, &sig_len, 
                         &pk, &res_ctx, Q, entropy, ctr_drbg);
 
-
-    
     print_exadecimal(signature, MBEDTLS_ECDSA_MAX_LEN);
-
     
     int ret= verify_signature((unsigned char*) message, strlen(message), 
                         signature, &sig_len, 
@@ -57,8 +69,12 @@ char* create_message(char * message){
     free_crypto(Q, entropy, ctr_drbg);
     printf("the result of the signature verification is %d\n", ret);
 
+    // Get wakeup num, create message by concat'ing boot_num:wakeup_pin
+    char mac_string[80];
+    
+    snprintf(mac_string, sizeof(mac_string), "%02X:%02X:%02X:%02X:%02X:%02X", mac_buf[0], mac_buf[1], mac_buf[2], mac_buf[3], mac_buf[4], mac_buf[5]);
 
-    char* strings[]={"A", "0", message, (char*)signature};
+    char* strings[]={mac_string, boot_num_string, message, (char*)signature};
 
     char *output_buffer = NULL;
     base64stringcat(strings, 4, &output_buffer, sig_len);
@@ -88,10 +104,10 @@ void app_main(void)
 
     printf("wake up number %ld\n", boot_num);
 
-    // Get wakeup num, create message by concat'ing boot_num:wakeup_pin
     uint64_t wakeup_pin = get_triggered_wakeup_pin();
-    char message[80];
-    snprintf(message, sizeof(message), "%ld:%lld",  boot_num, wakeup_pin);
+    //snprintf(message, sizeof(message), "%02X%02X%02X%02X%02X%02X:%ld:%lld", mac_buf[0], mac_buf[1], mac_buf[2], mac_buf[3], mac_buf[4], mac_buf[5], boot_num, wakeup_pin);
+    snprintf(message, sizeof(message), "%lld", wakeup_pin);
+
     printf("\nWRITTEN MESSAGE IS %s\n", message);
     char * m=create_message(message);
     printf("I am sending this message: %s\n of size %d", m, strlen(m));

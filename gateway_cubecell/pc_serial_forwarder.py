@@ -1,6 +1,7 @@
 import serial
 import platform
 import os
+import time
 from cryptography import x509
 from cryptography.hazmat.backends import default_backend
 import base64
@@ -9,10 +10,12 @@ from cryptography.hazmat.primitives.asymmetric import ec
 from cryptography.exceptions import InvalidSignature
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives import serialization
+import paho.mqtt.client as mqtt
 
+pid = "1"
+mqtt_broker_uri = "localhost"
 
-
-
+parking_spots = {}
 
 def load_ec_key_and_verify_signature(certificate, message, signature):
     try:
@@ -44,7 +47,6 @@ def load_ec_key_and_verify_signature(certificate, message, signature):
         return False
 
 
-
 def load_pem_files(directory):
     pem_files = [f for f in os.listdir(directory) if f.endswith('.pem')]
     certificates = []
@@ -62,7 +64,6 @@ def load_pem_files(directory):
 
     return certificates
 
-
     
 def get_certificate_by_filename(certificates, filename):
     for cert in certificates:
@@ -78,23 +79,23 @@ def parse_and_decode_string(input_string):
     if len(parts) >= 4:
         # Extract substrings
         first_substring = parts[0]
+        second_substring = parts[1]
         third_substring = parts[2]
         fourth_substring = parts[3]
 
         # Decode using base64
         try:
             first_decoded = base64.b64decode(first_substring).decode('utf-8')
+            second_decoded = base64.b64decode(second_substring)
             third_decoded = base64.b64decode(third_substring)   #kept as binary
             fourth_decoded = base64.b64decode(fourth_substring) #binary data, dig. siganture
-            return first_decoded, third_decoded, fourth_decoded
+            return first_decoded, second_decoded, third_decoded, fourth_decoded
         except Exception as e:
             print(f"Error decoding: {e}")
-            return None, None, None
+            return None, None, None, None
     else:
         print("Input string does not have enough parts separated by ':'")
-        return None, None, None
-
-
+        return None, None, None, None
 
 
 def print_hexadecimal(data):
@@ -103,7 +104,22 @@ def print_hexadecimal(data):
         print(f"Hexadecimal representation: {hex_representation}")
     else:
         print("Input data is not bytes")
-    
+
+
+def convert_mac_to_parking_spot_id(mac, spot_num):
+    if mac in parking_spots:
+        return parking_spots[mac] + spot_num
+    else:
+        next_id = len(parking_spots) * 2
+        parking_spots[mac] = next_id
+        return next_id + spot_num
+
+# Event handler for Paho MQTT client. We only need to publish
+def on_publish(client, userdata, mid, reason_code, properties):
+    try:
+        userdata.remove(mid)
+    except KeyError:
+        print("on_publish() caused a race condition")
 
 def main():
     system_type = input("Is your system Unix or Windows? (Enter 'unix' or 'windows'): ").strip().lower()
@@ -123,18 +139,38 @@ def main():
             print(f"Opened {port_name} successfully. Reading data...")
             certs = load_pem_files('./certs')
 
+            unacked_publish = set()
+            mqttc = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
+            mqttc.on_publish = on_publish
+
+            mqttc.user_data_set(unacked_publish)
+            mqttc.connect(mqtt_broker_uri)
+            mqttc.loop_start()
+
             while True:
                 if ser.in_waiting > 0:
                     data = ser.readline().decode('utf-8').strip()
                     print(f"Received: {data}")
 
-                    name, message, signature = parse_and_decode_string(data)
+                    name, nonce, message, signature = parse_and_decode_string(data)
                     print_hexadecimal(signature)
-                    
-                    certificate = get_certificate_by_filename(certs, name)
-                    is_valid = load_ec_key_and_verify_signature(certificate, message, signature)
-                    print(f"Signature is valid: {is_valid}")
 
+                    if name != None && nonce != None && != message != None:
+                    # Check nonce validity
+                    
+                        certificate = get_certificate_by_filename(certs, name)
+                        to_be_verified = name + nonce + message
+                        is_valid = load_ec_key_and_verify_signature(certificate, to_be_verified, signature)
+                        print(f"Signature is valid: {is_valid}")
+
+                        # get pspot (the mac) from received message
+                        msg_info = mqttc.publish(pid+"/pspot/"+pspot+"/", "change", qos = 2)
+                        unacked_publish.add(msg_info)
+
+                        msg_info.wait_for_publish()
+            
+            mqttc.disconnect()
+            mqttc.loop_stop()
                     
     except serial.SerialException as e:
         print(f"Error opening {port_name}: {e}")
