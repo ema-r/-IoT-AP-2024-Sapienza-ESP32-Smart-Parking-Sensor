@@ -13,13 +13,13 @@ from cryptography.hazmat.primitives import serialization
 import paho.mqtt.client as mqtt
 
 pid = "1"
-mqtt_broker_uri = "localhost"
+mqtt_broker_uri = "mosquitto"
 
 parking_spots = {}
 parking_nonces = {}
 
-mqtt_username = ""
-mqtt_passwd = ""
+mqtt_username = "user1"
+mqtt_passwd = "test"
 
 def load_ec_key_and_verify_signature(certificate, message, signature):
     try:
@@ -89,7 +89,7 @@ def parse_and_decode_string(input_string):
 
         # Decode using base64
         try:
-            first_decoded = base64.b64decode(first_substring).decode('utf-8')
+            first_decoded = base64.b64decode(first_substring)
             second_decoded = base64.b64decode(second_substring)
             third_decoded = base64.b64decode(third_substring)   #kept as binary
             fourth_decoded = base64.b64decode(fourth_substring) #binary data, dig. siganture
@@ -169,18 +169,20 @@ def main():
                     print(f"Received: {data}")
 
                     name, nonce, message, signature = parse_and_decode_string(data)
+                    name = "A"
                     print_hexadecimal(signature)
 
                     if (name is not None and nonce is not None and message is not None):
                         certificate = get_certificate_by_filename(certs, name)
-                        to_be_verified = str(name) + str(nonce) + str(message)
-                        is_valid = load_ec_key_and_verify_signature(certificate, to_be_verified, signature)
+                        #to_be_verified = str(name) + str(nonce) + str(message)
+                        is_valid = load_ec_key_and_verify_signature(certificate, message, signature)
                         print(f"Signature is valid: {is_valid}")
 
                         if is_valid and nonce_is_valid(name, nonce):
 
                             # get pspot (the mac) from received message
-                            pspot = convert_mac_to_parking_spot_id(name, message)
+                            pspot = str(convert_mac_to_parking_spot_id(name, int(message[-1])))
+
                             msg_info = mqttc.publish("pspot/"+pid+"/"+pspot+"/", "c", qos = 2)
                             unacked_publish.add(msg_info)
 

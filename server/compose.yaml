@@ -8,12 +8,13 @@ services:
     image: "redis:alpine"
   
   mosquitto:
-    image: eclipse-mosquitto
+    image: eclipse-mosquitto:2.0.15
     restart: unless-stopped
     container_name: mosquitto
+    hostname: mosquitto
     ports: 
       - "1883:1883"
       - "9001:9001"
     volumes:
-      - ./msqt_app:/etc/mosquitto
+      - ./msqt_app/passwd:/mosquitto/config/passwd
       - ./msqt_app/mosquitto.conf:/mosquitto/config/mosquitto.conf
