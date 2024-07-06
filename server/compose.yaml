@@ -10,6 +10,7 @@ services:
   mosquitto:
     image: eclipse-mosquitto
     restart: unless-stopped
+    container_name: mosquitto
     ports: 
       - "1883:1883"
       - "9001:9001"

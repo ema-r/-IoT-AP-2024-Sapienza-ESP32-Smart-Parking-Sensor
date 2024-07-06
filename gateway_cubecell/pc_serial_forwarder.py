@@ -18,6 +18,9 @@ mqtt_broker_uri = "localhost"
 parking_spots = {}
 parking_nonces = {}
 
+mqtt_username = ""
+mqtt_passwd = ""
+
 def load_ec_key_and_verify_signature(certificate, message, signature):
     try:
 
@@ -154,6 +157,7 @@ def main():
             unacked_publish = set()
             mqttc = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
             mqttc.on_publish = on_publish
+            mqttc.username_pw_set(mqtt_username, mqtt_passwd)
 
             mqttc.user_data_set(unacked_publish)
             mqttc.connect(mqtt_broker_uri)
