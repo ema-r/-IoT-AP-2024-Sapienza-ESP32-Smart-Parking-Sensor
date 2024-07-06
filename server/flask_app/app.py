@@ -15,7 +15,7 @@ app.config['MQTT_PASSWD'] = ''
 app.config['MQTT_KEEPALIVE'] = 5
 app.config['MQTT_TLS_ENABLED'] = False   # Same machine as the mqtt broker
 
-mqtt = Mqtt()
+mqtt = Mqtt(app)
 
 @mqtt.on_connect()
 def handle_connect(client, userdata, flags, rc):
@@ -41,3 +41,11 @@ def handle_mqtt_message(client, userdata, message):
 @app.route('/')
 def hello():
     return 'Hello'
+
+@app.route('/subtest')
+def stest():
+    mqtt.subscribe('test')
+    return 'okay'
+
+if __name__ == '__main__':
+   app.run(host='127.0.0.1', port=5000)

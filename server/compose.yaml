@@ -3,6 +3,9 @@ services:
     build: ./flask_app
     ports:
       - "15000:5000"
+    depends_on:
+      mosquitto:
+        condition: service_started
 
   redis:
     image: "redis:alpine"
