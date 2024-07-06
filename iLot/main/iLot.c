@@ -55,13 +55,14 @@ char* create_message(char * message){
     char sign_buffer[160];
     snprintf(sign_buffer, sizeof(sign_buffer), "%02X:%02X:%02X:%02X:%02X:%02X%ld%s", mac_buf[0], mac_buf[1], mac_buf[2], mac_buf[3], mac_buf[4], mac_buf[5], boot_num, message);
 
-    generate_signature(message, strlen(message), 
+
+    generate_signature(sign_buffer, strlen(sign_buffer), 
                         signature, &sig_len, 
                         &pk, &res_ctx, Q, entropy, ctr_drbg);
 
     print_exadecimal(signature, MBEDTLS_ECDSA_MAX_LEN);
     
-    int ret= verify_signature((unsigned char*) message, strlen(message), 
+    int ret= verify_signature((unsigned char*) sign_buffer, strlen(sign_buffer), 
                         signature, &sig_len, 
                         &pk, res_ctx, Q, entropy, ctr_drbg);
 
@@ -74,7 +75,7 @@ char* create_message(char * message){
     
     snprintf(mac_string, sizeof(mac_string), "%02X:%02X:%02X:%02X:%02X:%02X", mac_buf[0], mac_buf[1], mac_buf[2], mac_buf[3], mac_buf[4], mac_buf[5]);
 
-    char* strings[]={mac_string, boot_num_string, message, (char*)signature};
+    char* strings[]={mac_string, boot_num_string, sign_buffer, (char*)signature};
 
     char *output_buffer = NULL;
     base64stringcat(strings, 4, &output_buffer, sig_len);
@@ -113,7 +114,7 @@ void app_main(void)
     char * m=create_message(message);
     printf("I am sending this message: %s\n of size %d", m, strlen(m));
 
-    //send_lora_message(m);
+    send_lora_message(m);
 
     free(m);
     

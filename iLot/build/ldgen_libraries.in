@@ -66,4 +66,7 @@ $<TARGET_FILE:__idf_wifi_provisioning>
 $<TARGET_FILE:__idf_ra01s>
 $<TARGET_FILE:__idf_lora_communication>
 $<TARGET_FILE:__idf_crypto>
+$<TARGET_FILE:__idf_pspot>
+$<TARGET_FILE:__idf_permstorage>
 $<TARGET_FILE:__idf_main>
+$<TARGET_FILE:__idf_nvs_backing>
