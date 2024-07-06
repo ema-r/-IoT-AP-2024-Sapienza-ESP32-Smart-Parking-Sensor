@@ -181,7 +181,7 @@ def main():
 
                             # get pspot (the mac) from received message
                             pspot = convert_mac_to_parking_spot_id(name, message)
-                            msg_info = mqttc.publish(pid+"/pspot/"+pspot+"/", "change", qos = 2)
+                            msg_info = mqttc.publish("pspot/"+pid+"/"+pspot+"/", "c", qos = 2)
                             unacked_publish.add(msg_info)
 
                             msg_info.wait_for_publish()
