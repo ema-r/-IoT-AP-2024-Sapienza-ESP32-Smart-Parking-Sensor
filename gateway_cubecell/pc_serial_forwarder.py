@@ -18,8 +18,8 @@ mqtt_broker_uri = "mosquitto"  # replace with local ip of machine that hosts the
 parking_spots = {}
 parking_nonces = {}
 
-mqtt_username = ""
-mqtt_passwd = ""
+mqtt_username = "user1"
+mqtt_passwd = "test"
 
 def load_ec_key_and_verify_signature(certificate, message, signature):
     try:
