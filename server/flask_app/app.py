@@ -36,8 +36,8 @@ app = Flask(__name__)
 cache = redis.Redis(host='redis', port=6379)
 
 mqtt_broker_uri = ""
-mqtt_username = ""
-mqtt_passwd = ""
+mqtt_username = "user1"
+mqtt_passwd = "test"
 
 
 # We could upgrade to display each parking lot by filtering their id. We only have one so pid == 1 always
