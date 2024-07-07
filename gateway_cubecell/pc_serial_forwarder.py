@@ -13,13 +13,13 @@ from cryptography.hazmat.primitives import serialization
 import paho.mqtt.client as mqtt
 
 pid = "1"
-mqtt_broker_uri = "mosquitto"
+mqtt_broker_uri = "mosquitto"  # replace with local ip of machine that hosts the mosquitto instance
 
 parking_spots = {}
 parking_nonces = {}
 
-mqtt_username = "user1"
-mqtt_passwd = "test"
+mqtt_username = ""
+mqtt_passwd = ""
 
 def load_ec_key_and_verify_signature(certificate, message, signature):
     try:
@@ -184,9 +184,12 @@ def main():
                             pspot = str(convert_mac_to_parking_spot_id(name, int(message[-1])))
 
                             msg_info = mqttc.publish("pspot/"+pid+"/"+pspot+"/", "c", qos = 2)
-                            unacked_publish.add(msg_info)
+                            unacked_publish.add(msg_info.mid)
 
                             msg_info.wait_for_publish()
+
+                            while len(unacked_publish):
+                                time.sleep(0.1)
             
             mqttc.disconnect()
             mqttc.loop_stop()
