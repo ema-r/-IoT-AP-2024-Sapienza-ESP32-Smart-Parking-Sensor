@@ -1622,4 +1622,71 @@ entry 0x403c9914
 [0;32mI (362) RA01S: CONFIG_NSS_GPIO=8[0m
 [0;32mI (372) RA01S: CONFIG_RST_GPIO=12[0m
 [0;32mI (372) RA01S: CONFIG_BUSY_GPIO=13[0m
-[0;32mI (382) RA01S: CONFIG_TXEN_GPI
+[0;32mI (382) RA01S: CONFIG_TXEN_GPIO=-1[0m
+[0;32mI (382) RA01S: CONFIG_RXEN_GPIO=-1[0m
+[0;32mI (382) gpio: GPIO[8]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (392) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (402) gpio: GPIO[13]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (412) RA01S: spi_bus_initialize=0[0m
+[0;32mI (422) RA01S: spi_bus_add_device=0[0m
+[0;33mW (422) LORA: Enable TCXO[0m
+[0;32mI (462) RA01S: Reset[0m
+[0;32mI (462) RA01S: syncWord=0x1424[0m
+[0;32mI (462) RA01S: SX126x installed[0m
+[0;33mW (462) RA01S: WriteCommand2 status=0a retry=1[0m
+[0;32mI (472) RA01S: tcxoVoltage=3.300000[0m
+[0;32mI (482) RA01S: useRegulatorLDO=1[0m
+[0;32mI (492) RA01S: SetStopRxTimerOnPreambleDetect enable=0[0m
+[0;32mI (532) PSPOT_WAKEUP_HANDLER: Enabling EXT1 wakeup on pins GPIO1, GPIO2[0m
+wake up number 23
+[0;32mI (532) PSPOT_WAKEUP_HANDLER: Device was waken up by GPIO2[0m
+
+WRITTEN MESSAGE IS 1
+the ec key is:
+the key is: 
+-----BEGIN EC PRIVATE KEY-----
+MHcCAQEEILas2/EI5Vu1KQNWMZ3xDez7SmB4P7bBR8NCqq2/7Ea+oAoGCCqGSM49
+AwEHoUQDQgAEeaFGXLLGEEHOjNIUL1yefddMF6y4tbi+k4slCGpb1AoLg9Qk1V+p
+gdT4r7qnoOm/q18B1A5nvVAZVyi6SvCwSg==
+-----END EC PRIVATE KEY-----
+
+the key is: 
+-----BEGIN PUBLIC KEY-----
+MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEeaFGXLLGEEHOjNIUL1yefddMF6y4
+tbi+k4slCGpb1AoLg9Qk1V+pgdT4r7qnoOm/q18B1A5nvVAZVyi6SvCwSg==
+-----END PUBLIC KEY-----
+
+  . Computing message hash...the message in hexadecimal is:
+34383a32373a45323a45323a45353a4534323331
+ ok
+5099be1955c3e7c8700098fcddd9c72f411947e23f2d87101de3c21c2cc0180f
+  . Signing message hash... ok (signature length = 70)
+30440220200a2ea92f45bcbb9df7e1a8a3a1a68e9a64f46d56e36443a622a5de8fc39cd10220622798c9b0792d3aa5a2d665eb19b8b6e4ac4b22e5d0097719b1d1177c23b153000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  . Computing message hash...the message in hexadecimal is:
+34383a32373a45323a45323a45353a4534323331
+ ok
+5099be1955c3e7c8700098fcddd9c72f411947e23f2d87101de3c21c2cc0180f
+  . Preparing verification context... ok
+  . Verifying signature... which has lenght 70
+ the signature is valid!
+the result of the signature verification is 0
+I am sending this message: NDg6Mjc6RTI6RTI6RTU6RTQ=:MjM=:NDg6Mjc6RTI6RTI6RTU6RTQyMzE=:MEQCICAKLqkvRby7nffhqKOhpo6aZPRtVuNkQ6Yipd6Pw5zRAiBiJ5jJsHktOqWi1mXrGbi25KxLIuXQCXcZsdEXfCOxUw==
+ of size 155[0;32mI (922) LORA: Start[0m
+[0;32mI (1202) LORA: Send success[0m
+[0;32mI (1202) NVS_HANDLER: Updating value bootcount in NVS storage...[0m
+Done
+Committing updates in nvs... Done
+Entering deep sleep...
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x1 (DOWNLOAD(USB/UART0))
+waiting for download
+ 'ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x1 (DOWNLOAD(USB/UART0))
+waiting for download
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x1 (DOWNLOAD(USB/UART0))
+waiting for download
+ 

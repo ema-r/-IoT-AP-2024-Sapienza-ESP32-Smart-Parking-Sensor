@@ -69,4 +69,3 @@ $<TARGET_FILE:__idf_crypto>
 $<TARGET_FILE:__idf_pspot>
 $<TARGET_FILE:__idf_permstorage>
 $<TARGET_FILE:__idf_main>
-$<TARGET_FILE:__idf_nvs_backing>
