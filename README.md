@@ -41,7 +41,16 @@ mosquitto_passwd /mosquitto/config/passwd <username>
 ```
 which will prompt for the new password to be added. Configure these credentials on the Flask server and restart the containers to complete the configuration process.
 
-## Needed Devices
+## Objectives and Rationale
+### ESP32
+#### LoRa and Encryption
+#### Wakeup system
+### Gateway
+### Server
+
+## Energy consumption
+
+## Required Devices
 
 ## Members
 - [Emanuele Roncioni](https://www.linkedin.com/in/emanuele-roncioni-4b516a303/)
