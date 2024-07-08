@@ -31,10 +31,10 @@ uint64_t get_triggered_wakeup_pin() {
   ESP_LOGI(TAG, "%d", actual_pin);
 
   if (actual_pin == GPIO_WUP_1) {
-    return 1;
-  } else if (actual_pin == GPIO_WUP_2) {
-    return 2;
-  } else {
     return 0;
+  } else if (actual_pin == GPIO_WUP_2) {
+    return 1;
+  } else {
+    return -1;
   }
 }
