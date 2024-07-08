@@ -169,7 +169,7 @@ def main():
                     print(f"Received: {data}")
 
                     name, nonce, message, signature = parse_and_decode_string(data)
-                    name = "A"
+                    name = "48:27:E2:E2:E5:E4"
                     print_hexadecimal(signature)
 
                     if (name is not None and nonce is not None and message is not None):

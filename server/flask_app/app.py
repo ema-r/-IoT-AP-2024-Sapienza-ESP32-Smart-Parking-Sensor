@@ -35,7 +35,7 @@ def on_connect(client, userdata, flags, reason_code, properties):
 app = Flask(__name__)
 cache = redis.Redis(host='redis', port=6379)
 
-mqtt_broker_uri = ""
+mqtt_broker_uri = "mosquitto"
 mqtt_username = "user1"
 mqtt_passwd = "test"
 
