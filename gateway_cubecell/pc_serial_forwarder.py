@@ -12,7 +12,6 @@ from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives import serialization
 import paho.mqtt.client as mqtt
 
-pid = "1"
 mqtt_broker_uri = "mosquitto"  # replace with local ip of machine that hosts the mosquitto instance
 
 parking_spots = {}
@@ -181,9 +180,14 @@ def main():
                         if is_valid and nonce_is_valid(name, nonce):
 
                             # get pspot (the mac) from received message
+                            
                             pspot = str(convert_mac_to_parking_spot_id(name, int(message[-1])))
 
-                            msg_info = mqttc.publish("pspot/"+pid+"/"+pspot+"/", "c", qos = 2)
+                            topic="pspot/"+pspot
+                            print(f"the topic is {topic}")
+
+                            msg_info = mqttc.publish(topic, "c", qos = 2)
+                            print(f"message info is: {msg_info}")
                             unacked_publish.add(msg_info.mid)
 
                             msg_info.wait_for_publish()
