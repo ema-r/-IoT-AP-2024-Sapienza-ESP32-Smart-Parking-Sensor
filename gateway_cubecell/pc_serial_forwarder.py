@@ -126,7 +126,7 @@ def nonce_is_valid(mac, nonce):
         else:
             return False
     else:
-        parking_nonces[mac] = nonce
+        parking_nonces[mac] = int(nonce)
         return True
 
 # Event handler for Paho MQTT client. We only need to publish
