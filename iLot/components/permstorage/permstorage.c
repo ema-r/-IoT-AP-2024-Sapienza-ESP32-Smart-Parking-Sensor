@@ -2,6 +2,7 @@
 
 static char * TAG = "NVS_HANDLER";
 
+// Init nvs, check for errors
 void init_nvs() {
     esp_err_t err = nvs_flash_init();
     if (err == ESP_ERR_NVS_NO_FREE_PAGES || err == ESP_ERR_NVS_NEW_VERSION_FOUND) {
@@ -12,6 +13,7 @@ void init_nvs() {
     ESP_ERROR_CHECK( err );
 }
 
+// Get an handle, attempt opening the nvs storage with the right flag, we set the value then commit
 void write_u16_to_nvs(const char * v_name, uint16_t v) {
   nvs_handle_t n_handle;
   esp_err_t ret = nvs_open("storage", NVS_READWRITE, &n_handle);
@@ -33,6 +35,8 @@ void write_u16_to_nvs(const char * v_name, uint16_t v) {
   }
 }
 
+// Like write op, but since we only read there's no need to commit modifications
+// to the nvs.
 void read_u16_from_nvs(const char * v_name, uint16_t * v_buffer) {
   nvs_handle_t n_handle;
   esp_err_t ret = nvs_open("storage", NVS_READONLY, &n_handle);
