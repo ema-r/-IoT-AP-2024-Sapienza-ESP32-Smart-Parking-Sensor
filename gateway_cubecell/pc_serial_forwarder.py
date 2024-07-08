@@ -11,6 +11,8 @@ from cryptography.exceptions import InvalidSignature
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives import serialization
 import paho.mqtt.client as mqtt
+import queue
+
 
 mqtt_broker_uri = "mosquitto"  # replace with local ip of machine that hosts the mosquitto instance
 
@@ -118,23 +120,30 @@ def convert_mac_to_parking_spot_id(mac, spot_num):
         return next_id + spot_num
 
 def nonce_is_valid(mac, nonce):
+    nonce=int(nonce)
     if mac in parking_nonces:
-        if (parking_nonces[mac]+1) == nonce:
-            parking_nonces[mac] = parking_nonces[mac]+1
+        print(f"the current nounce is {parking_nonces[mac]}, insted the received nonce is: {nonce}")
+        if (parking_nonces[mac]) < nonce:
+            parking_nonces[mac] = nonce
             return True
         else:
             return False
     else:
-        parking_nonces[mac] = int(nonce)
+        parking_nonces[mac] = nonce
         return True
 
+
+def on_connect(client, userdata, flags, rc):
+    if rc == 0:
+        print("Connected successfully to broker")
+    else:
+        print(f"Connection failed with code {rc}")
+
+        
 # Event handler for Paho MQTT client. We only need to publish
 def on_publish(client, userdata, mid, reason_code, properties):
-    try:
-        userdata.remove(mid)
-    except KeyError:
-        print("on_publish() caused a race condition")
-
+    print("published the message")
+    
 def main():
     system_type = input("Is your system Unix or Windows? (Enter 'unix' or 'windows'): ").strip().lower()
     
@@ -153,7 +162,7 @@ def main():
             print(f"Opened {port_name} successfully. Reading data...")
             certs = load_pem_files('./certs')
 
-            unacked_publish = set()
+            unacked_publish = queue.Queue()
             mqttc = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
             mqttc.on_publish = on_publish
             mqttc.username_pw_set(mqtt_username, mqtt_passwd)
@@ -181,20 +190,16 @@ def main():
 
                             # get pspot (the mac) from received message
                             
-                            pspot = str(convert_mac_to_parking_spot_id(name, int(message[-1])))
-
+                            pspot = chr(convert_mac_to_parking_spot_id(name, int(message[-1])))
+                            
                             topic="pspot/"+pspot
                             print(f"the topic is {topic}")
 
-                            msg_info = mqttc.publish(topic, "c", qos = 2)
+                            msg_info = mqttc.publish(topic, message, qos = 0)
                             print(f"message info is: {msg_info}")
-                            unacked_publish.add(msg_info.mid)
+                        else:
+                            print("the nounce or the signature is not valid")
 
-                            msg_info.wait_for_publish()
-
-                            while len(unacked_publish):
-                                time.sleep(0.1)
-            
             mqttc.disconnect()
             mqttc.loop_stop()
                     

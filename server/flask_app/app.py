@@ -14,7 +14,7 @@ def on_message(client, userdata, message):
             )
     received = True
     print('aaa', flush = True)
-    print(data.get(payload),  flush = True)
+    print(data['payload'], flush=True)  # Print the payload
 #    split_topic = message.topic.split('/')
 #    if split_topic[2] is not None:
 #        parking_string = "pid"+split_topic[1]+"_pspot"+split_topic[2]
