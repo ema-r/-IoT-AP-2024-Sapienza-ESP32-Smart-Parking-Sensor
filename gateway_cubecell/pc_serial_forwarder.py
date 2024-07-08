@@ -18,8 +18,8 @@ mqtt_broker_uri = "mosquitto"  # replace with local ip of machine that hosts the
 parking_spots = {}
 parking_nonces = {}
 
-mqtt_username = ""
-mqtt_passwd = ""
+mqtt_username = "user2"
+mqtt_passwd = "test"
 
 def load_ec_key_and_verify_signature(certificate, message, signature):
     try:
@@ -126,7 +126,7 @@ def nonce_is_valid(mac, nonce):
         else:
             return False
     else:
-        parking_nonces[mac] = nonce
+        parking_nonces[mac] = int(nonce)
         return True
 
 # Event handler for Paho MQTT client. We only need to publish
