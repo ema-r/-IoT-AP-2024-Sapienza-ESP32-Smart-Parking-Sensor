@@ -1,4 +1,4 @@
-# _i(L)ot - IoT Algorithms and Services Sapienza 23/24_
+# i(L)ot - IoT Algorithms and Services Sapienza 23/24
 
 The following repository contains the final group project for the 23/34 edition
 of the IoT Algorithms and Services course held in Sapienza University of Rome.
@@ -43,6 +43,7 @@ which will prompt for the new password to be added. Configure these credentials 
 
 ## Objectives and Rationale
 ### ESP32
+#### Components overview
 #### LoRa and Encryption
 #### Wakeup system
 ### Gateway
