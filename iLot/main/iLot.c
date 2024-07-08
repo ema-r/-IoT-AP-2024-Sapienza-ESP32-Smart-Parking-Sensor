@@ -105,21 +105,23 @@ void app_main(void)
     printf("wake up number %ld\n", boot_num);
 
     uint64_t wakeup_pin = get_triggered_wakeup_pin();
-    char message[80];
-    //snprintf(message, sizeof(message), "%02X%02X%02X%02X%02X%02X:%ld:%lld", mac_buf[0], mac_buf[1], mac_buf[2], mac_buf[3], mac_buf[4], mac_buf[5], boot_num, wakeup_pin);
-    snprintf(message, sizeof(message), "%lld", wakeup_pin);
+    if (wakeup_pin >= 0) {
+        char message[80];
+        //snprintf(message, sizeof(message), "%02X%02X%02X%02X%02X%02X:%ld:%lld", mac_buf[0], mac_buf[1], mac_buf[2], mac_buf[3], mac_buf[4], mac_buf[5], boot_num, wakeup_pin);
+        snprintf(message, sizeof(message), "%lld", wakeup_pin);
 
-    printf("\nWRITTEN MESSAGE IS %s\n", message);
-    char * m=create_message(message);
-    printf("I am sending this message: %s\n of size %d", m, strlen(m));
+        printf("\nWRITTEN MESSAGE IS %s\n", message);
+        char * m=create_message(message);
+        printf("I am sending this message: %s\n of size %d", m, strlen(m));
 
-    send_lora_message(m);
+        send_lora_message(m);
 
-    free(m);
-    
-    boot_num++;
-    // Write the updated boot count to nvs memory in case power is completely lost.
-    write_u32_to_nvs(NVS_BOOTCOUNT_NAME, boot_num);
+        free(m);
+        
+        boot_num++;
+        // Write the updated boot count to nvs memory in case power is completely lost.
+        write_u32_to_nvs(NVS_BOOTCOUNT_NAME, boot_num);
+    }
 
     printf("Entering deep sleep...\n");
 

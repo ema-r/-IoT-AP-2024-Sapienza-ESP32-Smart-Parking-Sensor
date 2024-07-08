@@ -22,6 +22,8 @@ parking_nonces = {}
 mqtt_username = "user1"
 mqtt_passwd = "test"
 
+parking_lot_id = "0"
+
 def load_ec_key_and_verify_signature(certificate, message, signature):
     try:
 
@@ -130,7 +132,7 @@ def nonce_is_valid(mac, nonce):
         else:
             return False
     else:
-        parking_nonces[mac] = nonce
+        parking_nonces[mac] = int(nonce)
         return True
 
 
@@ -192,10 +194,10 @@ def main():
                             
                             pspot = chr(convert_mac_to_parking_spot_id(name, int(message[-1])))
                             
-                            topic="pspot/"+pspot
+                            topic="pspot/"+parking_lot_id+"/"+pspot
                             print(f"the topic is {topic}")
 
-                            msg_info = mqttc.publish(topic, message, qos = 0)
+                            msg_info = mqttc.publish(topic, 'c', qos = 0)
                             print(f"message info is: {msg_info}")
                         else:
                             print("the nounce or the signature is not valid")
