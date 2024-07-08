@@ -14,7 +14,7 @@ def on_message(client, userdata, message):
             )
     received = True
     print('aaa', flush = True)
-#    print(data.get(payload))
+    print(data.get(payload),  flush = True)
 #    split_topic = message.topic.split('/')
 #    if split_topic[2] is not None:
 #        parking_string = "pid"+split_topic[1]+"_pspot"+split_topic[2]
@@ -29,13 +29,13 @@ def on_connect(client, userdata, flags, reason_code, properties):
     if reason_code.is_failure:
         print(f"Failed to connect: {reason_code}. loop_forever() will retry connection")
     else:
-        client.subscribe("test")
+        client.subscribe("pspot/#")
 
 
 app = Flask(__name__)
 cache = redis.Redis(host='redis', port=6379)
 
-mqtt_broker_uri = ""
+mqtt_broker_uri = "mosquitto"
 mqtt_username = "user1"
 mqtt_passwd = "test"
 
