@@ -20,8 +20,7 @@ RTC_DATA_ATTR extern const uint8_t client_pri_key_start[] asm("_binary_private_k
 #define ADC1_CHANNEL_0 ADC1_CHANNEL_0
 #define NVS_BOOTCOUNT_NAME "bootcount"
 
-// GPIO number for ADC1 channel 0 (based on ESP32-S3 datasheet, update as necessary)
-#define GPIO_NUM_ADC1_CH0 GPIO_NUM_1 // Update GPIO number accordingly
+
 RTC_DATA_ATTR uint32_t boot_num=0;
 
 void get_unique_MAC_address(uint8_t mac[6]){
