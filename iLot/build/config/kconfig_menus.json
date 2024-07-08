@@ -6001,6 +6001,32 @@
     {
         "children": [
             {
+                "children": [],
+                "depends_on": null,
+                "help": "GPIO first pin to use for wakeup",
+                "id": "PIN1_WAKEUP",
+                "name": "PIN1_WAKEUP",
+                "range": [
+                    1,
+                    40
+                ],
+                "title": "GPIO first pin to use for wakeup",
+                "type": "int"
+            },
+            {
+                "children": [],
+                "depends_on": null,
+                "help": "GPIO second pin to use for wakeup",
+                "id": "PIN2_WAKEUP",
+                "name": "PIN2_WAKEUP",
+                "range": [
+                    1,
+                    40
+                ],
+                "title": "GPIO second pin to use for wakeup",
+                "type": "int"
+            },
+            {
                 "children": [
                     {
                         "children": [],
