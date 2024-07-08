@@ -1,5 +1,20 @@
 menu "Application Configuration"
 
+	config PIN1_WAKEUP
+		int "GPIO first pin to use for wakeup"
+		range 1 40
+		default 1
+		help
+			GPIO first pin to use for wakeup
+
+	config PIN2_WAKEUP
+		int "GPIO second pin to use for wakeup"
+		range 1 40
+		default 2
+		help
+			GPIO second pin to use for wakeup
+
+
 	choice POLARITY
 		prompt "Communication Polarity"
 		default PRIMARY
