@@ -9,7 +9,6 @@ void setup_sleeping_src() {
   // Prepare the bitmask needed for ext1 wakeup enabling. Will be concat'd as input to enabling func.
   // For some reason, GPIO_NUM_1 here means gpio4.
   ESP_LOGI(TAG, "Enabling EXT1 wakeup on pins %d %d", GPIO_WUP_1, GPIO_WUP_2);
-
   // bit sum the bit masks with bitwise OR operator
   ESP_ERROR_CHECK(esp_sleep_enable_ext1_wakeup_io((1ULL << GPIO_WUP_1) | (1ULL << GPIO_WUP_2), ESP_EXT1_WAKEUP_ANY_HIGH));
   ESP_ERROR_CHECK(rtc_gpio_pulldown_en(GPIO_WUP_1));
