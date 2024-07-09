@@ -40,7 +40,7 @@
 73	337	1719585897816379343	esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32s3/uart_periph.c.obj	4f2ec6dfedff483f
 1652	2001	1719585899519721954	esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_panic.c.obj	2dd06ccae245d81c
 3959	4511	1719585902023068915	esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_cache_esp32s2_esp32s3.c.obj	e4292e4485d880f1
-16	11073	1720435862078502475	build.ninja	66a65dcb0d915fd4
+12	15707	1720523680909551570	build.ninja	66a65dcb0d915fd4
 3857	4297	1719585901819734473	esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_spiflash.c.obj	eabaca018c5f5d23
 5479	5586	1719409151147787580	esp-idf/micro-ecc/libmicro-ecc.a	d02893e3a1f82557
 1054	3974	1719585901453065812	esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_utility.c.obj	f09ce17b1b654f4e
@@ -70,8 +70,8 @@
 357	735	1719409146121092632	esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32s3/rmt_periph.c.obj	1285719e11aef77b
 7660	7888	1719585905396420619	esp-idf/xtensa/libxtensa.a	705fe26f8cc4cadd
 239	501	1719585897983046918	esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32s3/timer_periph.c.obj	2fa675d3c25b3311
-4	83	0	/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	c54bf833295390b2
-4	83	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	c54bf833295390b2
+18	176	0	/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	c54bf833295390b2
+18	176	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	c54bf833295390b2
 1822	2283	1719585899823056940	esp-idf/efuse/CMakeFiles/__idf_efuse.dir/esp32s3/esp_efuse_utility.c.obj	5ce61c8227df6579
 2283	3989	1719585901489732677	esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/port/esp32s3/rtc_clk.c.obj	394ae14ba7e4dd65
 756	992	1719409146431094376	esp-idf/soc/CMakeFiles/__idf_soc.dir/esp32s3/usb_periph.c.obj	d1552827f6e6900f
@@ -115,6 +115,8 @@
 1422	1822	1719585899329720919	esp-idf/bootloader_support/CMakeFiles/__idf_bootloader_support.dir/src/bootloader_console_loader.c.obj	baca67292b4c0b62
 3883	4039	1719585901569733113	esp-idf/esp_rom/CMakeFiles/__idf_esp_rom.dir/patches/esp_rom_longjmp.S.obj	140977759fdc1fe4
 564	1190	1719585898723050948	esp-idf/spi_flash/CMakeFiles/__idf_spi_flash.dir/spi_flash_wrap.c.obj	c2610a2e54c4276d
-14	2853	1720435862078502475	build.ninja	66a65dcb0d915fd4
-3	27	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	c54bf833295390b2
-3	27	0	/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	c54bf833295390b2
+2	10055	1720523680909551570	build.ninja	66a65dcb0d915fd4
+14	233	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	c54bf833295390b2
+14	233	0	/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	c54bf833295390b2
+4	51	0	esp-idf/esptool_py/CMakeFiles/bootloader_check_size	c54bf833295390b2
+4	51	0	/home/fracchio/Desktop/-IoT-AP-2024-Sapienza-ESP32-Smart-Parking-Sensor/iLot/build/bootloader/esp-idf/esptool_py/CMakeFiles/bootloader_check_size	c54bf833295390b2
