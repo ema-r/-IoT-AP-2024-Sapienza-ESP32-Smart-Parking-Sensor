@@ -71,6 +71,8 @@ To achieve this, we started looking into alternative to regular protocols that w
 
 As mentioned previously, the chosen wakeup sensor doesn't require additional power to work, limiting the power consumption further. The device is meant to spend the vast majority of time in deep sleep: we did not require state to be kept from one wakeup to the other, excluding some small variables to facilitate encryption (more on that later), and the nature of a parking lot would mean that the device would rarely need to send data, allowing significant power savings from this kind of heavy duty cycling. We made sure that the device could afford to simply wake up and send data, cutting out anything that would've required listening.
 
+The layered architecture is especially helpful, as it allows us to use the lightest possible protocols to communicate from devices to gateway, leaving the "heavy lifting" of sending the data to an external server to a less power constrained device (in our demo, a pc).
+
 On a single wakeup cycle, this ends up being the final energy consumption:
 INSERISCI INSERISCI INSERISCI
 #### Components overview
