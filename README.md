@@ -120,4 +120,4 @@ The server consists in the couple <Mosquitto broker, Flask web application> in w
 - [Emanuele Roncioni](https://www.linkedin.com/in/emanuele-roncioni-4b516a303/)
 - [Francesco Saverio Sconocchia Pisoni](https://it.linkedin.com/in/francesco-saverio-sconocchia-pisoni-0a0050303)
 
-Click [here]() for our short presentation.
+Click [here](https://docs.google.com/presentation/d/1WWlMdKNF3itHTS7UBuRdHh-2u5YIbBHbUbkPbr7Lo0I) for our short presentation.
