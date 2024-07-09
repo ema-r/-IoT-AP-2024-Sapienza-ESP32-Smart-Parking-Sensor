@@ -73,6 +73,7 @@ def load_pem_files(directory):
 
     
 def get_certificate_by_filename(certificates, filename):
+    filename="48:27:E2:E2:E5:E4" # to delete, only for testing, for using a single private key <-> certificate
     for cert in certificates:
         if cert['filename'] == filename:
             return cert['certificate']
@@ -179,7 +180,6 @@ def main():
                     print(f"Received: {data}")
 
                     name, nonce, message, signature = parse_and_decode_string(data)
-                    name = "48:27:E2:E2:E5:E4"
                     print_hexadecimal(signature)
 
                     if (name is not None and nonce is not None and message is not None):
