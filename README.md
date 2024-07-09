@@ -77,7 +77,9 @@ On a single wakeup cycle, this ends up being the final energy consumption:
 
 ![powerplot](./Figure_1.png)
 
-Sampled in 10 ms intervals. The transmission of data over LoRa obviously providing the biggest spike in energy usage, with an increase of about 200% from the "regular" operative power usage. During deep sleep, the device appears to draw a suspiciously high 20mA and just under 100 mW, while it should sit vastly under 1mA assuming no other loads are active. During operation, barring the transmission of data, the device averages at 50mA and 300mW. During the short transmission scene, the device peaks at 150mA and slightly under 800mW.
+Sampled in 10 ms intervals. The transmission of data over LoRa obviously providing the biggest spike in energy usage, with an increase of about 200% from the "regular" operative power usage. During deep sleep, the device appears to draw a suspiciously high 20mA and just under 100 mW, while it should sit vastly under 1mA assuming no other loads are active. We assume this to be due to a some issues with the ground on the INA219 board used for testing: the remaining results appeared consistent with the data gathered during the individual project. During operation, barring the transmission of data, the device averages at 70mA and 300mW. During the short transmission scene, the device peaks at around 150mA and slightly under 800mW.
+
+Assuming a 1mA draw under deep sleep, and a 0.22 second long mA spikes averaging at 100 mA (22 samples on a 10 ms timestep), with 30 activations a day, about 1.25 activations an hour (slightly pessimistic assumptions based on collected data). We obtain that the system requires 1.0077 mAh, granting us about 166 days of uptime out of a 4000 mAh battery.
 
 #### Components overview
 The ESP32 code is split upon a number of developed libraries:
