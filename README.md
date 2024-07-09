@@ -84,6 +84,7 @@ The ESP32 code is split upon a number of developed libraries:
 - **Pspot**, confusingly named, provides functions to rapidly setup the device to for EXT1 wakeups from deep sleep. The code receives two configured pins, prepares the needed bitmask accordingly, and then activates the new sleep sources. It also provides information on the wakeup source on wakeups.
 
 #### LoRa and Encryption
+One critical issue encountered faced was that LoRa by default doesn't provide a way to authenticate message senders. In this scenario, eavesdropping doesn't matter, so we could've afforded to send messages "in the clear", but care had to be taken to avoid intrusion in the network, messages sent by unauthorized users and replay attacks: the latter especially would be incredibly aggravating, as it would effectively flip the actual availability of the parking spot. To get around this, a signing system with predistributed keys was 
 
 #### Wakeup system
 #### Avoiding false positives
