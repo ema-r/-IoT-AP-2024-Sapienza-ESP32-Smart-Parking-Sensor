@@ -8,6 +8,8 @@ The code is separated between the core esp32 component (iLot), that can provide 
 a gateway component that relies on a Cubecell IoT device to act as a "LoRa antenna" for a beefier MQTT gateway device,
 and a containerized server component that receives MQTT data to be processed in a easily accessible and persistent format.
 
+## Architecture
+
 ## How to setup
 Clone the repo, then:
 ### ESP32
