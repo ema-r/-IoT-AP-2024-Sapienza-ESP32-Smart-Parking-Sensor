@@ -122,9 +122,10 @@ void app_main(void)
         write_u32_to_nvs(NVS_BOOTCOUNT_NAME, boot_num);
     }
   
-    esp_sleep_enable_timer_wakeup(5 * 1000000); //light sleep for 5 seconds to avoid multiple triggers
+    esp_sleep_enable_timer_wakeup(1 * 1000000); //light sleep for 5 seconds to avoid multiple triggers
     esp_light_sleep_start();  
-  
+
+    esp_sleep_disable_wakeup_source(ESP_SLEEP_WAKEUP_TIMER);
     setup_sleeping_src(); // Actual deep sleep ext1 wakeup setup
     printf("Entering deep sleep...\n");
 
