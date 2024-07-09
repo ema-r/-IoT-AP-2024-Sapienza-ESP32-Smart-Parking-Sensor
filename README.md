@@ -75,9 +75,16 @@ The layered architecture is especially helpful, as it allows us to use the light
 
 On a single wakeup cycle, this ends up being the final energy consumption:
 INSERISCI INSERISCI INSERISCI
+
 #### Components overview
+The ESP32 code is split upon a number of developed libraries:
+- **Crypto** acts as a convenient wrapper around a number of functions offered by mbedtls, the cryptography library offered by default on the ESP32 SDK. It's mostly focused on handling signature handling and base64 encoding, with some helper functions to help create the context beforehand. The signature handling to handle LoRa-level authentication, and the base64 code to provide a way to send messages containing only a subset of characters. B64 messages also tend to be shorter than the plaintext they originated from, which, in a scenario where transmission is particularly costly, is pretty useful.
+- **Lora Communication** takes care of sending and receiving data via the LoRa protocol on the serial. Since the lower level communication relies entirely on LoRa, this is essential.
+- **Permstorage** provides an handy way to access the ESP32 NVS, to save data between resets. This was used to give the nonce a persistent backup state.
+- **Pspot**, confusingly named, provides functions to rapidly setup the device to for EXT1 wakeups from deep sleep. The code receives two configured pins, prepares the needed bitmask accordingly, and then activates the new sleep sources. It also provides information on the wakeup source on wakeups.
 
 #### LoRa and Encryption
+
 #### Wakeup system
 #### Avoiding false positives
 ### Gateway
