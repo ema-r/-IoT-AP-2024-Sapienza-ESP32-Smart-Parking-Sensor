@@ -7,5 +7,11 @@
 #include "sdkconfig.h"
 #include "driver/rtc_io.h"
 
+
+
+#define GPIO_WUP_1 CONFIG_PIN1_WAKEUP
+#define GPIO_WUP_2 CONFIG_PIN2_WAKEUP
+
+
 void setup_sleeping_src();
-uint64_t get_triggered_wakeup_pin();
+int get_triggered_wakeup_pin();
