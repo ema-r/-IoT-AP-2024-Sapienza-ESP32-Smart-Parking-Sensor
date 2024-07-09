@@ -1,0 +1,440 @@
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3810,len:0x178c
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xcbc
+load:0x403cc700,len:0x2d9c
+entry 0x403c9914
+[0;32mI (27) boot: ESP-IDF v5.2.2 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Jun 28 2024 16:44:58[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (34) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (38) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (53) boot: Partition Table:[0m
+[0;32mI (57) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (64) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (72) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (79) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (87) boot: End of partition table[0m
+[0;32mI (91) esp_image: segment 0: paddr=00010020 vaddr=3c040020 size=1b648h (112200) map[0m
+[0;32mI (119) esp_image: segment 1: paddr=0002b670 vaddr=3fc95a00 size=02bbch ( 11196) load[0m
+[0;32mI (122) esp_image: segment 2: paddr=0002e234 vaddr=40374000 size=01de4h (  7652) load[0m
+[0;32mI (127) esp_image: segment 3: paddr=00030020 vaddr=42000020 size=3a0d4h (237780) map[0m
+[0;32mI (176) esp_image: segment 4: paddr=0006a0fc vaddr=40375de4 size=0fbfch ( 64508) load[0m
+[0;32mI (191) esp_image: segment 5: paddr=00079d00 vaddr=50000000 size=00004h (     4) load[0m
+[0;32mI (191) esp_image: segment 6: paddr=00079d0c vaddr=600fe000 size=00070h (   112) load[0m
+[0;32mI (204) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (204) boot: Disabling RNG early entropy source...[0m
+[0;32mI (219) cpu_start: Multicore app[0m
+[0;32mI (229) cpu_start: Pro cpu start user code[0m
+[0;32mI (229) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (230) cpu_start: Application information:[0m
+[0;32mI (233) cpu_start: Project name:     iLot[0m
+[0;32mI (237) cpu_start: App version:      ce1791a-dirty[0m
+[0;32mI (243) cpu_start: Compile time:     Jul  9 2024 13:14:35[0m
+[0;32mI (249) cpu_start: ELF file SHA256:  b26ab1b07...[0m
+[0;32mI (254) cpu_start: ESP-IDF:          v5.2.2[0m
+[0;32mI (259) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (264) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (269) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (273) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (281) heap_init: At 3FC99118 len 000505F8 (321 KiB): RAM[0m
+[0;32mI (287) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (293) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (299) heap_init: At 600FE070 len 00001F78 (7 KiB): RTCRAM[0m
+[0;32mI (306) spi_flash: detected chip: gd[0m
+[0;32mI (309) spi_flash: flash io: dio[0m
+[0;33mW (313) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (327) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (333) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (341) main_task: Started on CPU0[0m
+[0;32mI (351) main_task: Calling app_main()[0m
+[0;32mI (351) LORA: Frequency is 868MHz[0m
+[0;32mI (351) RA01S: CONFIG_MISO_GPIO=11[0m
+[0;32mI (361) RA01S: CONFIG_MOSI_GPIO=10[0m
+[0;32mI (361) RA01S: CONFIG_SCLK_GPIO=9[0m
+[0;32mI (361) RA01S: CONFIG_NSS_GPIO=8[0m
+[0;32mI (371) RA01S: CONFIG_RST_GPIO=12[0m
+[0;32mI (371) RA01S: CONFIG_BUSY_GPIO=13[0m
+[0;32mI (381) RA01S: CONFIG_TXEN_GPIO=-1[0m
+[0;32mI (381) RA01S: CONFIG_RXEN_GPIO=-1[0m
+[0;32mI (381) gpio: GPIO[8]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (391) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (401) gpio: GPIO[13]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (411) RA01S: spi_bus_initialize=0[0m
+[0;32mI (421) RA01S: spi_bus_add_device=0[0m
+[0;33mW (421) LORA: Enable TCXO[0m
+[0;32mI (461) RA01S: Reset[0m
+[0;32mI (461) RA01S: syncWord=0x1424[0m
+[0;32mI (461) RA01S: SX126x installed[0m
+[0;33mW (461) RA01S: WriteCommand2 status=0a retry=1[0m
+[0;32mI (471) RA01S: tcxoVoltage=3.300000[0m
+[0;32mI (481) RA01S: useRegulatorLDO=1[0m
+[0;32mI (491) RA01S: SetStopRxTimerOnPreambleDetect enable=0[0m
+[0;32mI (531) PSPOT_WAKEUP_HANDLER: Enabling EXT1 wakeup on pins 1 2[0m
+[0;32mI (531) NVS_HANDLER: Retrieving value bootcount in NVS storage...[0m
+Done
+bootcount = 185
+wake up number on nvs: 185
+wake up number 185
+[0;32mI (541) PSPOT_WAKEUP_HANDLER: wakeup cause not recognized[0m
+Entering deep sleep...
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x5 (DSLEEP),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3810,len:0x178c
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xcbc
+load:0x403cc700,len:0x2d9c
+entry 0x403c9914
+[0;32mI (26) boot: ESP-IDF v5.2.2 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Jun 28 2024 16:44:58[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (34) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (38) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (53) boot: Partition Table:[0m
+[0;32mI (57) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (64) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (72) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (79) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (87) boot: End of partition table[0m
+[0;32mI (91) esp_image: segment 0: paddr=00010020 vaddr=3c040020 size=1b648h (112200) map[0m
+[0;32mI (119) esp_image: segment 1: paddr=0002b670 vaddr=3fc95a00 size=02bbch ( 11196) load[0m
+[0;32mI (122) esp_image: segment 2: paddr=0002e234 vaddr=40374000 size=01de4h (  7652) load[0m
+[0;32mI (127) esp_image: segment 3: paddr=00030020 vaddr=42000020 size=3a0d4h (237780) map[0m
+[0;32mI (176) esp_image: segment 4: paddr=0006a0fc vaddr=40375de4 size=0fbfch ( 64508) load[0m
+[0;32mI (191) esp_image: segment 5: paddr=00079d00 vaddr=50000000 size=00004h (     4) [0m
+[0;32mI (191) esp_image: segment 6: paddr=00079d0c vaddr=600fe000 size=00070h (   112) [0m
+[0;32mI (203) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (203) boot: Disabling RNG early entropy source...[0m
+[0;32mI (218) cpu_start: Multicore app[0m
+[0;32mI (229) cpu_start: Pro cpu start user code[0m
+[0;32mI (229) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (229) cpu_start: Application information:[0m
+[0;32mI (232) cpu_start: Project name:     iLot[0m
+[0;32mI (236) cpu_start: App version:      ce1791a-dirty[0m
+[0;32mI (242) cpu_start: Compile time:     Jul  9 2024 13:14:35[0m
+[0;32mI (248) cpu_start: ELF file SHA256:  b26ab1b07...[0m
+[0;32mI (253) cpu_start: ESP-IDF:          v5.2.2[0m
+[0;32mI (258) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (263) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (268) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (273) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (280) heap_init: At 3FC99118 len 000505F8 (321 KiB): RAM[0m
+[0;32mI (286) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (292) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (298) heap_init: At 600FE070 len 00001F78 (7 KiB): RTCRAM[0m
+[0;32mI (305) spi_flash: detected chip: gd[0m
+[0;32mI (309) spi_flash: flash io: dio[0m
+[0;33mW (312) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (326) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (333) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (340) main_task: Started on CPU0[0m
+[0;32mI (350) main_task: Calling app_main()[0m
+[0;32mI (350) LORA: Frequency is 868MHz[0m
+[0;32mI (350) RA01S: CONFIG_MISO_GPIO=11[0m
+[0;32mI (360) RA01S: CONFIG_MOSI_GPIO=10[0m
+[0;32mI (360) RA01S: CONFIG_SCLK_GPIO=9[0m
+[0;32mI (360) RA01S: CONFIG_NSS_GPIO=8[0m
+[0;32mI (370) RA01S: CONFIG_RST_GPIO=12[0m
+[0;32mI (370) RA01S: CONFIG_BUSY_GPIO=13[0m
+[0;32mI (380) RA01S: CONFIG_TXEN_GPIO=-1[0m
+[0;32mI (380) RA01S: CONFIG_RXEN_GPIO=-1[0m
+[0;32mI (380) gpio: GPIO[8]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (390) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (400) gpio: GPIO[13]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (410) RA01S: spi_bus_initialize=0[0m
+[0;32mI (420) RA01S: spi_bus_add_device=0[0m
+[0;33mW (420) LORA: Enable TCXO[0m
+[0;32mI (460) RA01S: Reset[0m
+[0;32mI (460) RA01S: syncWord=0x1424[0m
+[0;32mI (460) RA01S: SX126x installed[0m
+[0;33mW (460) RA01S: WriteCommand2 status=0a retry=1[0m
+[0;32mI (470) RA01S: tcxoVoltage=3.300000[0m
+[0;32mI (480) RA01S: useRegulatorLDO=1[0m
+[0;32mI (490) RA01S: SetStopRxTimerOnPreambleDetect enable=0[0m
+[0;32mI (530) PSPOT_WAKEUP_HANDLER: Enabling EXT1 wakeup on pins 1 2[0m
+wake up number 185
+[0;32mI (530) PSPOT_WAKEUP_HANDLER: Wake up caused because of GPIO 1 : [0m
+
+WRITTEN MESSAGE IS 0
+the ec key is:
+the key is: 
+-----BEGIN EC PRIVATE KEY-----
+MHcCAQEEILas2/EI5Vu1KQNWMZ3xDez7SmB4P7bBR8NCqq2/7Ea+oAoGCCqGSM49
+AwEHoUQDQgAEeaFGXLLGEEHOjNIUL1yefddMF6y4tbi+k4slCGpb1AoLg9Qk1V+p
+gdT4r7qnoOm/q18B1A5nvVAZVyi6SvCwSg==
+-----END EC PRIVATE KEY-----
+
+the key is: 
+-----BEGIN PUBLIC KEY-----
+MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEeaFGXLLGEEHOjNIUL1yefddMF6y4
+tbi+k4slCGpb1AoLg9Qk1V+pgdT4r7qnoOm/q18B1A5nvVAZVyi6SvCwSg==
+-----END PUBLIC KEY-----
+
+  . Computing message hash...the message in hexadecimal is:
+34383a32373a45323a45323a45353a453431383530
+ ok
+f2e7bd871cc434522a33bf68a47dd0ed3276ed9fbdb3c6276bb4bd2bab566c62
+  . Signing message hash... ok (signature length = 71)
+3045022100b5e0982f6f844f712b482019acafd2e09d9d51c38d98248172c55b37bb3f3ff802205e6c871206fdccdc17ae554a0df74240367e153e8a3c00d4494b7a7d6c7238120000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  . Computing message hash...the message in hexadecimal is:
+34383a32373a45323a45323a45353a453431383530
+ ok
+f2e7bd871cc434522a33bf68a47dd0ed3276ed9fbdb3c6276bb4bd2bab566c62
+  . Preparing verification context... ok
+  . Verifying signature... which has lenght 71
+ the signature is valid!
+the result of the signature verification is 0
+I am sending this message: NDg6Mjc6RTI6RTI6RTU6RTQ=:MTg1:NDg6Mjc6RTI6RTI6RTU6RTQxODUw:MEUCIQC14Jgvb4RPcStIIBmsr9LgnZ1Rw42YJIFyxVs3uz8/+AIgXmyHEgb9zNwXrlVKDfdCQDZ+FT6KPADUSUt6fWxyOBI=
+ of size 155[0;32mI (920) LORA: Start[0m
+[0;32mI (1200) LORA: Send success[0m
+[0;32mI (1200) NVS_HANDLER: Updating value bootcount in NVS storage...[0m
+Done
+Committing updates in nvs... Done
+Entering deep sleep...
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x5 (DSLEEP),boot:0x8 (SPI_FAST_FLASH_BOOT)
+pro cpu reset by JTAG
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3810,len:0x178c
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xcbc
+load:0x403cc700,len:0x2d9c
+entry 0x403c9914
+[0;32mI (28) boot: ESP-IDF v5.2.2 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Jun 28 2024 16:44:58[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v0.2[0m
+[0;32mI (36) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (40) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (45) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (50) boot: Enabling RNG early entropy source...[0m
+[0;32mI (55) boot: Partition Table:[0m
+[0;32mI (59) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (66) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (74) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (81) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (89) boot: End of partition table[0m
+[0;32mI (93) esp_image: segment 0: paddr=00010020 vaddr=3c040020 size=1b648h (112200) map[0m
+[0;32mI (121) esp_image: segment 1: paddr=0002b670 vaddr=3fc95a00 size=02bbch ( 11196) load[0m
+[0;32mI (124) esp_image: segment 2: paddr=0002e234 vaddr=40374000 size=01de4h (  7652) load[0m
+[0;32mI (129) esp_image: segment 3: paddr=00030020 vaddr=42000020 size=3a0d4h (237780) map[0m
+[0;32mI (178) esp_image: segment 4: paddr=0006a0fc vaddr=40375de4 size=0fbfch ( 64508) load[0m
+[0;32mI (193) esp_image: segment 5: paddr=00079d00 vaddr=50000000 size=00004h (     4) [0m
+[0;32mI (193) esp_image: segment 6: paddr=00079d0c vaddr=600fe000 size=00070h (   112) [0m
+[0;32mI (205) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (205) boot: Disabling RNG early entropy source...[0m
+[0;32mI (220) cpu_start: Multicore app[0m
+[0;32mI (231) cpu_start: Pro cpu start user code[0m
+[0;32mI (231) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (231) cpu_start: Application information:[0m
+[0;32mI (234) cpu_start: Project name:     iLot[0m
+[0;32mI (238) cpu_start: App version:      ce1791a-dirty[0m
+[0;32mI (244) cpu_start: Compile time:     Jul  9 2024 13:14:35[0m
+[0;32mI (250) cpu_start: ELF file SHA256:  b26ab1b07...[0m
+[0;32mI (255) cpu_start: ESP-IDF:          v5.2.2[0m
+[0;32mI (260) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (265) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (270) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (275) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (282) heap_init: At 3FC99118 len 000505F8 (321 KiB): RAM[0m
+[0;32mI (288) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (294) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (300) heap_init: At 600FE070 len 00001F78 (7 KiB): RTCRAM[0m
+[0;32mI (307) spi_flash: detected chip: gd[0m
+[0;32mI (311) spi_flash: flash io: dio[0m
+[0;33mW (314) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (328) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (335) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (342) main_task: Started on CPU0[0m
+[0;32mI (352) main_task: Calling app_main()[0m
+[0;32mI (352) LORA: Frequency is 868MHz[0m
+[0;32mI (352) RA01S: CONFIG_MISO_GPIO=11[0m
+[0;32mI (362) RA01S: CONFIG_MOSI_GPIO=10[0m
+[0;32mI (362) RA01S: CONFIG_SCLK_GPIO=9[0m
+[0;32mI (362) RA01S: CONFIG_NSS_GPIO=8[0m
+[0;32mI (372) RA01S: CONFIG_RST_GPIO=12[0m
+[0;32mI (372) RA01S: CONFIG_BUSY_GPIO=13[0m
+[0;32mI (382) RA01S: CONFIG_TXEN_GPIO=-1[0m
+[0;32mI (382) RA01S: CONFIG_RXEN_GPIO=-1[0m
+[0;32mI (382) gpio: GPIO[8]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (392) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (402) gpio: GPIO[13]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (412) RA01S: spi_bus_initialize=0[0m
+[0;32mI (422) RA01S: spi_bus_add_device=0[0m
+[0;33mW (422) LORA: Enable TCXO[0m
+[0;32mI (462) RA01S: Reset[0m
+[0;32mI (462) RA01S: syncWord=0x1424[0m
+[0;32mI (462) RA01S: SX126x installed[0m
+[0;33mW (462) RA01S: WriteCommand2 status=0a retry=1[0m
+[0;32mI (472) RA01S: tcxoVoltage=3.300000[0m
+[0;32mI (482) RA01S: useRegulatorLDO=1[0m
+[0;32mI (492) RA01S: SetStopRxTimerOnPreambleDetect enable=0[0m
+[0;32mI (532) PSPOT_WAKEUP_HANDLER: Enabling EXT1 wakeup on pins 1 2[0m
+wake up number 186
+[0;32mI (532) PSPOT_WAKEUP_HANDLER: Wake up caused because of GPIO 1 : [0m
+
+WRITTEN MESSAGE IS 0
+the ec key is:
+the key is: 
+-----BEGIN EC PRIVATE KEY-----
+MHcCAQEEILas2/EI5Vu1KQNWMZ3xDez7SmB4P7bBR8NCqq2/7Ea+oAoGCCqGSM49
+AwEHoUQDQgAEeaFGXLLGEEHOjNIUL1yefddMF6y4tbi+k4slCGpb1AoLg9Qk1V+p
+gdT4r7qnoOm/q18B1A5nvVAZVyi6SvCwSg==
+-----END EC PRIVATE KEY-----
+
+the key is: 
+-----BEGIN PUBLIC KEY-----
+MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEeaFGXLLGEEHOjNIUL1yefddMF6y4
+tbi+k4slCGpb1AoLg9Qk1V+pgdT4r7qnoOm/q18B1A5nvVAZVyi6SvCwSg==
+-----END PUBLIC KEY-----
+
+  . Computing message hash...the message in hexadecimal is:
+34383a32373a45323a45323a45353a453431383630
+ ok
+e826923577d02a0ec309e59ff033378f19b69d16d58dee1c7b3a753cf4f7d677
+  . Signing message hash... ok (signature length = 70)
+304402201288e9565a270ea9e5a263478c7c8d6fca49a82d4d941cc7f741dadc5cf02d4f02202fb00b1f6f65ceb7b39e28ea5f6b79f6c4133afdb2d380cef1f3d6fd6f1c8a82000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  . Computing message hash...the message in hexadecimal is:
+34383a32373a45323a45323a45353a453431383630
+ ok
+e826923577d02a0ec309e59ff033378f19b69d16d58dee1c7b3a753cf4f7d677
+  . Preparing verification context... ok
+  . Verifying signature... which has lenght 70
+ the signature is valid!
+the result of the signature verification is 0
+I am sending this message: NDg6Mjc6RTI6RTI6RTU6RTQ=:MTg2:NDg6Mjc6RTI6RTI6RTU6RTQxODYw:MEQCIBKI6VZaJw6p5aJjR4x8jW/KSagtTZQcx/dB2txc8C1PAiAvsAsfb2XOt7OeKOpfa3n2xBM6/bLTgM7x89b9bxyKgg==
+ of size 155[0;32mI (922) LORA: Start[0m
+[0;32mI (1202) LORA: Send success[0m
+[0;32mI (1202) NVS_HANDLER: Updating value bootcount in NVS storage...[0m
+Done
+Committing updates in nvs... Done
+Entering deep sleep...
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x5 (DSLEEP),boot:0x8 (SPI_FAST_FLASH_BOOT)
+pro cpu reset by JTAG
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3810,len:0x178c
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xcbc
+load:0x403cc700,len:0x2d9c
+entry 0x403c9914
+[0;32mI (28) boot: ESP-IDF v5.2.2 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Jun 28 2024 16:44:58[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (32) boot: chip revision: v0.2[0m
+[0;32mI (36) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (40) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (45) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (50) boot: Enabling RNG early entropy source...[0m
+[0;32mI (55) boot: Partition Table:[0m
+[0;32mI (59) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (66) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (74) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (81) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (89) boot: End of partition table[0m
+[0;32mI (93) esp_image: segment 0: paddr=00010020 vaddr=3c040020 size=1b648h (112200) map[0m
+[0;32mI (121) esp_image: segment 1: paddr=0002b670 vaddr=3fc95a00 size=02bbch ( 11196) load[0m
+[0;32mI (124) esp_image: segment 2: paddr=0002e234 vaddr=40374000 size=01de4h (  7652) load[0m
+[0;32mI (129) esp_image: segment 3: paddr=00030020 vaddr=42000020 size=3a0d4h (237780) map[0m
+[0;32mI (178) esp_image: segment 4: paddr=0006a0fc vaddr=40375de4 size=0fbfch ( 64508) load[0m
+[0;32mI (193) esp_image: segment 5: paddr=00079d00 vaddr=50000000 size=00004h (     4) [0m
+[0;32mI (193) esp_image: segment 6: paddr=00079d0c vaddr=600fe000 size=00070h (   112) [0m
+[0;32mI (205) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (205) boot: Disabling RNG early entropy source...[0m
+[0;32mI (220) cpu_start: Multicore app[0m
+[0;32mI (231) cpu_start: Pro cpu start user code[0m
+[0;32mI (231) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (231) cpu_start: Application information:[0m
+[0;32mI (234) cpu_start: Project name:     iLot[0m
+[0;32mI (238) cpu_start: App version:      ce1791a-dirty[0m
+[0;32mI (244) cpu_start: Compile time:     Jul  9 2024 13:14:35[0m
+[0;32mI (250) cpu_start: ELF file SHA256:  b26ab1b07...[0m
+[0;32mI (255) cpu_start: ESP-IDF:          v5.2.2[0m
+[0;32mI (260) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (265) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (270) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (275) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (282) heap_init: At 3FC99118 len 000505F8 (321 KiB): RAM[0m
+[0;32mI (288) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (294) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (300) heap_init: At 600FE070 len 00001F78 (7 KiB): RTCRAM[0m
+[0;32mI (307) spi_flash: detected chip: gd[0m
+[0;32mI (311) spi_flash: flash io: dio[0m
+[0;33mW (314) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (328) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (335) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (342) main_task: Started on CPU0[0m
+[0;32mI (352) main_task: Calling app_main()[0m
+[0;32mI (352) LORA: Frequency is 868MHz[0m
+[0;32mI (352) RA01S: CONFIG_MISO_GPIO=11[0m
+[0;32mI (362) RA01S: CONFIG_MOSI_GPIO=10[0m
+[0;32mI (362) RA01S: CONFIG_SCLK_GPIO=9[0m
+[0;32mI (362) RA01S: CONFIG_NSS_GPIO=8[0m
+[0;32mI (372) RA01S: CONFIG_RST_GPIO=12[0m
+[0;32mI (372) RA01S: CONFIG_BUSY_GPIO=13[0m
+[0;32mI (382) RA01S: CONFIG_TXEN_GPIO=-1[0m
+[0;32mI (382) RA01S: CONFIG_RXEN_GPIO=-1[0m
+[0;32mI (382) gpio: GPIO[8]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (392) gpio: GPIO[12]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (402) gpio: GPIO[13]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (412) RA01S: spi_bus_initialize=0[0m
+[0;32mI (422) RA01S: spi_bus_add_device=0[0m
+[0;33mW (422) LORA: Enable TCXO[0m
+[0;32mI (462) RA01S: Reset[0m
+[0;32mI (462) RA01S: syncWord=0x1424[0m
+[0;32mI (462) RA01S: SX126x installed[0m
+[0;33mW (462) RA01S: WriteCommand2 status=0a retry=1[0m
+[0;32mI (472) RA01S: tcxoVoltage=3.300000[0m
+[0;32mI (482) RA01S: useRegulatorLDO=1[0m
+[0;32mI (492) RA01S: SetStopRxTimerOnPreambleDetect enable=0[0m
+[0;32mI (532) PSPOT_WAKEUP_HANDLER: Enabling EXT1 wakeup on pins 1 2[0m
+wake up number 187
+[0;32mI (532) PSPOT_WAKEUP_HANDLER: Wake up caused because of GPIO 2 : [0m
+
+WRITTEN MESSAGE IS 1
+the ec key is:
+the key is: 
+-----BEGIN EC PRIVATE KEY-----
+MHcCAQEEILas2/EI5Vu1KQNWMZ3xDez7SmB4P7bBR8NCqq2/7Ea+oAoGCCqGSM49
+AwEHoUQDQgAEeaFGXLLGEEHOjNIUL1yefddMF6y4tbi+k4slCGpb1AoLg9Qk1V+p
+gdT4r7qnoOm/q18B1A5nvVAZVyi6SvCwSg==
+-----END EC PRIVATE KEY-----
+
+the key is: 
+-----BEGIN PUBLIC KEY-----
+MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEeaFGXLLGEEHOjNIUL1yefddMF6y4
+tbi+k4slCGpb1AoLg9Qk1V+pgdT4r7qnoOm/q18B1A5nvVAZVyi6SvCwSg==
+-----END PUBLIC KEY-----
+
+  . Computing message hash...the message in hexadecimal is:
+34383a32373a45323a45323a45353a453431383731
+ ok
+88323b7d67ea4d06e53a825be9dfbfc9226f9a915cd96e7715d5d991b1380b42
+  . Signing message hash... ok (signature length = 71)
+304502210090632ae70a436a62dbef83b7cbc4081e720279aab6917200c3bc1be9d45cee010220506be06daabfe7a1fe351cab279a5cc16490b8e021c530d2a95e31cfa73eca500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  . Computing message hash...the message in hexadecimal is:
+34383a32373a45323a45323a45353a453431383731
+ ok
+88323b7d67ea4d06e53a825be9dfbfc9226f9a915cd96e7715d5d991b1380b42
+  . Preparing verification context... ok
+  . Verifying signature... which has lenght 71
+ the signature is valid!
+the result of the signature verification is 0
+I am sending this message: NDg6Mjc6RTI6RTI6RTU6RTQ=:MTg3:NDg6Mjc6RTI6RTI6RTU6RTQxODcx:MEU

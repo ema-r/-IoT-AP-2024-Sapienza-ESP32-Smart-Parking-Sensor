@@ -14,4 +14,4 @@
 
 
 void setup_sleeping_src();
-uint64_t get_triggered_wakeup_pin();
+int get_triggered_wakeup_pin();

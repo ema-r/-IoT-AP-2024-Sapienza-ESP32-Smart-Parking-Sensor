@@ -90,7 +90,6 @@ void app_main(void)
 {
     init_lora();
     init_nvs();
-    setup_sleeping_src();
 
     if (boot_num == 0) {
       // Check if there's a boot count written on the NVS
@@ -104,11 +103,11 @@ void app_main(void)
 
     printf("wake up number %ld\n", boot_num);
 
-    uint64_t wakeup_pin = get_triggered_wakeup_pin();
+    int wakeup_pin = get_triggered_wakeup_pin();
     if (wakeup_pin >= 0) {
         char message[80];
         //snprintf(message, sizeof(message), "%02X%02X%02X%02X%02X%02X:%ld:%lld", mac_buf[0], mac_buf[1], mac_buf[2], mac_buf[3], mac_buf[4], mac_buf[5], boot_num, wakeup_pin);
-        snprintf(message, sizeof(message), "%lld", wakeup_pin);
+        snprintf(message, sizeof(message), "%d", wakeup_pin);
 
         printf("\nWRITTEN MESSAGE IS %s\n", message);
         char * m=create_message(message);
@@ -122,7 +121,12 @@ void app_main(void)
         // Write the updated boot count to nvs memory in case power is completely lost.
         write_u32_to_nvs(NVS_BOOTCOUNT_NAME, boot_num);
     }
+  
+    esp_sleep_enable_timer_wakeup(1 * 1000000); //light sleep for 5 seconds to avoid multiple triggers
+    esp_light_sleep_start();  
 
+    esp_sleep_disable_wakeup_source(ESP_SLEEP_WAKEUP_TIMER);
+    setup_sleeping_src(); // Actual deep sleep ext1 wakeup setup
     printf("Entering deep sleep...\n");
 
     //        // Enter deep sleep
