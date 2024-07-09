@@ -74,7 +74,10 @@ As mentioned previously, the chosen wakeup sensor doesn't require additional pow
 The layered architecture is especially helpful, as it allows us to use the lightest possible protocols to communicate from devices to gateway, leaving the "heavy lifting" of sending the data to an external server to a less power constrained device (in our demo, a pc).
 
 On a single wakeup cycle, this ends up being the final energy consumption:
+
 ![powerplot](./Figure_1.png)
+
+Sampled in 10 ms intervals. The transmission of data over LoRa obviously providing the biggest spike in energy usage, with an increase of about 200% from the "regular" operative power usage. During deep sleep, the device appears to draw 20mA and just under 100 mW. During operation, barring the transmission of data, the device averages at 50mA and 300mW. During the short transmission scene, the device peaks at 150mA and slightly under 800mW.
 
 #### Components overview
 The ESP32 code is split upon a number of developed libraries:
@@ -85,7 +88,15 @@ The ESP32 code is split upon a number of developed libraries:
 
 #### LoRa and Encryption
 One critical issue encountered faced was that LoRa by default doesn't provide a way to authenticate message senders. In this scenario, eavesdropping doesn't matter, so we could've afforded to send messages "in clear", but care had to be taken to avoid intrusion in the network, messages sent by unauthorized users and replay attacks: the latter especially would be incredibly aggravating, as it would effectively flip the actual availability of the parking spot. To get around this, a signing system with predistributed keys was introduced.
+
 The first attempt was done using rsa 2048 bits private keys for the digital signature of the messages sent by the esp devices; this brings an important issue: the message total size to be sent via LoRa: our devices use an SX1262 LoRa antenna which could transmit 256 bytes of data per transmission and only the signature would have occupied all the available size. For solving this problem is introduced the use of Elliptic Curve private keys which reduces the size of the signature to 70/71 bytes of size as well as reduce the costs of power consuming while producing the signature itself.
+
+The message that gets sent over LoRa during a wakeup cycle is the following:
+```
+base64(MAC):base64(boot_number):base64(cat(MAC,boot_num,message)):base64(signature(cat(MAC,boot_num,message))
+```
+with message being 0 or 1 depending on which of the two parking sensors connected to the device triggered the wakeup and message creation. The MAC is of course, to identify the sender. The boot_count acts as a nonce: the gateway keeps the last value and refuses messages from a MAC that contain a boot_count that's not the last recorded boot_count + 1; this was done for the purpose of avoiding replay attacks. The boot count value is kept as an RTC data attribute on the devices, but to prevent data loss, they're backed on the NVS at the end of every cycle. The NVS backup is accessed exclusively in case a full device reset turns the RTC data attribute backed boot_count to 0 again; in that case a branch takes care of accessing the NVS to acquire the backup. To ensure that the message has not been falsified, we sign with the device secret key a concatenation of MAC, boot number and message. On delivery, the gateway will verify the signature, propagating the message on MQTT if valid.
+The message does contain a significant amount of redundant information, effectively sending the MAC and boot number data twice. This was a consequence of the message function interfaces estabilished early on the project's timeline lacking the necessary fields. As a stopgap solution, without having to restructure the interfaces across two different devices, we opted for this dirty hack that sends all the data that needs to be signature-verified as a message.
 
 #### Wakeup system
 #### Avoiding false positives
@@ -101,7 +112,7 @@ The server consists in the couple <Mosquitto broker, Flask web application> in w
   - one ESP32 device for each couple of parking spots you have.
   - one device with a LoRa antenna for receiving the LoRa messages from the ESP32 devices.
   - one device which reads the previous LoRa device data by serial communication and is connected to internet.
-
+  - a pair of piezo elements fitted with protection circuits
 
 ## Members
 - [Emanuele Roncioni](https://www.linkedin.com/in/emanuele-roncioni-4b516a303/)
