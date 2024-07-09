@@ -13,10 +13,14 @@ and a containerized server component that receives MQTT data to be processed in 
 
 The system relies on a tiered architecture, with different protocols employed at each level. From the bottom up:
 - The lowermost layer of the architecture is the ESP32 - Detector component. This communicates with the upper level via the LoRa protocol, chosen since the working of the ESP32 component would require constant, sleep-heavy duty cycling; LoRa allows the devices to communicate without having to setup and negotiate a connection every wakeup, lowering energy costs significantly. Attention was given to avoiding MitM attacks at this level. Each device at this level accounts for 2 parking spots in a lot, sending a message every time it's woken up by a detection in either of the spots.
+  
 - The middle layer acts as a bridge between the server and the devices, as communicating over LoRa directly to the server wouldn't work. The devices in this layer consist of regular machines, connected to the internet, with a prototyping board (we used a cubecell, but any LoRa and serial capable device can work) connected to act as a LoRa antenna. The system receives the messages and resends them via MQTT to a broker present on the next layer. MQTT was chosen to allow, if needed, to send messages back to the lower layers of the system, but this capability went unused. Every device on this layer accounts for a multitude of parking spots, intended for potentially handling the messages of the entire parking lot building.
+  
 - The uppermost layer is a dockerized system composed by an MQTT broker and a webserver. The broker sends data to the webserver, that subscribes to the required MQTT topic. Every received message updates the webserver state, which can be accessed via a web interface. Every element on this layer is meant to take care of 1..n parking lots.
+  
 ## How to setup
 Clone the repo, then:
+
 ### ESP32
 The ESP component requires the Espressif SDK. For the automated wakeup to work correctly,
 two GPIO pins must be selected (defaults to GPIO1 and GPIO2) as wakeup sources, either via menuconfig or by editing sdkconfig directly,
