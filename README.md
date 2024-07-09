@@ -84,14 +84,24 @@ The ESP32 code is split upon a number of developed libraries:
 - **Pspot**, confusingly named, provides functions to rapidly setup the device to for EXT1 wakeups from deep sleep. The code receives two configured pins, prepares the needed bitmask accordingly, and then activates the new sleep sources. It also provides information on the wakeup source on wakeups.
 
 #### LoRa and Encryption
-One critical issue encountered faced was that LoRa by default doesn't provide a way to authenticate message senders. In this scenario, eavesdropping doesn't matter, so we could've afforded to send messages "in the clear", but care had to be taken to avoid intrusion in the network, messages sent by unauthorized users and replay attacks: the latter especially would be incredibly aggravating, as it would effectively flip the actual availability of the parking spot. To get around this, a signing system with predistributed keys was 
+One critical issue encountered faced was that LoRa by default doesn't provide a way to authenticate message senders. In this scenario, eavesdropping doesn't matter, so we could've afforded to send messages "in clear", but care had to be taken to avoid intrusion in the network, messages sent by unauthorized users and replay attacks: the latter especially would be incredibly aggravating, as it would effectively flip the actual availability of the parking spot. To get around this, a signing system with predistributed keys was introduced.
+The first attempt was done using rsa 2048 bits private keys for the digital signature of the messages sent by the esp devices; this brings an important issue: the message total size to be sent via LoRa: our devices use an SX1262 LoRa antenna which could transmit 256 bytes of data per transmission and only the signature would have occupied all the available size. For solving this problem is introduced the use of Elliptic Curve private keys which reduces the size of the signature to 70/71 bytes of size as well as reduce the costs of power consuming while producing the signature itself.
 
 #### Wakeup system
 #### Avoiding false positives
 ### Gateway
+
+The gateway consists in the couple <Cubecell device, pc with Python SDK> allowing to convert the data from IoT (Internet of Things) data to Internet data.
 ### Server
 
+The server consists in the couple <Mosquitto broker, Flask web application> in which the second one has the goal of making available the parking data to all the shareholders which has no technological skills, by simply consulting the web page which displays the current parking state.
+
+
 ## Required Devices
+  - one ESP32 device for each couple of parking spots you have.
+  - one device with a LoRa antenna for receiving the LoRa messages from the ESP32 devices.
+  - one device which reads the previous LoRa device data by serial communication and is connected to internet.
+
 
 ## Members
 - [Emanuele Roncioni](https://www.linkedin.com/in/emanuele-roncioni-4b516a303/)
