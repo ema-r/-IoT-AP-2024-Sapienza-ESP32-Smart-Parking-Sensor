@@ -74,7 +74,7 @@ As mentioned previously, the chosen wakeup sensor doesn't require additional pow
 The layered architecture is especially helpful, as it allows us to use the lightest possible protocols to communicate from devices to gateway, leaving the "heavy lifting" of sending the data to an external server to a less power constrained device (in our demo, a pc).
 
 On a single wakeup cycle, this ends up being the final energy consumption:
-INSERISCI INSERISCI INSERISCI
+![powerplot](./Figure_1.png)
 
 #### Components overview
 The ESP32 code is split upon a number of developed libraries:
