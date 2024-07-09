@@ -67,7 +67,7 @@ A wrong sensor, a pressure sensitive resistence, was also bought, but ended up u
 
 #### Energy consumption
 Particular care was put towards making the power consumption as low as possible. During the individual project it was noticed that most of the power consumption came from opening encrypted connections: since we wanted to rely on duty cycling to further reduce power consumption, we couldn't afford to re-estabilish a connection for every wakeup; getting rid of that estabilishing phase would've meant a significant increase in battery life.
-To achieve this, we started looking into alternative to regular protocols that wouldn't require setup: we ended up settling on LoRa. The other candidate was ESPNOW, the Espressif communication protocol; discarded due to being an ESP32 exclusive.
+To achieve this, we started looking into alternative to regular protocols that wouldn't require setup: we ended up settling on LoRa. The other candidate was ESPNOW, the Espressif communication protocol; discarded due to being an ESP32 exclusive, and requiring Wi-Fi related peripherals to be powered on at every wakeup.
 
 As mentioned previously, the chosen wakeup sensor doesn't require additional power to work, limiting the power consumption further. The device is meant to spend the vast majority of time in deep sleep: we did not require state to be kept from one wakeup to the other, excluding some small variables to facilitate encryption (more on that later), and the nature of a parking lot would mean that the device would rarely need to send data, allowing significant power savings from this kind of heavy duty cycling. We made sure that the device could afford to simply wake up and send data, cutting out anything that would've required listening.
 
