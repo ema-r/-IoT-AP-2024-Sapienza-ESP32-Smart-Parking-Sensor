@@ -90,7 +90,6 @@ void app_main(void)
 {
     init_lora();
     init_nvs();
-    setup_sleeping_src();
 
     if (boot_num == 0) {
       // Check if there's a boot count written on the NVS
@@ -122,7 +121,11 @@ void app_main(void)
         // Write the updated boot count to nvs memory in case power is completely lost.
         write_u32_to_nvs(NVS_BOOTCOUNT_NAME, boot_num);
     }
-
+  
+    esp_sleep_enable_timer_wakeup(5 * 1000000); //light sleep for 5 seconds to avoid multiple triggers
+    esp_light_sleep_start();  
+  
+    setup_sleeping_src(); // Actual deep sleep ext1 wakeup setup
     printf("Entering deep sleep...\n");
 
     //        // Enter deep sleep
