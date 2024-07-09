@@ -64,10 +64,20 @@ Three different detection systems were considered: a soundwave distance detector
 - The piezoelectric element was the chosen solution. The small sensor chosen is a ready-made device that utilizes a piezoelectric element paired to a protection board that reduces to voltage to a safe range. It provides analog and tuneable digital outputs, the latter requiring external power to work. Once the piezoelectric element is struck by any kind of force that's capable of inducing a vibration, AC current is produced on the analog output, with no external power source required. We connect the AO to the ESP32 device via GPIO pins, which we then setup as EXT1, wake-up-when-any-high GPIO pins. We can pinpoint which one of multiple elements woke up the device, allowing us to connect multiple lot sensors to a single ESP32 for cost effectiveness. To prove the concept, we ended up pairing two sensors to the ESP32.
 
 A wrong sensor, a pressure sensitive resistence, was also bought, but ended up unused due to requiring, again, extra power.
+
 #### Energy consumption
+Particular care was put towards making the power consumption as low as possible. During the individual project it was noticed that most of the power consumption came from opening encrypted connections: since we wanted to rely on duty cycling to further reduce power consumption, we couldn't afford to re-estabilish a connection for every wakeup; getting rid of that estabilishing phase would've meant a significant increase in battery life.
+To achieve this, we started looking into alternative to regular protocols that wouldn't require setup: we ended up settling on LoRa. The other candidate was ESPNOW, the Espressif communication protocol; discarded due to being an ESP32 exclusive.
+
+As mentioned previously, the chosen wakeup sensor doesn't require additional power to work, limiting the power consumption further. The device is meant to spend the vast majority of time in deep sleep: we did not require state to be kept from one wakeup to the other, excluding some small variables to facilitate encryption (more on that later), and the nature of a parking lot would mean that the device would rarely need to send data, allowing significant power savings from this kind of heavy duty cycling. We made sure that the device could afford to simply wake up and send data, cutting out anything that would've required listening.
+
+On a single wakeup cycle, this ends up being the final energy consumption:
+INSERISCI INSERISCI INSERISCI
 #### Components overview
+
 #### LoRa and Encryption
 #### Wakeup system
+#### Avoiding false positives
 ### Gateway
 ### Server
 
