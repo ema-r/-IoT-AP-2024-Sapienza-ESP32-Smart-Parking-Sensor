@@ -77,7 +77,7 @@ On a single wakeup cycle, this ends up being the final energy consumption:
 
 ![powerplot](./Figure_1.png)
 
-Sampled in 10 ms intervals. The transmission of data over LoRa obviously providing the biggest spike in energy usage, with an increase of about 200% from the "regular" operative power usage. During deep sleep, the device appears to draw 20mA and just under 100 mW. During operation, barring the transmission of data, the device averages at 50mA and 300mW. During the short transmission scene, the device peaks at 150mA and slightly under 800mW.
+Sampled in 10 ms intervals. The transmission of data over LoRa obviously providing the biggest spike in energy usage, with an increase of about 200% from the "regular" operative power usage. During deep sleep, the device appears to draw a suspiciously high 20mA and just under 100 mW, while it should sit vastly under 1mA assuming no other loads are active. During operation, barring the transmission of data, the device averages at 50mA and 300mW. During the short transmission scene, the device peaks at 150mA and slightly under 800mW.
 
 #### Components overview
 The ESP32 code is split upon a number of developed libraries:
@@ -99,10 +99,12 @@ with message being 0 or 1 depending on which of the two parking sensors connecte
 The message does contain a significant amount of redundant information, effectively sending the MAC and boot number data twice. This was a consequence of the message function interfaces estabilished early on the project's timeline lacking the necessary fields. As a stopgap solution, without having to restructure the interfaces across two different devices, we opted for this dirty hack that sends all the data that needs to be signature-verified as a message.
 
 #### Wakeup system
-#### Avoiding false positives
+The device functionality hinges on the wakeup system: the code loop is executed exactly once every wakeup, from message creation to connection. The sensors detect car movement, the device is woken up, and a message is sent to the upper layers notifying the change in state. To allow for multiple GPIO pins to wake up the device, we choose to utilize EXT1 as a wakeup source.
+The system spends most of it's time in deep sleep, with no state being held excluding RTC attributes and NVS. We use RTC attributes to hold a single unsigned integer variable (the aforementioned nonce) and NVS to back it up in a more "persistent" manner. To avoid multiple false positive wakeups being triggered in sequence, the device enters a timer-wakeup light sleep mode after sending the state change message; at this point the device will wait a few seconds (1 second in testing, 30 or more likely ideal in real world scenarios, to give users time to park) then wake up again, disable the timer wakeup, set up its wakeup sources for deep sleep and then initiate deep sleep. It will proceed to sleep until the next wakeup is triggered
+
 ### Gateway
 
-The gateway consists in the couple <Cubecell device, pc with Python SDK> allowing to convert the data from IoT (Internet of Things) data to Internet data.
+The gateway consists in the couple <Cubecell device, pc with Python SDK> allowing to convert the data from LoRa data fed over serial to MQTT data.
 ### Server
 
 The server consists in the couple <Mosquitto broker, Flask web application> in which the second one has the goal of making available the parking data to all the shareholders which has no technological skills, by simply consulting the web page which displays the current parking state.
@@ -118,4 +120,4 @@ The server consists in the couple <Mosquitto broker, Flask web application> in w
 - [Emanuele Roncioni](https://www.linkedin.com/in/emanuele-roncioni-4b516a303/)
 - [Francesco Saverio Sconocchia Pisoni](https://it.linkedin.com/in/francesco-saverio-sconocchia-pisoni-0a0050303)
 
-Click [here](https://docs.google.com/presentation/d/1uYoUDjAFOGUmK91i_s4SOkWCZ_YNvJvgRWBcW6wO5Q0/edit#slide=id.p) for our short presentation.
+Click [here]() for our short presentation.
