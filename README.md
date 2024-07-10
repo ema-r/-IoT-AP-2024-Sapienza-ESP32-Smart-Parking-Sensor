@@ -81,6 +81,8 @@ Sampled in 10 ms intervals. The transmission of data over LoRa obviously providi
 
 Assuming a 1mA draw under deep sleep, and a 0.22 second long mA spikes averaging at 100 mA (22 samples on a 10 ms timestep), with 30 activations a day, about 1.25 activations an hour (slightly pessimistic assumptions based on collected data). We obtain that the system requires 1.0077 mAh, granting us about 166 days of uptime out of a 4000 mAh battery.
 
+If we assume our INA219 is 20mA off at all times (estimated compared to individual project results), and assuming a more optimistic 0.1mA current during deep sleep, we can reach uptimes superior to 4 years off a single 4000mAh battery. In both cases, most of the power draw is caused by the deep sleep phase, with the power spike during wakeup and trasmission happening very rarely and not contributing much to the overall result, even assuming a high number of state changes per day. Reducing deep sleep power draw by turning every single connected device off appears to the key to a long battery life in our case.
+
 #### Components overview
 The ESP32 code is split upon a number of developed libraries:
 - **Crypto** acts as a convenient wrapper around a number of functions offered by mbedtls, the cryptography library offered by default on the ESP32 SDK. It's mostly focused on handling signature handling and base64 encoding, with some helper functions to help create the context beforehand. The signature handling to handle LoRa-level authentication, and the base64 code to provide a way to send messages containing only a subset of characters. B64 messages also tend to be shorter than the plaintext they originated from, which, in a scenario where transmission is particularly costly, is pretty useful.
